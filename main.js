@@ -4,9 +4,10 @@
   /* ---------- Hero: drone kadrovi ---------- */
   const SHOT_MS = 7500;
   const PLAYBACK_RATE = 0.8; // snimke se vrte malo usporeno, mirnije
+  // Nazivi lokacija dolaze iz HTML-a (data-name na crticama), pa rade na svakom jeziku.
   const shots = [
-    { name: 'Ranokršćanska bazilika', dot: [46, 30] },
-    { name: 'Ranokršćanska bazilika', dot: [46, 30] }
+    { dot: [46, 30] },
+    { dot: [46, 30] }
   ];
 
   const hero = document.querySelector('[data-hero]');
@@ -61,7 +62,7 @@
         s.setAttribute('aria-pressed', j === idx ? 'true' : 'false');
         if (j === idx) restartSegment(s); else s.classList.remove('is-active');
       });
-      nameEl.textContent = shot.name;
+      if (segments[idx] && segments[idx].dataset.name) nameEl.textContent = segments[idx].dataset.name;
       numEl.textContent = String(idx + 1).padStart(2, '0');
       dots.forEach((d) => { d.style.left = shot.dot[0] + '%'; d.style.top = shot.dot[1] + '%'; });
       schedule();
@@ -160,7 +161,7 @@
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       form.classList.add('is-sent');
-      form.querySelector('button').textContent = 'Hvala!';
+      form.querySelector('button').textContent = form.dataset.thanks || 'Hvala!';
     });
   }
 })();

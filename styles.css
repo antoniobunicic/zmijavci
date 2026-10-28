@@ -134,8 +134,10 @@ button { font: inherit; }
   display: flex; flex-direction: column; line-height: 1;
   font-family: var(--font-display); text-transform: uppercase;
 }
-.brand__visit { font-size: 11px; font-weight: 500; letter-spacing: .34em; opacity: .85; margin-bottom: 4px; }
 .brand__name { font-size: 23px; font-weight: 600; letter-spacing: .07em; }
+/* Razmak slova podešen da drugi red bude točno širok kao ZMIJAVCI iznad. */
+.brand__sub { margin-top: 5px; font-size: 9px; font-weight: 500; letter-spacing: .247em; opacity: .85; white-space: nowrap; }
+.brand__sub:lang(en) { font-size: 10px; letter-spacing: .371em; } /* „TRAVEL GUIDE” je kraći */
 .site-nav { display: flex; align-items: center; gap: 36px; font-family: var(--font-display); font-size: 16px; font-weight: 500; }
 .site-header__actions { justify-self: end; display: flex; align-items: center; gap: 18px; font-size: 13px; font-weight: 500; }
 .lang {
@@ -422,6 +424,12 @@ button { font: inherit; }
 
 .event h3 a { color: inherit; text-decoration: none; }
 .event__img a { display: block; height: 100%; }
+
+/* Cijela kartica je klikabilna: link u naslovu se rasteže preko kartice. */
+.event, .stay { position: relative; }
+.event h3 a::after, .stay h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.event__foot .text-link { position: relative; z-index: 2; }
+.event h3 a:hover, .stay h3 a:hover { opacity: 1; }
 
 .not-found { min-height: calc(100svh - 100px); display: flex; align-items: center; }
 .not-found .container { width: 100%; }
