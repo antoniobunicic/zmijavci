@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visit Zmijavci — Imotska krajina</title>
+  <meta name="description" content="Službena turistička stranica Općine Zmijavci: znamenitosti, događanja, smještaj, gastronomija i izleti u Imotskoj krajini.">
+  <link rel="icon" href="assets/img/grb.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400..700&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#uvod">Preskoči na sadržaj</a>
+
+<!-- HERO -->
+<section class="hero" data-hero aria-label="Zmijavci iz zraka">
+  <div class="hero__layer" data-hero-layer>
+    <video class="hero__video is-active" src="assets/video/bazilika-1.mp4" poster="assets/video/bazilika-poster.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video>
+    <video class="hero__video" src="assets/video/bazilika-2.mp4" muted loop playsinline preload="metadata" aria-hidden="true"></video>
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a href="#uvod" class="brand link-plain">
+      <img src="assets/img/logo-white.png" alt="" width="31" height="44" class="brand__mark">
+      <span class="brand__word">
+        <span class="brand__visit">Visit</span>
+        <span class="brand__name">Zmijavci</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Glavna navigacija">
+      <a href="#dogadanja" class="link-plain">Događanja</a>
+      <a href="#smjestaj" class="link-plain">Smještaj</a>
+      <a href="#gastronomija" class="link-plain">Gastronomija</a>
+      <a href="#izleti" class="link-plain">Izleti</a>
+    </nav>
+    <div class="site-header__actions">
+      <a href="#" lang="en" aria-label="English" class="lang link-plain">EN</a>
+      <a href="#smjestaj" class="btn-glass link-plain">Planiraj posjet</a>
+    </div>
+  </header>
+
+  <div class="hero__footer">
+    <div class="hero__location">
+      <div class="hero__meta">
+        <span class="label">Trenutno u kadru</span>
+        <span class="hero__place" data-shot-name aria-live="polite">Ranokršćanska bazilika</span>
+        <div class="hero__controls">
+          <div class="hero__segments">
+            <button type="button" class="segment is-active" data-shot="0" aria-label="Kadar 1 od 2" aria-pressed="true"><span></span></button>
+            <button type="button" class="segment" data-shot="1" aria-label="Kadar 2 od 2" aria-pressed="false"><span></span></button>
+          </div>
+          <span class="hero__count"><span data-shot-num>01</span> <span class="dim">/ 02</span></span>
+          <button type="button" class="hero__skip link-plain" data-shot-next aria-label="Sljedeći kadar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l10 7-10 7z"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="hero__map">
+        <img src="assets/img/obris-zmijavci.svg" alt="Obris općine Zmijavci">
+        <span class="hero__dot-pulse" data-dot aria-hidden="true"></span>
+        <span class="hero__dot" data-dot aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- UVOD + ZNAMENITOSTI -->
+<section id="uvod" class="section intro">
+  <div class="container intro__head">
+    <p class="eyebrow eyebrow--accent">01 — Dobro došli</p>
+    <p class="intro__lead two-tone">Zmijavci leže na rubu Imotskog polja, ondje gdje plodna zemlja dodiruje kamen. <em>Mjesto vinograda, sporih jutara i tragova koji sežu do ranog kršćanstva.</em></p>
+  </div>
+
+  <div class="container carousel-head">
+    <h2 class="small-title">Znamenitosti u Zmijavcima</h2>
+    <div class="carousel-nav">
+      <button type="button" class="round-btn" data-carousel-prev aria-label="Prethodna znamenitost">←</button>
+      <button type="button" class="round-btn round-btn--dark" data-carousel-next aria-label="Sljedeća znamenitost">→</button>
+    </div>
+  </div>
+  <div class="carousel" data-carousel>
+    <article class="place card">
+      <figure class="place__img"><img src="assets/img/bazilika.webp" alt="Ranokršćanska bazilika u Zmijavcima iz zraka" loading="lazy"></figure>
+      <div class="place__head"><h3>Ranokršćanska bazilika</h3><span class="tag">Baština</span></div>
+      <p>Temelji iz kasne antike s krstionicom u obliku križa.</p>
+    </article>
+    <article class="place card">
+      <figure class="place__img"><img src="assets/img/zmijavacki-most.webp" alt="Kameni most na lukovima preko rijeke Vrljike" loading="lazy"></figure>
+      <div class="place__head"><h3>Zmijavački most</h3><span class="tag">Graditeljska baština</span></div>
+      <p>Kameni most na lukovima preko rijeke Vrljike.</p>
+    </article>
+    <article class="place card">
+      <figure class="place__img"><img src="assets/img/crkva-svih-svetih.webp" alt="Župna crkva Svih svetih u Zmijavcima iz zraka" loading="lazy"></figure>
+      <div class="place__head"><h3>Župna crkva Svih svetih</h3><span class="tag">Sakralna baština</span></div>
+      <p>Kamena crkva s visokim zvonikom u srcu mjesta.</p>
+    </article>
+    <article class="place card">
+      <figure class="place__img"><img src="assets/img/kriz.webp" alt="Križ na brdu iznad Zmijavaca iz zraka" loading="lazy"></figure>
+      <div class="place__head"><h3>Križ</h3><span class="tag">Vidikovac</span></div>
+      <p>Bijeli križ na brdu iznad mjesta, s pogledom preko Imotskog polja.</p>
+    </article>
+  </div>
+</section>
+
+<!-- DOGAĐANJA -->
+<section id="dogadanja" class="section section--dark events">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow eyebrow--gold">02 — Događanja</p>
+        <h2 class="display two-tone">Zmijavci <em>kroz godinu</em></h2>
+      </div>
+      <a href="#dogadanja" class="text-link link-plain">Kalendar događanja <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="event-list">
+      <article class="event card">
+        <div class="event__main">
+          <div class="event__top">
+            <p class="event__date" aria-label="19. prosinca 2026. – 3. siječnja 2027.">
+              <span class="date-part"><span class="date-day">19</span><span class="date-my"><span>pro</span><span>2026</span></span></span>
+              <span class="date-dash" aria-hidden="true">–</span>
+              <span class="date-part"><span class="date-day">3</span><span class="date-my"><span>sij</span><span>2027</span></span></span>
+            </p>
+            <span class="tag tag--light">Zima</span>
+          </div>
+          <div class="event__body">
+            <h3><a href="dogadanja/advent-u-zmijavcima.html">Advent u Zmijavcima</a></h3>
+            <p>Klizalište, adventske kućice i druženje za cijelu obitelj pod tisućama lampica.</p>
+          </div>
+          <div class="event__foot">
+            <span>Zmijavci, središte</span>
+            <a href="dogadanja/advent-u-zmijavcima.html" class="text-link link-plain" aria-label="Saznaj više o Adventu u Zmijavcima">Saznaj više <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <figure class="event__img"><a href="dogadanja/advent-u-zmijavcima.html" tabindex="-1" aria-hidden="true"><img src="assets/img/advent.webp" alt="" loading="lazy"></a></figure>
+      </article>
+
+      <article class="event card">
+        <div class="event__main">
+          <div class="event__top">
+            <p class="event__date" aria-label="25. srpnja 2027.">
+              <span class="date-part"><span class="date-day">25</span><span class="date-my"><span>srp</span><span>2027</span></span></span>
+            </p>
+            <span class="tag tag--light">Gastro</span>
+          </div>
+          <div class="event__body">
+            <h3><a href="dogadanja/zabarska-vecer.html">Žabarska večer</a></h3>
+            <p>Tradicionalna gastronomska manifestacija uz glazbu i bogatu ponudu domaćih specijaliteta.</p>
+          </div>
+          <div class="event__foot">
+            <span>Zmijavci · 20:00 – 23:30</span>
+            <a href="dogadanja/zabarska-vecer.html" class="text-link link-plain" aria-label="Saznaj više o Žabarskoj večeri">Saznaj više <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <figure class="event__img"><a href="dogadanja/zabarska-vecer.html" tabindex="-1" aria-hidden="true"><img src="assets/img/zabarska-vecer.webp" alt="" loading="lazy"></a></figure>
+      </article>
+
+      <article class="event card">
+        <div class="event__main">
+          <div class="event__top">
+            <p class="event__date" aria-label="31. srpnja 2027.">
+              <span class="date-part"><span class="date-day">31</span><span class="date-my"><span>srp</span><span>2027</span></span></span>
+            </p>
+            <span class="tag tag--light">Sport</span>
+          </div>
+          <div class="event__body">
+            <h3><a href="dogadanja/memorijalni-turnir-marijan-suto-mrma.html">Memorijalni turnir „Marijan Šuto Mrma”</a></h3>
+            <p>Nogometni turnir posvećen igraču Croatie Zmijavci i hrvatskom branitelju poginulom u Domovinskom ratu.</p>
+          </div>
+          <div class="event__foot">
+            <span>Zmijavci</span>
+            <a href="dogadanja/memorijalni-turnir-marijan-suto-mrma.html" class="text-link link-plain" aria-label="Saznaj više o memorijalnom turniru">Saznaj više <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <figure class="event__img"><a href="dogadanja/memorijalni-turnir-marijan-suto-mrma.html" tabindex="-1" aria-hidden="true"><img src="assets/img/turnir.webp" alt="" loading="lazy"></a></figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SMJEŠTAJ -->
+<section id="smjestaj" class="section stays">
+  <div class="container">
+    <div class="stays__head">
+      <p class="eyebrow eyebrow--muted">03 — Smještaj</p>
+      <h2 class="display display--xl two-tone">Odmor u ritmu <em>zagore</em></h2>
+      <p class="stays__lead">Kamene kuće s bazenom, mirne vile i obiteljski apartmani — privatnost i tišina zagore, a more je s druge strane Biokova.</p>
+      <div class="filters" role="group" aria-label="Vrsta smještaja">
+        <button type="button" class="filter is-active" data-filter="sve" aria-pressed="true">Sve</button>
+        <button type="button" class="filter" data-filter="vila" aria-pressed="false">Vile s bazenom</button>
+        <button type="button" class="filter" data-filter="kuca" aria-pressed="false">Kuće za odmor</button>
+      </div>
+    </div>
+
+    <div class="stay-grid">
+      <article class="stay card" data-kind="kuca">
+        <figure class="stay__img"><img src="assets/img/villa-milla.webp" alt="Villa Milla, kamena kuća s bazenom u Zmijavcima" loading="lazy"></figure>
+        <div class="stay__info">
+          <div class="stay__title">
+            <h3><a href="https://www.novasol.hr/smjestaj/makarska-zmijavci-csc481" class="link-plain" target="_blank" rel="noopener">Villa Milla</a></h3>
+            <span class="stay__meta">6 gostiju · 3 sobe · bazen</span>
+          </div>
+          <p class="price">od <span class="price__num">235 €</span> / noć</p>
+        </div>
+      </article>
+      <article class="stay card" data-kind="vila">
+        <figure class="stay__img"><img src="assets/img/villa-ivana.webp" alt="Villa Ivana s bazenom u Zmijavcima" loading="lazy"></figure>
+        <div class="stay__info">
+          <div class="stay__title">
+            <h3><a href="https://hr.airbnb.com/rooms/43777790" class="link-plain" target="_blank" rel="noopener">Villa Ivana</a></h3>
+            <span class="stay__meta">10 gostiju · 4 sobe · bazen</span>
+          </div>
+          <p class="price">od <span class="price__num">142 €</span> / noć</p>
+        </div>
+      </article>
+      <article class="stay card" data-kind="kuca">
+        <figure class="stay__img"><img src="assets/img/hacienda-luica-dvori.webp" alt="Kameno imanje Hacienda Luića Dvori s bazenom, snimljeno iz zraka" loading="lazy"></figure>
+        <div class="stay__info">
+          <div class="stay__title">
+            <h3><a href="https://hr.airbnb.com/rooms/9325461" class="link-plain" target="_blank" rel="noopener">Hacienda Luića Dvori</a></h3>
+            <span class="stay__meta">16+ gostiju · 10 soba · bazen</span>
+          </div>
+          <p class="price">od <span class="price__num">1.150 €</span> / noć</p>
+        </div>
+      </article>
+      <article class="stay card" data-kind="vila">
+        <figure class="stay__img"><img src="assets/img/moderna-vila.webp" alt="Moderna bijela vila s bazenom u Zmijavcima, snimljena iz zraka" loading="lazy"></figure>
+        <div class="stay__info">
+          <div class="stay__title">
+            <h3><a href="https://www.booking.com/hotel/hr/modern-and-luxurious-villa-with-swimming-pool-in-zmijavci.hr.html" class="link-plain" target="_blank" rel="noopener">Moderna vila s bazenom</a></h3>
+            <span class="stay__meta">12 gostiju · bazen</span>
+          </div>
+          <p class="price">od <span class="price__num">684 €</span> / noć</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="center">
+      <a href="#smjestaj" class="btn-outline link-plain">Pregledaj sav smještaj <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- GASTRONOMIJA -->
+<section id="gastronomija" class="section section--white">
+  <div class="container gastro">
+    <div class="gastro__intro">
+      <p class="eyebrow eyebrow--accent">04 — Gastronomija</p>
+      <h2 class="display two-tone">Okusi <em>Imotske krajine</em></h2>
+      <p class="lead">Kuhinja zagore je jednostavna i iskrena: ono što daju polje, vinograd i stado, pripremljeno polako, ispod peke ili na otvorenoj vatri.</p>
+      <div class="dishes">
+        <div class="dish"><span class="dish__num">01</span><p class="dish__name">Imotska torta</p><p>Kolač od badema, simbol imotskih slavlja.</p></div>
+        <div class="dish"><span class="dish__num">02</span><p class="dish__name">Kujundžuša</p><p>Autohtona bijela sorta Imotskog polja.</p></div>
+        <div class="dish"><span class="dish__num">03</span><p class="dish__name">Janjetina ispod peke</p><p>Polagano, pod žarom, s krumpirom.</p></div>
+        <div class="dish"><span class="dish__num">04</span><p class="dish__name">Pršut i sir iz mišine</p><p>Zagorska klasika za početak objeda.</p></div>
+      </div>
+    </div>
+    <div class="gastro__list">
+      <div class="list-head">
+        <h3>Ugostiteljstvo</h3>
+        <a href="#gastronomija">Svi objekti →</a>
+      </div>
+      <div class="venue"><span class="venue__type">Restoran</span><span class="venue__name">[Naziv restorana]</span><span class="venue__info">[Radno vrijeme]</span><a href="#gastronomija">Jelovnik →</a></div>
+      <div class="venue"><span class="venue__type">Konoba</span><span class="venue__name">[Naziv konobe]</span><span class="venue__info">[Radno vrijeme]</span><a href="#gastronomija">Jelovnik →</a></div>
+      <div class="venue"><span class="venue__type">Pizzeria</span><span class="venue__name">[Naziv objekta]</span><span class="venue__info">[Radno vrijeme]</span><a href="#gastronomija">Jelovnik →</a></div>
+      <div class="venue"><span class="venue__type">Kafić</span><span class="venue__name">[Naziv objekta]</span><span class="venue__info">[Radno vrijeme]</span><a href="#gastronomija">Detalji →</a></div>
+      <div class="venue"><span class="venue__type">Vinarija</span><span class="venue__name">[Naziv vinarije]</span><span class="venue__info">[Termin degustacije]</span><a href="#gastronomija">Rezerviraj →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- IZLETI -->
+<section id="izleti" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__text">
+        <p class="eyebrow eyebrow--accent">05 — Ideje za izlete</p>
+        <h2 class="display two-tone">Izleti u <em>Imotskoj krajini</em></h2>
+        <p class="lead">Krška jezera, utvrde nad poljem i planina koja se spušta u more — sve na kratkoj vožnji od Zmijavaca.</p>
+      </div>
+      <a href="#izleti" class="text-link text-link--dark link-plain">Karta izleta <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="trips">
+      <article class="trip"><div class="trip__top"><span class="trip__num">01</span><span class="tag">Priroda</span></div><div><h3>Modro jezero</h3><p>Krško jezero na rubu Imotskog. Kad ljeti presuši, na njegovu se dnu igra nogomet.</p></div></article>
+      <article class="trip"><div class="trip__top"><span class="trip__num">02</span><span class="tag">Priroda</span></div><div><h3>Crveno jezero</h3><p>Duboka krška jama strmih crvenkastih stijena, jedna od najdubljih u Europi.</p></div></article>
+      <article class="trip"><div class="trip__top"><span class="trip__num">03</span><span class="tag">Kultura</span></div><div><h3>Tvrđava Topana</h3><p>Utvrda nad Imotskim s pogledom ravno u Modro jezero i preko cijelog polja.</p></div></article>
+      <article class="trip"><div class="trip__top"><span class="trip__num">04</span><span class="tag">Aktivno</span></div><div><h3>Biokovo</h3><p>Park prirode, vidikovac Skywalk i vrh Sveti Jure, s pogledom na otoke.</p></div></article>
+      <article class="trip"><div class="trip__top"><span class="trip__num">05</span><span class="tag">Priroda</span></div><div><h3>Prološko blato</h3><p>Močvarni krajolik uz Proložac, utočište ptica i mirnih šetnji.</p></div></article>
+      <article class="trip"><div class="trip__top"><span class="trip__num">06</span><span class="tag">Aktivno</span></div><div><h3>Rijeka Vrljika</h3><p>Ponornica koja vijuga Imotskim poljem — za bicikl ili šetnju uz vodu.</p></div></article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- PODNOŽJE -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__cta">
+        <p class="display display--sm two-tone">Dođite. Ostanite. <em>Vratite se.</em></p>
+        <form class="newsletter" data-newsletter>
+          <label for="email" class="visually-hidden">E-mail adresa</label>
+          <input id="email" type="email" placeholder="Vaša e-mail adresa" autocomplete="email" required>
+          <button type="submit">Prijava na novosti</button>
+        </form>
+      </div>
+      <div class="site-footer__cols">
+        <div>
+          <span class="label label--muted">Istraži</span>
+          <a href="#dogadanja" class="link-plain">Događanja</a>
+          <a href="#smjestaj" class="link-plain">Smještaj</a>
+          <a href="#gastronomija" class="link-plain">Gastronomija</a>
+          <a href="#izleti" class="link-plain">Izleti</a>
+        </div>
+        <div>
+          <span class="label label--muted">Kontakt</span>
+          <span>Općina Zmijavci</span>
+          <span>[Adresa]</span>
+          <span>[Telefon]</span>
+          <span>[E-mail]</span>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <a href="#" class="brand link-plain" aria-label="Visit Zmijavci — na vrh">
+        <img src="assets/img/logo-white.png" alt="" width="31" height="44" class="brand__mark">
+        <span class="brand__word"><span class="brand__visit">Visit</span><span class="brand__name">Zmijavci</span></span>
+      </a>
+      <span>© 2026 Općina Zmijavci · Službena turistička stranica</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
