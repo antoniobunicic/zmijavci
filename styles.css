@@ -106,7 +106,7 @@ button { font: inherit; }
 
 /* ---------- Hero ---------- */
 .hero {
-  position: relative; height: 100svh; min-height: 640px; max-height: 1100px;
+  position: relative; height: 100vh; height: 100dvh;
   overflow: hidden; background: #0B0E12; color: var(--white); touch-action: pan-y;
 }
 .hero__layer {
@@ -347,10 +347,27 @@ button { font: inherit; }
 
 /* ---------- Event page ---------- */
 .site-header--solid { position: relative; background: var(--night); color: var(--white); }
+.site-header--overlay { position: absolute; color: var(--white); }
 .event-hero {
-  background: linear-gradient(var(--night) 0, var(--night) calc(100% - clamp(120px, 16vw, 260px)), var(--paper) calc(100% - clamp(120px, 16vw, 260px)));
+  --overlap: clamp(120px, 16vw, 260px);
+  position: relative; isolation: isolate;
+  background: var(--paper);
   color: var(--on-dark);
-  padding: clamp(40px, 5vw, 72px) var(--gutter) 0;
+  padding: calc(clamp(40px, 5vw, 72px) + 100px) var(--gutter) 0;
+}
+/* Pozadina: jako zamućena i potamnjena verzija naslovne fotografije. */
+.event-hero__bg {
+  position: absolute; z-index: -1; top: 0; left: 0; right: 0; bottom: var(--overlap);
+  overflow: hidden; background: var(--night);
+}
+.event-hero__bg img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: blur(56px) saturate(1.15) brightness(.55);
+  transform: scale(1.3);
+}
+.event-hero__bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8,10,14,.45) 0%, rgba(8,10,14,.2) 45%, rgba(8,10,14,.35) 100%);
 }
 .breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: clamp(40px, 5vw, 64px); font-size: 13px; color: var(--on-dark-muted); }
 .breadcrumb a { color: var(--on-dark); }
