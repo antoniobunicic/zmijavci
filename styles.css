@@ -110,7 +110,7 @@ button { font: inherit; }
   overflow: hidden; background: #0B0E12; color: var(--white); touch-action: pan-y;
 }
 .hero__layer {
-  position: absolute; inset: -9%;
+  position: absolute; inset: -5%;
   will-change: transform;
 }
 .hero__video {
@@ -166,7 +166,7 @@ button { font: inherit; }
   content: ""; position: absolute; inset: 0; background: var(--white);
   transform: scaleX(0); transform-origin: left center;
 }
-.segment.is-active span::after { animation: fill var(--shot-ms, 6500ms) linear forwards; }
+.segment.is-active span::after { animation: fill var(--shot-ms, 7500ms) linear forwards; }
 .segment:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
 @keyframes fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .hero__count { font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: .08em; }

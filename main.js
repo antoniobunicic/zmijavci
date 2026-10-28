@@ -2,7 +2,8 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Hero: drone kadrovi ---------- */
-  const SHOT_MS = 6500;
+  const SHOT_MS = 7500;
+  const PLAYBACK_RATE = 0.8; // snimke se vrte malo usporeno, mirnije
   const shots = [
     { name: 'Ranokršćanska bazilika', dot: [46, 30] },
     { name: 'Ranokršćanska bazilika', dot: [46, 30] }
@@ -26,6 +27,8 @@
 
     const play = (v) => {
       v.muted = true;
+      v.defaultPlaybackRate = PLAYBACK_RATE;
+      v.playbackRate = PLAYBACK_RATE;
       const p = v.play();
       if (p && p.catch) p.catch(() => {});
     };
@@ -71,7 +74,7 @@
     schedule();
 
     /* Dron: kursor desno → kadar se pomiče desno → sadržaj klizi ulijevo. */
-    const RANGE = 6.5; // % pomaka sloja
+    const RANGE = 3.6; // % pomaka sloja; sloj je 5 % veći od kadra sa svake strane
     let target = { x: 0, y: 0 };
     let cur = { x: 0, y: 0 };
     let lastPointer = 0;
@@ -96,7 +99,7 @@
       cur.y += (target.y - cur.y) * 0.045;
       const tx = (-cur.x * RANGE).toFixed(3);
       const ty = (-cur.y * RANGE * 0.8).toFixed(3);
-      const rot = (cur.x * 0.5).toFixed(3);
+      const rot = (cur.x * 0.3).toFixed(3);
       layer.style.transform = `translate3d(${tx}%, ${ty}%, 0) rotate(${rot}deg)`;
       raf = requestAnimationFrame(tick);
     };
