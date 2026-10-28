@@ -1,0 +1,16 @@
+# Statična stranica — nema build koraka, objavljuje se korijen repozitorija.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Slike i videi nemaju hash u imenu, pa ih keširamo tjedan dana, ne zauvijek.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
