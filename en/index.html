@@ -21,13 +21,17 @@
 <!-- HERO -->
 <section class="hero" data-hero aria-label="Zmijavci from above">
   <div class="hero__layer" data-hero-layer>
-    <video class="hero__video is-active" poster="../assets/video/bazilika-poster.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true">
+    <video class="hero__video is-active" poster="../assets/video/bazilika-poster.jpg" muted playsinline autoplay preload="auto" aria-hidden="true">
       <source src="../assets/video/bazilika-2-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
       <source src="../assets/video/bazilika-2.mp4" type="video/mp4">
     </video>
-    <video class="hero__video" muted loop playsinline preload="metadata" aria-hidden="true">
+    <video class="hero__video" muted playsinline preload="metadata" aria-hidden="true">
       <source src="../assets/video/bazilika-1-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
       <source src="../assets/video/bazilika-1.mp4" type="video/mp4">
+    </video>
+    <video class="hero__video" muted playsinline preload="metadata" aria-hidden="true">
+      <source src="../assets/video/advent-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
+      <source src="../assets/video/advent.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
@@ -41,6 +45,7 @@
       </span>
     </a>
     <nav class="site-nav" aria-label="Main navigation">
+      <a href="#welcome" class="link-plain">Landmarks</a>
       <a href="#events" class="link-plain">Events</a>
       <a href="#stay" class="link-plain">Stay</a>
       <a href="#food" class="link-plain">Food &amp; drink</a>
@@ -48,7 +53,6 @@
     </nav>
     <div class="site-header__actions">
       <a href="../index.html" lang="hr" hreflang="hr" aria-label="Hrvatski" class="lang link-plain">HR</a>
-      <a href="#stay" class="btn-glass link-plain">Plan your visit</a>
     </div>
   </header>
 
@@ -59,10 +63,11 @@
         <span class="hero__place" data-shot-name aria-live="polite">Early Christian Basilica</span>
         <div class="hero__controls">
           <div class="hero__segments">
-            <button type="button" class="segment is-active" data-shot="0" data-name="Early Christian Basilica" aria-label="Shot 1 of 2" aria-pressed="true"><span></span></button>
-            <button type="button" class="segment" data-shot="1" data-name="Early Christian Basilica" aria-label="Shot 2 of 2" aria-pressed="false"><span></span></button>
+            <button type="button" class="segment is-active" data-shot="0" data-name="Early Christian Basilica" aria-label="Shot 1 of 3" aria-pressed="true"><span></span></button>
+            <button type="button" class="segment" data-shot="1" data-name="Early Christian Basilica" aria-label="Shot 2 of 3" aria-pressed="false"><span></span></button>
+            <button type="button" class="segment" data-shot="2" data-name="Advent in Zmijavci" aria-label="Shot 3 of 3" aria-pressed="false"><span></span></button>
           </div>
-          <span class="hero__count"><span data-shot-num>01</span> <span class="dim">/ 02</span></span>
+          <span class="hero__count"><span data-shot-num>01</span> <span class="dim">/ 03</span></span>
           <button type="button" class="hero__skip link-plain" data-shot-next aria-label="Next shot">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l10 7-10 7z"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
           </button>
@@ -80,13 +85,13 @@
 <main>
 
 <!-- WELCOME + LANDMARKS -->
-<section id="welcome" class="section intro">
+<section id="welcome" class="section intro section--white">
   <div class="container intro__head">
-    <p class="eyebrow eyebrow--accent">01 — Welcome</p>
-    <p class="intro__lead two-tone">Zmijavci sits on the edge of the Imotski field, where fertile soil meets limestone. <em>A place of vineyards, slow mornings and traces reaching back to early Christianity.</em></p>
+    <p class="eyebrow eyebrow--accent">Welcome</p>
+    <p class="intro__lead">Zmijavci holds a unique story of landscape, history and heritage. From an Early Christian basilica and medieval stećci to stone bridges and watermills on the Vrljika.</p>
   </div>
 
-  <div class="container carousel-head">
+  <div class="container carousel-head" id="landmarks">
     <h2 class="small-title">Landmarks in Zmijavci</h2>
     <div class="carousel-nav">
       <button type="button" class="round-btn" data-carousel-prev aria-label="Previous landmark">←</button>
@@ -95,24 +100,44 @@
   </div>
   <div class="carousel" data-carousel>
     <article class="place card">
-      <figure class="place__img"><img src="../assets/img/bazilika.webp" alt="The Early Christian basilica in Zmijavci from above" loading="lazy"></figure>
-      <div class="place__head"><h3>Early Christian Basilica</h3><span class="tag">Heritage</span></div>
-      <p>Late antique foundations with a cross-shaped baptismal font.</p>
+      <figure class="place__img"><img src="../assets/img/bazilika.webp" alt="The remains of the Early Christian basilica at Bublin from above" loading="lazy"></figure>
+      <div class="place__head"><h3><a href="landmarks/early-christian-basilica.html">Early Christian Basilica</a></h3><span class="tag">Archaeological heritage</span></div>
+      <p>The remains of a 5th–6th century church complex with a three-aisled basilica and two baptismal fonts, one cross-shaped and one round — among the most important late antique sites in the Imotski region.</p>
     </article>
     <article class="place card">
-      <figure class="place__img"><img src="../assets/img/zmijavacki-most.webp" alt="Arched stone bridge over the Vrljika river" loading="lazy"></figure>
-      <div class="place__head"><h3>Zmijavci Bridge</h3><span class="tag">Built heritage</span></div>
-      <p>An arched stone bridge over the Vrljika river.</p>
+      <figure class="place__img"><img src="../assets/img/zmijavacki-most.webp" alt="The arched stone bridge over the Vrljika river" loading="lazy"></figure>
+      <div class="place__head"><h3><a href="landmarks/zmijavci-bridge.html">Zmijavci Bridge</a></h3><span class="tag">Built heritage</span></div>
+      <p>A six-arched stone bridge over the Vrljika, built in the early 19th century from dressed local stone. One of the finest examples of historic bridge-building in the Imotski region.</p>
     </article>
     <article class="place card">
       <figure class="place__img"><img src="../assets/img/crkva-svih-svetih.webp" alt="All Saints parish church in Zmijavci from above" loading="lazy"></figure>
-      <div class="place__head"><h3>All Saints Parish Church</h3><span class="tag">Sacred heritage</span></div>
-      <p>A stone church with a tall bell tower in the heart of the village.</p>
+      <div class="place__head"><h3><a href="landmarks/all-saints-church.html">All Saints Church</a></h3><span class="tag">Sacred heritage</span></div>
+      <p>A stone parish church on Tonkića glavica, built in 1895 on the site of an older church. Inside are a Tyrolean wooden altar, an old crucifix and eleven stained-glass windows by Branimir Dorotić.</p>
     </article>
     <article class="place card">
-      <figure class="place__img"><img src="../assets/img/kriz.webp" alt="The cross on the hill above Zmijavci from above" loading="lazy"></figure>
-      <div class="place__head"><h3>The Cross</h3><span class="tag">Viewpoint</span></div>
-      <p>A white cross on the hill above the village, overlooking the Imotski field.</p>
+      <figure class="place__img"><img src="../assets/img/kriz.webp" alt="The votive cross on Todorića gradina above Zmijavci from above" loading="lazy"></figure>
+      <div class="place__head"><h3><a href="landmarks/todorica-gradina.html">Todorića gradina</a></h3><span class="tag">Viewpoint</span></div>
+      <p>A viewpoint above Zmijavci looking across the Imotski plain to Imotski. On the summit stands a fifteen-metre votive cross, raised in 1998, beside a stone altar.</p>
+    </article>
+    <article class="place card">
+      <figure class="place__img"><img src="../assets/img/stecci-brizine.webp" alt="The stećci at Brižine–Balinjača from above" loading="lazy"></figure>
+      <div class="place__head"><h3><a href="landmarks/brizine-stecci.html">Stećci at Brižine</a></h3><span class="tag">Archaeological heritage</span></div>
+      <p>A medieval cemetery of at least 31 stećci, the carved medieval tombstones, set on a prehistoric burial mound. One bears a carved cross, another an unusual image of two figures holding hands.</p>
+    </article>
+    <article class="place card">
+      <figure class="place__img photo-soon"><img src="../assets/img/obris-zmijavci.svg" alt=""><figcaption>Photo coming soon</figcaption></figure>
+      <div class="place__head"><h3><a href="landmarks/dikovaca-stecci.html">Stećci at Dikovača</a></h3><span class="tag">Archaeological heritage</span></div>
+      <p>A 290-metre hilltop with eight medieval stećci decorated with a crescent moon, a rosette, a lily and a kolo circle dance. Traces of settlement go back to the Bronze and Iron Ages.</p>
+    </article>
+    <article class="place card">
+      <figure class="place__img photo-soon"><img src="../assets/img/obris-zmijavci.svg" alt=""><figcaption>Photo coming soon</figcaption></figure>
+      <div class="place__head"><h3><a href="landmarks/bublin-bridge.html">Bublin Bridge</a></h3><span class="tag">Built heritage</span></div>
+      <p>A late 19th-century stone bridge over the Vrljika beside the historic Petrović watermill. With the mill and the river it forms one of the most authentic settings in Zmijavci.</p>
+    </article>
+    <article class="place card">
+      <figure class="place__img"><img src="../assets/img/dogica-mlinica.webp" alt="The Đogić watermill, a stone mill with a wooden water wheel" loading="lazy"></figure>
+      <div class="place__head"><h3><a href="landmarks/dogic-watermill.html">Đogić Watermill</a></h3><span class="tag">Built heritage</span></div>
+      <p>A stone watermill on the Vrljika, known locally as the Matica, with a wooden wheel turned by the river. One of the best-preserved examples of traditional building in Zmijavci.</p>
     </article>
   </div>
 </section>
@@ -122,8 +147,8 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <p class="eyebrow eyebrow--gold">02 — Events</p>
-        <h2 class="display two-tone">Zmijavci <em>through the year</em></h2>
+        <p class="eyebrow eyebrow--gold">Events</p>
+        <h2 class="display">Zmijavci through the year</h2>
       </div>
       <a href="#events" class="text-link link-plain">Events calendar <span aria-hidden="true">→</span></a>
     </div>
@@ -198,18 +223,13 @@
 <section id="stay" class="section stays">
   <div class="container">
     <div class="stays__head">
-      <p class="eyebrow eyebrow--muted">03 — Stay</p>
-      <h2 class="display display--xl two-tone">At the pace of <em>the hinterland</em></h2>
+      <p class="eyebrow eyebrow--muted">Stay</p>
+      <h2 class="display">At the pace of the hinterland</h2>
       <p class="stays__lead">Stone houses with pools, quiet villas and family apartments — the privacy and calm of the Dalmatian hinterland, with the sea just beyond Biokovo.</p>
-      <div class="filters" role="group" aria-label="Type of accommodation">
-        <button type="button" class="filter is-active" data-filter="sve" aria-pressed="true">All</button>
-        <button type="button" class="filter" data-filter="vila" aria-pressed="false">Villas with pool</button>
-        <button type="button" class="filter" data-filter="kuca" aria-pressed="false">Holiday homes</button>
-      </div>
     </div>
 
     <div class="stay-grid">
-      <article class="stay card" data-kind="kuca">
+      <article class="stay card">
         <figure class="stay__img"><img src="../assets/img/villa-milla.webp" alt="Villa Milla, a stone house with a pool in Zmijavci" loading="lazy"></figure>
         <div class="stay__info">
           <div class="stay__title">
@@ -219,7 +239,7 @@
           <p class="price">from <span class="price__num">€235</span> / night</p>
         </div>
       </article>
-      <article class="stay card" data-kind="vila">
+      <article class="stay card">
         <figure class="stay__img"><img src="../assets/img/villa-ivana.webp" alt="Villa Ivana with a pool in Zmijavci" loading="lazy"></figure>
         <div class="stay__info">
           <div class="stay__title">
@@ -229,7 +249,7 @@
           <p class="price">from <span class="price__num">€142</span> / night</p>
         </div>
       </article>
-      <article class="stay card" data-kind="kuca">
+      <article class="stay card">
         <figure class="stay__img"><img src="../assets/img/hacienda-luica-dvori.webp" alt="The Hacienda Luića Dvori stone estate with a pool, seen from above" loading="lazy"></figure>
         <div class="stay__info">
           <div class="stay__title">
@@ -239,7 +259,7 @@
           <p class="price">from <span class="price__num">€1,150</span> / night</p>
         </div>
       </article>
-      <article class="stay card" data-kind="vila">
+      <article class="stay card">
         <figure class="stay__img"><img src="../assets/img/moderna-vila.webp" alt="A modern white villa with a pool in Zmijavci, seen from above" loading="lazy"></figure>
         <div class="stay__info">
           <div class="stay__title">
@@ -261,8 +281,8 @@
 <section id="food" class="section section--white">
   <div class="container gastro">
     <div class="gastro__intro">
-      <p class="eyebrow eyebrow--accent">04 — Food &amp; drink</p>
-      <h2 class="display two-tone">Flavours of <em>the Imotski region</em></h2>
+      <p class="eyebrow eyebrow--accent">Food &amp; drink</p>
+      <h2 class="display">Flavours of the Imotski region</h2>
       <p class="lead">Hinterland cooking is simple and honest: what the fields, vineyards and flocks provide, cooked slowly under the peka bell or over an open fire.</p>
       <div class="dishes">
         <div class="dish"><span class="dish__num">01</span><p class="dish__name">Imotska torta</p><p>An almond cake, the centrepiece of every Imotski celebration.</p></div>
@@ -274,13 +294,11 @@
     <div class="gastro__list">
       <div class="list-head">
         <h3>Where to eat</h3>
-        <a href="#food">All venues →</a>
       </div>
-      <div class="venue"><span class="venue__type">Restaurant</span><span class="venue__name">[Restaurant name]</span><span class="venue__info">[Opening hours]</span><a href="#food">Menu →</a></div>
-      <div class="venue"><span class="venue__type">Konoba</span><span class="venue__name">[Tavern name]</span><span class="venue__info">[Opening hours]</span><a href="#food">Menu →</a></div>
-      <div class="venue"><span class="venue__type">Pizzeria</span><span class="venue__name">[Venue name]</span><span class="venue__info">[Opening hours]</span><a href="#food">Menu →</a></div>
-      <div class="venue"><span class="venue__type">Café</span><span class="venue__name">[Venue name]</span><span class="venue__info">[Opening hours]</span><a href="#food">Details →</a></div>
-      <div class="venue"><span class="venue__type">Winery</span><span class="venue__name">[Winery name]</span><span class="venue__info">[Tasting times]</span><a href="#food">Book →</a></div>
+      <div class="venue"><span class="venue__type">Rural restaurant</span><span class="venue__name">Buljan Farmstead</span><span class="venue__info">Domovinskog rata 145</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Seosko%20domacinstvo%20izletiste%20Buljan%20Zmijavci" target="_blank" rel="noopener">Map →</a></div>
+      <div class="venue"><span class="venue__type">Restaurant</span><span class="venue__name">Bufet Brana</span><span class="venue__info">Domovinskog rata 101</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Bufet%20Brana%20Zmijavci" target="_blank" rel="noopener">Map →</a></div>
+      <div class="venue"><span class="venue__type">Home cooking</span><span class="venue__name">Kod Runje</span><span class="venue__info">Zmijavci</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Kod%20Runje%20Zmijavci" target="_blank" rel="noopener">Map →</a></div>
+      <div class="venue"><span class="venue__type">Bistro</span><span class="venue__name">Bistro Traverca</span><span class="venue__info">Dr. Franje Tuđmana 136</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Bistro%20Traverca%20Zmijavci" target="_blank" rel="noopener">Map →</a></div>
     </div>
   </div>
 </section>
@@ -290,8 +308,8 @@
   <div class="container">
     <div class="section-head">
       <div class="section-head__text">
-        <p class="eyebrow eyebrow--accent">05 — Day trips</p>
-        <h2 class="display two-tone">Day trips around <em>the Imotski region</em></h2>
+        <p class="eyebrow eyebrow--accent">Day trips</p>
+        <h2 class="display">Day trips around the Imotski region</h2>
         <p class="lead">Karst lakes, fortresses above the field and a mountain that drops into the sea — all a short drive from Zmijavci.</p>
       </div>
       <a href="#day-trips" class="text-link text-link--dark link-plain">Day trip map <span aria-hidden="true">→</span></a>
@@ -324,6 +342,7 @@
       <div class="site-footer__cols">
         <div>
           <span class="label label--muted">Explore</span>
+          <a href="#welcome" class="link-plain">Landmarks</a>
           <a href="#events" class="link-plain">Events</a>
           <a href="#stay" class="link-plain">Stay</a>
           <a href="#food" class="link-plain">Food &amp; drink</a>

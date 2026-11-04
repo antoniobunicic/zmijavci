@@ -21,13 +21,17 @@
 <!-- HERO -->
 <section class="hero" data-hero aria-label="Zmijavci iz zraka">
   <div class="hero__layer" data-hero-layer>
-    <video class="hero__video is-active" poster="assets/video/bazilika-poster.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true">
+    <video class="hero__video is-active" poster="assets/video/bazilika-poster.jpg" muted playsinline autoplay preload="auto" aria-hidden="true">
       <source src="assets/video/bazilika-2-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
       <source src="assets/video/bazilika-2.mp4" type="video/mp4">
     </video>
-    <video class="hero__video" muted loop playsinline preload="metadata" aria-hidden="true">
+    <video class="hero__video" muted playsinline preload="metadata" aria-hidden="true">
       <source src="assets/video/bazilika-1-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
       <source src="assets/video/bazilika-1.mp4" type="video/mp4">
+    </video>
+    <video class="hero__video" muted playsinline preload="metadata" aria-hidden="true">
+      <source src="assets/video/advent-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
+      <source src="assets/video/advent.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
@@ -41,6 +45,7 @@
       </span>
     </a>
     <nav class="site-nav" aria-label="Glavna navigacija">
+      <a href="#uvod" class="link-plain">Znamenitosti</a>
       <a href="#dogadanja" class="link-plain">Događanja</a>
       <a href="#smjestaj" class="link-plain">Smještaj</a>
       <a href="#gastronomija" class="link-plain">Gastronomija</a>
@@ -48,7 +53,6 @@
     </nav>
     <div class="site-header__actions">
       <a href="en/index.html" lang="en" hreflang="en" aria-label="English" class="lang link-plain">EN</a>
-      <a href="#smjestaj" class="btn-glass link-plain">Planiraj posjet</a>
     </div>
   </header>
 
@@ -59,10 +63,11 @@
         <span class="hero__place" data-shot-name aria-live="polite">Ranokršćanska bazilika</span>
         <div class="hero__controls">
           <div class="hero__segments">
-            <button type="button" class="segment is-active" data-shot="0" data-name="Ranokršćanska bazilika" aria-label="Kadar 1 od 2" aria-pressed="true"><span></span></button>
-            <button type="button" class="segment" data-shot="1" data-name="Ranokršćanska bazilika" aria-label="Kadar 2 od 2" aria-pressed="false"><span></span></button>
+            <button type="button" class="segment is-active" data-shot="0" data-name="Ranokršćanska bazilika" aria-label="Kadar 1 od 3" aria-pressed="true"><span></span></button>
+            <button type="button" class="segment" data-shot="1" data-name="Ranokršćanska bazilika" aria-label="Kadar 2 od 3" aria-pressed="false"><span></span></button>
+            <button type="button" class="segment" data-shot="2" data-name="Advent u Zmijavcima" aria-label="Kadar 3 od 3" aria-pressed="false"><span></span></button>
           </div>
-          <span class="hero__count"><span data-shot-num>01</span> <span class="dim">/ 02</span></span>
+          <span class="hero__count"><span data-shot-num>01</span> <span class="dim">/ 03</span></span>
           <button type="button" class="hero__skip link-plain" data-shot-next aria-label="Sljedeći kadar">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l10 7-10 7z"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
           </button>
@@ -80,13 +85,13 @@
 <main>
 
 <!-- UVOD + ZNAMENITOSTI -->
-<section id="uvod" class="section intro">
+<section id="uvod" class="section intro section--white">
   <div class="container intro__head">
-    <p class="eyebrow eyebrow--accent">01 — Dobro došli</p>
-    <p class="intro__lead two-tone">Zmijavci leže na rubu Imotskog polja, ondje gdje plodna zemlja dodiruje kamen. <em>Mjesto vinograda, sporih jutara i tragova koji sežu do ranog kršćanstva.</em></p>
+    <p class="eyebrow eyebrow--accent">Dobro došli</p>
+    <p class="intro__lead">Zmijavci čuvaju jedinstvenu priču o prostoru, povijesti i baštini. Od ranokršćanske bazilike i srednjovjekovnih stećaka do kamenih mostova i mlinica na Vrljici.</p>
   </div>
 
-  <div class="container carousel-head">
+  <div class="container carousel-head" id="znamenitosti">
     <h2 class="small-title">Znamenitosti u Zmijavcima</h2>
     <div class="carousel-nav">
       <button type="button" class="round-btn" data-carousel-prev aria-label="Prethodna znamenitost">←</button>
@@ -95,24 +100,44 @@
   </div>
   <div class="carousel" data-carousel>
     <article class="place card">
-      <figure class="place__img"><img src="assets/img/bazilika.webp" alt="Ranokršćanska bazilika u Zmijavcima iz zraka" loading="lazy"></figure>
-      <div class="place__head"><h3>Ranokršćanska bazilika</h3><span class="tag">Baština</span></div>
-      <p>Temelji iz kasne antike s krstionicom u obliku križa.</p>
+      <figure class="place__img"><img src="assets/img/bazilika.webp" alt="Ostaci ranokršćanske bazilike na Bublinu iz zraka" loading="lazy"></figure>
+      <div class="place__head"><h3><a href="znamenitosti/ranokrscanska-bazilika.html">Ranokršćanska bazilika</a></h3><span class="tag">Arheološka baština</span></div>
+      <p>Ostaci sakralnog kompleksa iz 5. i 6. stoljeća, s trobrodnom crkvom i dvama krsnim zdencima, jednim križnog i drugim kružnog oblika — jedan od najznačajnijih spomenika kasne antike u Imotskoj krajini.</p>
     </article>
     <article class="place card">
       <figure class="place__img"><img src="assets/img/zmijavacki-most.webp" alt="Kameni most na lukovima preko rijeke Vrljike" loading="lazy"></figure>
-      <div class="place__head"><h3>Zmijavački most</h3><span class="tag">Graditeljska baština</span></div>
-      <p>Kameni most na lukovima preko rijeke Vrljike.</p>
+      <div class="place__head"><h3><a href="znamenitosti/zmijavacki-most.html">Zmijavački most</a></h3><span class="tag">Graditeljska baština</span></div>
+      <p>Kameni most sa šest lukova preko Vrljike, podignut početkom 19. stoljeća od priklesanog lokalnog kamena. Jedan od najvrjednijih primjera povijesne mostogradnje u Imotskoj krajini.</p>
     </article>
     <article class="place card">
       <figure class="place__img"><img src="assets/img/crkva-svih-svetih.webp" alt="Župna crkva Svih svetih u Zmijavcima iz zraka" loading="lazy"></figure>
-      <div class="place__head"><h3>Župna crkva Svih svetih</h3><span class="tag">Sakralna baština</span></div>
-      <p>Kamena crkva s visokim zvonikom u srcu mjesta.</p>
+      <div class="place__head"><h3><a href="znamenitosti/crkva-svih-svetih.html">Crkva Svih svetih</a></h3><span class="tag">Sakralna baština</span></div>
+      <p>Kamena župna crkva na Tonkića glavici, sagrađena 1895. na mjestu starije crkve. Čuva drveni oltar tirolske izrade, staro raspelo i jedanaest vitraja Branimira Dorotića.</p>
     </article>
     <article class="place card">
-      <figure class="place__img"><img src="assets/img/kriz.webp" alt="Križ na brdu iznad Zmijavaca iz zraka" loading="lazy"></figure>
-      <div class="place__head"><h3>Križ</h3><span class="tag">Vidikovac</span></div>
-      <p>Bijeli križ na brdu iznad mjesta, s pogledom preko Imotskog polja.</p>
+      <figure class="place__img"><img src="assets/img/kriz.webp" alt="Zavjetni križ na Todorića gradini iznad Zmijavaca iz zraka" loading="lazy"></figure>
+      <div class="place__head"><h3><a href="znamenitosti/todorica-gradina.html">Todorića gradina</a></h3><span class="tag">Vidikovac</span></div>
+      <p>Vidikovac iznad Zmijavaca s pogledom preko Imotskog polja do Imotskog. Na vrhu se uzdiže petnaest metara visok zavjetni križ, podignut 1998., uz kameni oltar.</p>
+    </article>
+    <article class="place card">
+      <figure class="place__img"><img src="assets/img/stecci-brizine.webp" alt="Stećci na lokalitetu Brižine–Balinjača iz zraka" loading="lazy"></figure>
+      <div class="place__head"><h3><a href="znamenitosti/stecci-brizine.html">Stećci u Brižinama</a></h3><span class="tag">Arheološka baština</span></div>
+      <p>Srednjovjekovno groblje s najmanje 31 stećkom podignuto na prapovijesnom tumulu. Jedan stećak nosi uklesan križ, a drugi neobičan prikaz dviju osoba koje se drže za ruke.</p>
+    </article>
+    <article class="place card">
+      <figure class="place__img photo-soon"><img src="assets/img/obris-zmijavci.svg" alt=""><figcaption>Fotografija uskoro</figcaption></figure>
+      <div class="place__head"><h3><a href="znamenitosti/stecci-dikovaca.html">Stećci na Dikovači</a></h3><span class="tag">Arheološka baština</span></div>
+      <p>Uzvisina na 290 metara s osam srednjovjekovnih stećaka ukrašenih polumjesecom, rozetom, ljiljanom i prizorom kola. Tragovi naselja sežu sve do brončanog i željeznog doba.</p>
+    </article>
+    <article class="place card">
+      <figure class="place__img photo-soon"><img src="assets/img/obris-zmijavci.svg" alt=""><figcaption>Fotografija uskoro</figcaption></figure>
+      <div class="place__head"><h3><a href="znamenitosti/most-bublin.html">Most na Bublinu</a></h3><span class="tag">Graditeljska baština</span></div>
+      <p>Kameni most preko Vrljike s kraja 19. stoljeća, uz povijesnu Petrovića mlinicu. Zajedno s mlinicom i riječnim krajolikom čini jednu od najautentičnijih cjelina u Zmijavcima.</p>
+    </article>
+    <article class="place card">
+      <figure class="place__img"><img src="assets/img/dogica-mlinica.webp" alt="Đogića mlinica, kamena vodenica s drvenim mlinskim kolom" loading="lazy"></figure>
+      <div class="place__head"><h3><a href="znamenitosti/dogica-mlinica.html">Đogića mlinica</a></h3><span class="tag">Graditeljska baština</span></div>
+      <p>Kamena vodenica na Vrljici, koju mještani zovu Matica, s drvenim mlinskim kolom koje pokreće snaga rijeke. Jedan od najbolje sačuvanih primjera tradicijskog graditeljstva u Zmijavcima.</p>
     </article>
   </div>
 </section>
@@ -122,8 +147,8 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <p class="eyebrow eyebrow--gold">02 — Događanja</p>
-        <h2 class="display two-tone">Zmijavci <em>kroz godinu</em></h2>
+        <p class="eyebrow eyebrow--gold">Događanja</p>
+        <h2 class="display">Zmijavci kroz godinu</h2>
       </div>
       <a href="#dogadanja" class="text-link link-plain">Kalendar događanja <span aria-hidden="true">→</span></a>
     </div>
@@ -198,18 +223,13 @@
 <section id="smjestaj" class="section stays">
   <div class="container">
     <div class="stays__head">
-      <p class="eyebrow eyebrow--muted">03 — Smještaj</p>
-      <h2 class="display display--xl two-tone">Odmor u ritmu <em>zagore</em></h2>
+      <p class="eyebrow eyebrow--muted">Smještaj</p>
+      <h2 class="display">Odmor u ritmu zagore</h2>
       <p class="stays__lead">Kamene kuće s bazenom, mirne vile i obiteljski apartmani — privatnost i tišina zagore, a more je s druge strane Biokova.</p>
-      <div class="filters" role="group" aria-label="Vrsta smještaja">
-        <button type="button" class="filter is-active" data-filter="sve" aria-pressed="true">Sve</button>
-        <button type="button" class="filter" data-filter="vila" aria-pressed="false">Vile s bazenom</button>
-        <button type="button" class="filter" data-filter="kuca" aria-pressed="false">Kuće za odmor</button>
-      </div>
     </div>
 
     <div class="stay-grid">
-      <article class="stay card" data-kind="kuca">
+      <article class="stay card">
         <figure class="stay__img"><img src="assets/img/villa-milla.webp" alt="Villa Milla, kamena kuća s bazenom u Zmijavcima" loading="lazy"></figure>
         <div class="stay__info">
           <div class="stay__title">
@@ -219,7 +239,7 @@
           <p class="price">od <span class="price__num">235 €</span> / noć</p>
         </div>
       </article>
-      <article class="stay card" data-kind="vila">
+      <article class="stay card">
         <figure class="stay__img"><img src="assets/img/villa-ivana.webp" alt="Villa Ivana s bazenom u Zmijavcima" loading="lazy"></figure>
         <div class="stay__info">
           <div class="stay__title">
@@ -229,7 +249,7 @@
           <p class="price">od <span class="price__num">142 €</span> / noć</p>
         </div>
       </article>
-      <article class="stay card" data-kind="kuca">
+      <article class="stay card">
         <figure class="stay__img"><img src="assets/img/hacienda-luica-dvori.webp" alt="Kameno imanje Hacienda Luića Dvori s bazenom, snimljeno iz zraka" loading="lazy"></figure>
         <div class="stay__info">
           <div class="stay__title">
@@ -239,7 +259,7 @@
           <p class="price">od <span class="price__num">1.150 €</span> / noć</p>
         </div>
       </article>
-      <article class="stay card" data-kind="vila">
+      <article class="stay card">
         <figure class="stay__img"><img src="assets/img/moderna-vila.webp" alt="Moderna bijela vila s bazenom u Zmijavcima, snimljena iz zraka" loading="lazy"></figure>
         <div class="stay__info">
           <div class="stay__title">
@@ -261,8 +281,8 @@
 <section id="gastronomija" class="section section--white">
   <div class="container gastro">
     <div class="gastro__intro">
-      <p class="eyebrow eyebrow--accent">04 — Gastronomija</p>
-      <h2 class="display two-tone">Okusi <em>Imotske krajine</em></h2>
+      <p class="eyebrow eyebrow--accent">Gastronomija</p>
+      <h2 class="display">Okusi Imotske krajine</h2>
       <p class="lead">Kuhinja zagore je jednostavna i iskrena: ono što daju polje, vinograd i stado, pripremljeno polako, ispod peke ili na otvorenoj vatri.</p>
       <div class="dishes">
         <div class="dish"><span class="dish__num">01</span><p class="dish__name">Imotska torta</p><p>Kolač od badema, simbol imotskih slavlja.</p></div>
@@ -274,13 +294,11 @@
     <div class="gastro__list">
       <div class="list-head">
         <h3>Ugostiteljstvo</h3>
-        <a href="#gastronomija">Svi objekti →</a>
       </div>
-      <div class="venue"><span class="venue__type">Restoran</span><span class="venue__name">[Naziv restorana]</span><span class="venue__info">[Radno vrijeme]</span><a href="#gastronomija">Jelovnik →</a></div>
-      <div class="venue"><span class="venue__type">Konoba</span><span class="venue__name">[Naziv konobe]</span><span class="venue__info">[Radno vrijeme]</span><a href="#gastronomija">Jelovnik →</a></div>
-      <div class="venue"><span class="venue__type">Pizzeria</span><span class="venue__name">[Naziv objekta]</span><span class="venue__info">[Radno vrijeme]</span><a href="#gastronomija">Jelovnik →</a></div>
-      <div class="venue"><span class="venue__type">Kafić</span><span class="venue__name">[Naziv objekta]</span><span class="venue__info">[Radno vrijeme]</span><a href="#gastronomija">Detalji →</a></div>
-      <div class="venue"><span class="venue__type">Vinarija</span><span class="venue__name">[Naziv vinarije]</span><span class="venue__info">[Termin degustacije]</span><a href="#gastronomija">Rezerviraj →</a></div>
+      <div class="venue"><span class="venue__type">Izletište</span><span class="venue__name">Seosko domaćinstvo Buljan</span><span class="venue__info">Domovinskog rata 145</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Seosko%20domacinstvo%20izletiste%20Buljan%20Zmijavci" target="_blank" rel="noopener">Karta →</a></div>
+      <div class="venue"><span class="venue__type">Restoran</span><span class="venue__name">Bufet Brana</span><span class="venue__info">Domovinskog rata 101</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Bufet%20Brana%20Zmijavci" target="_blank" rel="noopener">Karta →</a></div>
+      <div class="venue"><span class="venue__type">Domaća kuhinja</span><span class="venue__name">Kod Runje</span><span class="venue__info">Zmijavci</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Kod%20Runje%20Zmijavci" target="_blank" rel="noopener">Karta →</a></div>
+      <div class="venue"><span class="venue__type">Bistro</span><span class="venue__name">Bistro Traverca</span><span class="venue__info">Dr. Franje Tuđmana 136</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Bistro%20Traverca%20Zmijavci" target="_blank" rel="noopener">Karta →</a></div>
     </div>
   </div>
 </section>
@@ -290,8 +308,8 @@
   <div class="container">
     <div class="section-head">
       <div class="section-head__text">
-        <p class="eyebrow eyebrow--accent">05 — Ideje za izlete</p>
-        <h2 class="display two-tone">Izleti u <em>Imotskoj krajini</em></h2>
+        <p class="eyebrow eyebrow--accent">Ideje za izlete</p>
+        <h2 class="display">Izleti u Imotskoj krajini</h2>
         <p class="lead">Krška jezera, utvrde nad poljem i planina koja se spušta u more — sve na kratkoj vožnji od Zmijavaca.</p>
       </div>
       <a href="#izleti" class="text-link text-link--dark link-plain">Karta izleta <span aria-hidden="true">→</span></a>
@@ -324,6 +342,7 @@
       <div class="site-footer__cols">
         <div>
           <span class="label label--muted">Istraži</span>
+          <a href="#uvod" class="link-plain">Znamenitosti</a>
           <a href="#dogadanja" class="link-plain">Događanja</a>
           <a href="#smjestaj" class="link-plain">Smještaj</a>
           <a href="#gastronomija" class="link-plain">Gastronomija</a>
