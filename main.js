@@ -5,9 +5,12 @@
   const FALLBACK_MS = 7000; // samo ako se snimka ne može pokrenuti (npr. iOS u štednom načinu rada)
   const PLAYBACK_RATE = 0.8; // snimke se vrte malo usporeno, mirnije
   // Nazivi lokacija dolaze iz HTML-a (data-name na crticama), pa rade na svakom jeziku.
+  // Redoslijed prati videe u HTML-u: bazilika, Zmijavački most, Todorića gradina, crkva, Advent.
   const shots = [
     { dot: [46, 30] },
-    { dot: [46, 30] },
+    { dot: [58, 26] },
+    { dot: [30, 82] },
+    { dot: [44, 46] },
     { dot: [39, 40] }
   ];
 
@@ -20,6 +23,18 @@
     const numEl = hero.querySelector('[data-shot-num]');
     const dots = [...hero.querySelectorAll('[data-dot]')];
     const nextBtn = hero.querySelector('[data-shot-next]');
+
+    /* Koju verziju snimke poslati: HEVC 2560 px ili H.264 1080p za desktop,
+       lakšu za mobitele, a uz štednju podataka ili spor internet samo poster. */
+    const conn = navigator.connection || {};
+    const liteMode = conn.saveData || /(^|-)2g$/.test(conn.effectiveType || '');
+    const pickSrc = (name) => {
+      const base = hero.dataset.videoBase || '';
+      if (window.matchMedia('(max-width: 767px)').matches) return `${base}${name}-mobile.mp4`;
+      const hevc = document.createElement('video').canPlayType('video/mp4; codecs="hvc1"') !== '';
+      // HEVC u 2560 px gdje ga preglednik podržava; inače H.264 u 1080p.
+      return `${base}${name}${hevc ? '-hevc' : ''}.mp4`;
+    };
 
     // Sve lokacije su stalno na karti kao manje točke; aktivna dobiva svijetlu točku s pulsom.
     const spots = [...new Set(shots.map((s) => s.dot.join(',')))];
@@ -48,13 +63,15 @@
     const next = () => goTo((idx + 1) % shots.length);
 
     const play = (v) => {
+      if (!v.src) return; // izvori se postavljaju tek nakon učitavanja stranice
       v.muted = true;
       v.defaultPlaybackRate = PLAYBACK_RATE;
       v.playbackRate = PLAYBACK_RATE;
       const p = v.play();
       if (p && p.catch) p.catch((err) => {
-        // Preglednik ne dopušta reprodukciju: kadrovi se izmjenjuju po satu.
-        if (err && err.name === 'NotAllowedError') { clearTimeout(fallback); fallback = setTimeout(next, FALLBACK_MS); }
+        // Preglednik ne dopušta reprodukciju (npr. iOS u štednom načinu): ostaje poster, bez izmjene kadrova.
+        if (err && err.name === 'NotAllowedError' && !hero.classList.contains('has-video')) hero.classList.add('is-static');
+        else if (err && err.name === 'NotAllowedError') { clearTimeout(fallback); fallback = setTimeout(next, FALLBACK_MS); }
       });
     };
 
@@ -62,6 +79,12 @@
       seg.classList.remove('is-active');
       void seg.offsetWidth; // ponovno pokreni CSS animaciju trake
       seg.classList.add('is-active');
+    };
+
+    // Sljedeći kadar se skida dok traje trenutni, da prijelaz ne zapne.
+    const preloadNext = () => {
+      const nv = videos[(idx + 1) % videos.length];
+      if (nv && nv.src && nv.preload !== 'auto') { nv.preload = 'auto'; nv.load(); }
     };
 
     const goTo = (i) => {
@@ -76,6 +99,7 @@
       setShotMs(cur);
       syncBar = true;
       play(cur);
+      preloadNext();
       videos.forEach((v, j) => v.classList.toggle('is-active', j === idx));
       if (prev && prev !== cur) setTimeout(() => { if (!prev.classList.contains('is-active')) prev.pause(); }, 1500);
 
@@ -94,6 +118,7 @@
       v.addEventListener('loadedmetadata', () => { if (j === idx) setShotMs(v); });
       // Traka kreće iznova kad snimka stvarno krene, da ne pobjegne dok se učitava.
       v.addEventListener('playing', () => {
+        hero.classList.add('has-video'); // poster se pretapa u video tek kad snimka stvarno krene
         if (j !== idx || !syncBar) return;
         syncBar = false;
         restartSegment(segments[idx]);
@@ -103,9 +128,21 @@
     segments.forEach((s) => s.addEventListener('click', () => goTo(Number(s.dataset.shot))));
     nextBtn.addEventListener('click', next);
 
-    setShotMs(videos[0]);
-    syncBar = true;
-    play(videos[0]);
+    /* Videi se učitavaju tek nakon što je stranica gotova, da ne otimaju promet posteru,
+       fontovima i stilovima (brži LCP). Do tada se vidi poster. */
+    const startVideos = () => {
+      if (liteMode) { hero.classList.add('is-static'); return; }
+      videos.forEach((v, j) => {
+        v.preload = j === 0 ? 'auto' : 'metadata';
+        v.src = pickSrc(v.dataset.video);
+      });
+      setShotMs(videos[0]);
+      syncBar = true;
+      if (heroVisible && !document.hidden) play(videos[0]);
+      videos[0].addEventListener('canplaythrough', preloadNext, { once: true });
+    };
+    if (document.readyState === 'complete') startVideos();
+    else window.addEventListener('load', startVideos, { once: true });
 
     /* Dron: kursor desno → kadar se pomiče desno → sadržaj klizi ulijevo. */
     const RANGE = 3.6; // % pomaka sloja; sloj je 5 % veći od kadra sa svake strane

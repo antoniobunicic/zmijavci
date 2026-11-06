@@ -19,20 +19,17 @@
 <a class="skip-link" href="#welcome">Skip to content</a>
 
 <!-- HERO -->
-<section class="hero" data-hero aria-label="Zmijavci from above">
+<section class="hero" data-hero data-video-base="../assets/video/" aria-label="Zmijavci from above">
   <div class="hero__layer" data-hero-layer>
-    <video class="hero__video is-active" poster="../assets/video/bazilika-poster.jpg" muted playsinline autoplay preload="auto" aria-hidden="true">
-      <source src="../assets/video/bazilika-2-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
-      <source src="../assets/video/bazilika-2.mp4" type="video/mp4">
-    </video>
-    <video class="hero__video" muted playsinline preload="metadata" aria-hidden="true">
-      <source src="../assets/video/bazilika-1-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
-      <source src="../assets/video/bazilika-1.mp4" type="video/mp4">
-    </video>
-    <video class="hero__video" muted playsinline preload="metadata" aria-hidden="true">
-      <source src="../assets/video/advent-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
-      <source src="../assets/video/advent.mp4" type="video/mp4">
-    </video>
+    <picture>
+      <source type="image/avif" srcset="../assets/video/hero-poster-1280.avif 1280w, ../assets/video/hero-poster-1920.avif 1920w, ../assets/video/hero-poster-2560.avif 2560w" sizes="110vw">
+      <img class="hero__poster" src="../assets/video/hero-poster-1920.webp" srcset="../assets/video/hero-poster-1280.webp 1280w, ../assets/video/hero-poster-1920.webp 1920w" sizes="110vw" alt="The Early Christian basilica in Zmijavci from above" fetchpriority="high" decoding="async">
+    </picture>
+    <video class="hero__video is-active" data-video="bazilika" muted playsinline preload="none" aria-hidden="true"></video>
+    <video class="hero__video" data-video="most" muted playsinline preload="none" aria-hidden="true"></video>
+    <video class="hero__video" data-video="kriz" muted playsinline preload="none" aria-hidden="true"></video>
+    <video class="hero__video" data-video="crkva" muted playsinline preload="none" aria-hidden="true"></video>
+    <video class="hero__video" data-video="advent" muted playsinline preload="none" aria-hidden="true"></video>
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
 
@@ -63,11 +60,13 @@
         <span class="hero__place" data-shot-name aria-live="polite">Early Christian Basilica</span>
         <div class="hero__controls">
           <div class="hero__segments">
-            <button type="button" class="segment is-active" data-shot="0" data-name="Early Christian Basilica" aria-label="Shot 1 of 3" aria-pressed="true"><span></span></button>
-            <button type="button" class="segment" data-shot="1" data-name="Early Christian Basilica" aria-label="Shot 2 of 3" aria-pressed="false"><span></span></button>
-            <button type="button" class="segment" data-shot="2" data-name="Advent in Zmijavci" aria-label="Shot 3 of 3" aria-pressed="false"><span></span></button>
+            <button type="button" class="segment is-active" data-shot="0" data-name="Early Christian Basilica" aria-label="Shot 1 of 5" aria-pressed="true"><span></span></button>
+            <button type="button" class="segment" data-shot="1" data-name="Zmijavci Bridge" aria-label="Shot 2 of 5" aria-pressed="false"><span></span></button>
+            <button type="button" class="segment" data-shot="2" data-name="Todorića gradina" aria-label="Shot 3 of 5" aria-pressed="false"><span></span></button>
+            <button type="button" class="segment" data-shot="3" data-name="All Saints Church" aria-label="Shot 4 of 5" aria-pressed="false"><span></span></button>
+            <button type="button" class="segment" data-shot="4" data-name="Advent in Zmijavci" aria-label="Shot 5 of 5" aria-pressed="false"><span></span></button>
           </div>
-          <span class="hero__count"><span data-shot-num>01</span> <span class="dim">/ 03</span></span>
+          <span class="hero__count"><span data-shot-num>01</span> <span class="dim">/ 05</span></span>
           <button type="button" class="hero__skip link-plain" data-shot-next aria-label="Next shot">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l10 7-10 7z"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
           </button>
