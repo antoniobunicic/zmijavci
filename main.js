@@ -5,10 +5,11 @@
   const FALLBACK_MS = 7000; // samo ako se snimka ne može pokrenuti (npr. iOS u štednom načinu rada)
   const PLAYBACK_RATE = 0.8; // snimke se vrte malo usporeno, mirnije
   // Nazivi lokacija dolaze iz HTML-a (data-name na crticama), pa rade na svakom jeziku.
-  // Redoslijed prati videe u HTML-u: bazilika, Zmijavački most, Todorića gradina, crkva, Advent.
+  // Redoslijed prati videe u HTML-u: bazilika, Zmijavački most, uspon na Todorića gradinu, križ, crkva, Advent.
   const shots = [
     { dot: [46, 30] },
     { dot: [58, 26] },
+    { dot: [30, 82] },
     { dot: [30, 82] },
     { dot: [44, 46] },
     { dot: [39, 40] }

@@ -391,6 +391,9 @@ button { font: inherit; }
 .event-hero__lead { max-width: 640px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.6; color: var(--on-dark-soft); }
 .event-hero__img { margin-top: clamp(48px, 6vw, 80px); overflow: hidden; border-radius: 4px; background: #1B2333; }
 .event-hero__img img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+/* Crkva i most su u donjem dijelu fotografija, pa je usjek pomaknut prema dolje. */
+img[src$="crkva-svih-svetih.webp"] { object-position: center 75%; }
+img[src$="zmijavacki-most.webp"] { object-position: center 62%; }
 
 .facts {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -474,7 +477,7 @@ button { font: inherit; }
   .hero__place { font-size: 22px; }
   .hero__controls { gap: 10px; }
   .hero__segments { gap: 4px; }
-  .segment span { width: 22px; }
+  .segment span { width: 16px; }
   .event__img img { min-height: 260px; }
   .stay-grid { gap: 56px; }
 }
