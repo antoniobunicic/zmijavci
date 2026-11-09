@@ -1,0 +1,79 @@
+{
+  "order": 3,
+  "slugs": {
+    "hr": "crkva-svih-svetih",
+    "en": "all-saints-church"
+  },
+  "image": "../../assets/images/crkva-svih-svetih.webp",
+  "hr": {
+    "name": "Crkva Svih svetih",
+    "category": "Sakralna baština",
+    "summary": "Župna crkva iz 1895. s drvenim oltarom i vitrajima Branimira Dorotića.",
+    "lead": "Kamena župna crkva na Tonkića glavici, sagrađena 1895. na mjestu starije crkve. Čuva drveni oltar tirolske izrade, staro raspelo i jedanaest vitraja Branimira Dorotića.",
+    "imageAlt": "Župna crkva Svih svetih u Zmijavcima iz zraka",
+    "facts": [
+      {
+        "label": "Sagrađena",
+        "value": "1895."
+      },
+      {
+        "label": "Lokacija",
+        "value": "Tonkića glavica"
+      },
+      {
+        "label": "Blagdan",
+        "value": "1. studenoga"
+      },
+      {
+        "label": "Zaštita",
+        "value": "Kulturno dobro"
+      }
+    ],
+    "body": [
+      "Na Tonkića glavici, na mjestu koje stoljećima zauzima posebno mjesto u životu Zmijavaca, uzdiže se župna crkva Svih svetih, jedan od najvažnijih sakralnih i kulturno-povijesnih spomenika ovoga kraja. Njezina povijest svjedoči o dugoj vjerskoj tradiciji, zajedništvu i predanosti naraštaja koji su gradili i čuvali duhovni identitet mjesta.",
+      "Današnja crkva sagrađena je 1895. godine, za vrijeme župnikovanja fra Ante Rake, na mjestu starije crkve koja je proširena 1821. godine zalaganjem fra Andrije Šabića i 28 zmijavačkih obitelji. Povijesni izvori spominju da se na ovom prostoru još sredinom 18. stoljeća nalazila manja crkva ili kapela posvećena svetom Anti Padovanskom. Time se povijest sakralne namjene ovoga mjesta proteže znatno dalje od današnje građevine.",
+      "Crkva je izgrađena od pažljivo obrađenih kamenih blokova, kao jednobrodna građevina duga približno 26 i široka 11 metara. Njezino pročelje obilježavaju kameni portal s uklesanom godinom gradnje, okrugli prozor i zvonik na preslicu s trima zvonima. Jednostavnost arhitektonskih linija i sklad kamenih elemenata odražavaju tradiciju sakralnog graditeljstva dalmatinskoga zaleđa.",
+      "Posebnu vrijednost unutrašnjosti daje veliki drveni oltar tirolske izrade, nabavljen 1903. godine, koji predstavlja vrijedan primjer crkvene umjetnosti svojega vremena. U crkvi se čuva i staro drveno raspelo, dok njezinu unutrašnjost dodatno obogaćuje jedanaest vitraja akademskog slikara Branimira Dorotića, postavljenih 1999. godine.",
+      "Tijekom svoje povijesti crkva je više puta obnavljana i uređivana. Posebno značajna obnova provedena je od 1976. do 1978. godine, kada je svetište prilagođeno suvremenim liturgijskim potrebama. Godine 2002. uz crkvu je podignut i novi zvonik, koji je dodatno oblikovao njezin današnji izgled.",
+      "Važna prekretnica u vjerskom životu Zmijavaca dogodila se 1982. godine, kada je osnovana samostalna župa Svih svetih. Do tada su stanovnici Zmijavaca kroz različita povijesna razdoblja pripadali župama Podbablje i Runovići. Osnivanjem vlastite župe crkva je dobila još istaknutije mjesto u svakodnevnom životu zajednice.",
+      "Posebno svečano u Zmijavcima je 1. studenoga, na blagdan Svih svetih, kada se obilježava svetkovina zaštitnika župe. Taj dan okuplja mještane, njihove obitelji i brojne Zmijavčane koji žive izvan rodnoga kraja, potvrđujući trajnu povezanost mjesta, njegovih ljudi i vjerske tradicije.",
+      "Danas je crkva Svih svetih zaštićeno kulturno dobro Republike Hrvatske. Osim svoje sakralne uloge, predstavlja vrijedan spomenik graditeljske baštine i nezaobilaznu točku upoznavanja povijesti Zmijavaca. Njezini kameni zidovi, umjetnički detalji i povijest nastanka pričaju priču o zajednici koja je kroz stoljeća sačuvala svoju vjeru, običaje i osjećaj pripadnosti."
+    ]
+  },
+  "en": {
+    "name": "All Saints Church",
+    "category": "Sacred heritage",
+    "summary": "An 1895 parish church with a wooden altar and stained glass by Branimir Dorotić.",
+    "lead": "A stone parish church on Tonkića glavica, built in 1895 on the site of an older church. Inside are a Tyrolean wooden altar, an old crucifix and eleven stained-glass windows by Branimir Dorotić.",
+    "imageAlt": "All Saints parish church in Zmijavci from above",
+    "facts": [
+      {
+        "label": "Built",
+        "value": "1895"
+      },
+      {
+        "label": "Location",
+        "value": "Tonkića glavica"
+      },
+      {
+        "label": "Feast day",
+        "value": "1 November"
+      },
+      {
+        "label": "Protection",
+        "value": "Cultural property"
+      }
+    ],
+    "body": [
+      "On Tonkića glavica, a hill that has held a special place in the life of Zmijavci for centuries, rises the parish church of All Saints, one of the most important religious and historic monuments of the area. Its story speaks of a long religious tradition, of community, and of the devotion of the generations who built and kept the spiritual identity of the village.",
+      "The present church was built in 1895, when Friar Ante Rako was parish priest, on the site of an older church that had been enlarged in 1821 through the efforts of Friar Andrija Šabić and 28 families of Zmijavci. Historical sources mention a small church or chapel dedicated to St Anthony of Padua here as early as the mid-18th century, so the sacred history of the site reaches well beyond today's building.",
+      "The church is built of carefully dressed stone blocks as a single-nave building about 26 metres long and 11 metres wide. Its façade features a stone portal carved with the year of construction, a round window and a bell gable with three bells. The simple lines and harmony of the stonework reflect the tradition of church building in the Dalmatian hinterland.",
+      "The interior is distinguished by a large wooden altar of Tyrolean workmanship, acquired in 1903, a fine example of the church art of its time. The church also keeps an old wooden crucifix, and its interior is further enriched by eleven stained-glass windows by the painter Branimir Dorotić, installed in 1999.",
+      "The church has been restored and refurbished several times. A particularly important renovation took place from 1976 to 1978, when the sanctuary was adapted to modern liturgical needs. In 2002 a new bell tower was built beside the church, further shaping its present appearance.",
+      "A turning point in the religious life of Zmijavci came in 1982, when the independent parish of All Saints was founded. Until then, the people of Zmijavci had belonged at different times to the parishes of Podbablje and Runovići. With a parish of its own, the church took an even more central place in the daily life of the community.",
+      "The most festive day in Zmijavci is 1 November, the feast of All Saints, when the parish celebrates its patrons. The day brings together locals, their families and the many people from Zmijavci who live elsewhere, a lasting bond between the village, its people and its faith.",
+      "Today All Saints Church is a protected cultural property of the Republic of Croatia. Beyond its religious role, it is a valuable monument of built heritage and an essential stop for anyone getting to know the history of Zmijavci. Its stone walls, artistic details and story tell of a community that has kept its faith, customs and sense of belonging through the centuries."
+    ]
+  },
+  "imageFocus": 75
+}

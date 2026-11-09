@@ -1,0 +1,22 @@
+.eyebrow, .label, .tag, .small-title {
+  font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+}
+.eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; font-size: 11px; letter-spacing: .26em; }
+.eyebrow::before { content: ""; flex: none; width: 36px; height: 1px; background: currentColor; }
+.eyebrow--accent { color: var(--accent); }
+.eyebrow--gold { color: var(--gold); }
+.eyebrow--muted { color: var(--muted-warm); }
+.label { font-size: 11px; }
+.label--muted { color: #9AA0A9; letter-spacing: .18em; margin-bottom: 8px; }
+.tag { font-size: 11px; letter-spacing: .16em; color: var(--muted); }
+.tag--light { color: var(--on-dark-muted); letter-spacing: .18em; font-size: 12px; }
+.small-title { font-size: 13px; letter-spacing: .14em; }
+
+.display {
+  font-family: var(--font-display); font-weight: var(--display-weight);
+  font-size: clamp(44px, 6vw, 96px); line-height: .96; letter-spacing: -0.035em;
+}
+.display--xl { font-size: clamp(44px, 5.6vw, 84px); line-height: .98; letter-spacing: -0.035em; }
+.display--sm { font-size: clamp(34px, 4.2vw, 60px); line-height: 1; }
+.two-tone em { font-style: normal; opacity: .42; }
+.lead { margin-top: 18px; font-size: 16px; line-height: 1.65; color: var(--ink-soft); max-width: 460px; }

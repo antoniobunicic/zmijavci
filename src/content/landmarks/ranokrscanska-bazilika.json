@@ -1,0 +1,83 @@
+{
+  "order": 1,
+  "slugs": {
+    "hr": "ranokrscanska-bazilika",
+    "en": "early-christian-basilica"
+  },
+  "image": "../../assets/images/bazilika.webp",
+  "panoramaUrl": "https://www.google.com/maps/embed?pb=!4v1793789099875!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ3UxOURCWFE.!2m2!1d43.41753054853605!2d17.21233887056092!3f3.808370370343665!4f-37.91910418885868!5f0.699469483563308",
+  "hr": {
+    "name": "Ranokršćanska bazilika",
+    "category": "Arheološka baština",
+    "summary": "Ostaci ranokršćanskog kompleksa iz 5. i 6. stoljeća s dva krsna zdenca.",
+    "lead": "Ostaci sakralnog kompleksa iz 5. i 6. stoljeća, s trobrodnom crkvom i dvama krsnim zdencima, jednim križnog i drugim kružnog oblika — jedan od najznačajnijih spomenika kasne antike u Imotskoj krajini.",
+    "imageAlt": "Ostaci ranokršćanske bazilike na Bublinu iz zraka",
+    "facts": [
+      {
+        "label": "Razdoblje",
+        "value": "5. – 6. stoljeće"
+      },
+      {
+        "label": "Lokalitet",
+        "value": "Crkvina na Bublinu"
+      },
+      {
+        "label": "Otkrivena",
+        "value": "1897."
+      },
+      {
+        "label": "Zaštita",
+        "value": "Kulturno dobro Z-3997"
+      }
+    ],
+    "body": [
+      "U podnožju Dikovače, na arheološkom lokalitetu Crkvina na Bublinu, nalaze se ostaci ranokršćanske bazilike, jednog od najznačajnijih spomenika kasnoantičke baštine Imotske krajine. Ovaj izniman lokalitet svjedoči o dugoj povijesti naseljenosti zmijavačkog područja i prisutnosti kršćanstva još u prvim stoljećima njegova širenja ovim prostorima.",
+      "Bazilika je nastajala tijekom 5. i 6. stoljeća, a njezini ostaci otkriveni su 1897. godine zahvaljujući fra Ivanu Tonkoviću. Kasnija arheološka istraživanja otkrila su složen sakralni kompleks s trobrodnom crkvom, dvjema apsidama, krstionicom i grobnicama.",
+      "Posebnu vrijednost nalazištu daju dva krsna zdenca, jedan križnog, a drugi kružnog oblika, koji upućuju na različite oblike ranokršćanskog obreda krštenja. Upravo je ta arhitektonska posebnost jedan od razloga zbog kojih bazilika zauzima važno mjesto u proučavanju ranokršćanske baštine Dalmacije.",
+      "Danas sačuvani temelji omogućuju posjetiteljima da upoznaju izgled nekadašnjeg sakralnog kompleksa i otkriju dio povijesti koji Zmijavce povezuje s kulturnim i duhovnim nasljeđem kasne antike.",
+      "Posjet bazilici prilika je za upoznavanje najstarijih slojeva zmijavačke povijesti, ali i za istraživanje obližnjih arheoloških lokaliteta koji svjedoče o kontinuitetu života na ovom prostoru."
+    ],
+    "panorama": {
+      "heading": "Prošetajte lokalitetom",
+      "frameTitle": "Panorama 360° ranokršćanske bazilike na Google kartama",
+      "caption": "Povucite prstom ili mišem za pogled oko sebe."
+    }
+  },
+  "en": {
+    "name": "Early Christian Basilica",
+    "category": "Archaeological heritage",
+    "summary": "The remains of a 5th–6th century church complex with two baptismal fonts.",
+    "lead": "The remains of a 5th–6th century church complex with a three-aisled basilica and two baptismal fonts, one cross-shaped and one round — among the most important late antique sites in the Imotski region.",
+    "imageAlt": "The remains of the Early Christian basilica at Bublin from above",
+    "facts": [
+      {
+        "label": "Period",
+        "value": "5th – 6th century"
+      },
+      {
+        "label": "Site",
+        "value": "Crkvina, Bublin"
+      },
+      {
+        "label": "Discovered",
+        "value": "1897"
+      },
+      {
+        "label": "Protection",
+        "value": "Cultural property Z-3997"
+      }
+    ],
+    "body": [
+      "At the foot of Dikovača, on the archaeological site of Crkvina at Bublin, lie the remains of an Early Christian basilica — one of the most important late antique monuments in the Imotski region. This remarkable site bears witness to the long history of settlement around Zmijavci and to the presence of Christianity here from the first centuries of its spread.",
+      "The basilica took shape during the 5th and 6th centuries, and its remains were uncovered in 1897 thanks to Friar Ivan Tonković. Later excavations revealed a complex church compound with a three-aisled basilica, two apses, a baptistery and graves.",
+      "The site is especially valuable for its two baptismal fonts, one cross-shaped and the other round, which point to different forms of the early Christian rite of baptism. This architectural feature is one of the reasons the basilica holds an important place in the study of Early Christian heritage in Dalmatia.",
+      "The foundations preserved today let visitors picture the former church complex and discover a part of history that links Zmijavci to the cultural and spiritual legacy of late antiquity.",
+      "A visit to the basilica is a chance to explore the oldest layers of Zmijavci's past, and to discover the nearby archaeological sites that show how life on this land has continued through the ages."
+    ],
+    "panorama": {
+      "heading": "Walk around the site",
+      "frameTitle": "360° panorama of the Early Christian basilica on Google Maps",
+      "caption": "Drag with your finger or mouse to look around."
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.section-head {
+  display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+  gap: 24px 32px; margin-bottom: 56px;
+}
+.section-head__text { max-width: 680px; }

@@ -1,0 +1,106 @@
+---
+import DetailPage from './DetailPage.astro';
+import AwardCard from '../components/detail/AwardCard.astro';
+import DetailHero from '../components/detail/DetailHero.astro';
+import Facts from '../components/detail/Facts.astro';
+import Gallery from '../components/detail/Gallery.astro';
+import MoreSection from '../components/detail/MoreSection.astro';
+import EventDate from '../components/shared/EventDate.astro';
+import { eventPath, homePath, navLabel, sectionHref } from '../i18n/routes';
+import { ui, type Lang } from '../i18n/ui';
+import { getEvents, otherEvents, type EventEntry } from '../lib/content';
+import { formatFact, formatLong } from '../lib/dates';
+import { socialImageUrl } from '../lib/social-image';
+import { breadcrumbSchema, eventSchema } from '../lib/structured-data';
+
+interface Props {
+  lang: Lang;
+  event: EventEntry;
+}
+
+const { lang, event } = Astro.props;
+const { slugs, image, awardImage, gallery, start, end } = event.data;
+const text = event.data[lang];
+const copy = ui[lang];
+const range = { start, end };
+
+const site = Astro.site!;
+const path = eventPath(slugs, lang);
+const url = new URL(path, site).href;
+const socialImage = await socialImageUrl(image, site);
+const sectionLabel = navLabel('events', lang);
+
+const facts = [
+  { label: end ? copy.facts.dates : copy.facts.date, value: formatFact(range, lang) },
+  ...(text.time ? [{ label: copy.facts.time, value: text.time }] : []),
+  { label: copy.facts.place, value: text.place },
+  { label: copy.facts.category, value: text.category },
+];
+
+const moreItems = otherEvents(await getEvents(), event).map(({ data }) => ({
+  href: eventPath(data.slugs, lang),
+  image: data.image,
+  meta: `${formatLong(data, lang)} · ${data[lang].category}`,
+  title: data[lang].title,
+}));
+---
+
+<DetailPage
+  lang={lang}
+  title={text.pageTitle ?? text.title}
+  description={text.description}
+  path={path}
+  alternatePath={eventPath(slugs, lang === 'hr' ? 'en' : 'hr')}
+  socialImage={socialImage}
+  currentSection="events"
+  structuredData={[
+    eventSchema(event, lang, url, socialImage),
+    breadcrumbSchema([
+      { name: copy.siteName, url: new URL(homePath(lang), site).href },
+      { name: sectionLabel, url: new URL(sectionHref('events', lang), site).href },
+      { name: text.title, url },
+    ]),
+  ]}
+>
+  <DetailHero
+    lang={lang}
+    parent={{ label: sectionLabel, href: sectionHref('events', lang) }}
+    breadcrumb={text.breadcrumb}
+    title={text.title}
+    lead={text.lead}
+    image={image}
+    imageAlt={text.imageAlt}
+  >
+    <div class="event__top">
+      <EventDate lang={lang} range={range} />
+      <span class="tag tag--light">{text.category}</span>
+    </div>
+  </DetailHero>
+
+  <section class="event-content">
+    <div class="container">
+      <Facts items={facts} />
+      <div class="prose">
+        {
+          text.sections.map((section) => (
+            <>
+              <h2>{section.heading}</h2>
+              {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+              {section.placeholder && <p class="placeholder">{section.placeholder}</p>}
+            </>
+          ))
+        }
+      </div>
+      {awardImage && text.award && <AwardCard image={awardImage} {...text.award} />}
+      {gallery && <Gallery items={gallery.map((item) => ({ image: item.image, alt: item.alt[lang] }))} />}
+    </div>
+  </section>
+
+  <MoreSection
+    lang={lang}
+    title={copy.moreEvents}
+    allLabel={copy.allEvents}
+    allHref={sectionHref('events', lang)}
+    items={moreItems}
+  />
+</DetailPage>

@@ -1,0 +1,25 @@
+:root {
+  --paper: #F6F5F1;
+  --white: #FFFFFF;
+  --stone: #EAE5DC;
+  --night: #0E1420;
+  --ink: #15181D;
+  --ink-soft: #3E434B;
+  --muted: #5B616B;
+  --muted-warm: #6B655A;
+  --line: #DAD8D1;
+  --line-warm: #CFC8BB;
+  --accent: #1756A8;
+  --gold: #E8B65A;
+  --on-dark: #F3F1EC;
+  --on-dark-soft: #C9CED6;
+  --on-dark-muted: #A9B0BC;
+
+  --font-display: 'Familjen Grotesk Variable', 'Inter Tight Variable', system-ui, sans-serif;
+  --font-body: 'Inter Tight Variable', system-ui, sans-serif;
+  --display-weight: 500;
+
+  --gutter: clamp(20px, 4vw, 56px);
+  --max: 1320px;
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+}

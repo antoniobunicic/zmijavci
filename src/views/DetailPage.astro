@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SkipLink from '../components/layout/SkipLink.astro';
+import SiteHeader from '../components/layout/SiteHeader.astro';
+import SiteFooter from '../components/layout/SiteFooter.astro';
+import '../styles/components/detail-content.css';
+import type { NavSection } from '../i18n/routes';
+import { ui, type Lang } from '../i18n/ui';
+import type { JsonLd } from '../lib/structured-data';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  path: string;
+  alternatePath: string;
+  socialImage?: string;
+  structuredData: JsonLd[];
+  currentSection: NavSection;
+}
+
+const { lang, title, path, alternatePath, description, socialImage, structuredData, currentSection } =
+  Astro.props;
+const { siteName, contentId } = ui[lang];
+---
+
+<BaseLayout
+  lang={lang}
+  title={`${title} — ${siteName}`}
+  description={description}
+  path={path}
+  alternatePath={alternatePath}
+  socialImage={socialImage}
+  ogType="article"
+  structuredData={structuredData}
+>
+  <SkipLink lang={lang} target={contentId} />
+  <SiteHeader lang={lang} variant="overlay" alternatePath={alternatePath} currentSection={currentSection} />
+  <main id={contentId}>
+    <slot />
+  </main>
+  <SiteFooter lang={lang} />
+</BaseLayout>

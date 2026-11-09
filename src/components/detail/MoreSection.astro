@@ -1,0 +1,31 @@
+---
+import '../../styles/components/card.css';
+import '../../styles/components/more-cards.css';
+import type { ImageMetadata } from 'astro';
+import SectionHead from '../ui/SectionHead.astro';
+import TextLink from '../ui/TextLink.astro';
+import MoreCard from './MoreCard.astro';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  allLabel: string;
+  allHref: string;
+  items: { href: string; image?: ImageMetadata; imageAlt?: string; imageFocus?: number; meta: string; title: string }[];
+}
+
+const { lang, title, allLabel, allHref, items } = Astro.props;
+---
+
+<section class="more-events section--white">
+  <div class="container">
+    <SectionHead>
+      <h2 class="display display--sm">{title}</h2>
+      <TextLink href={allHref} dark>{allLabel}</TextLink>
+    </SectionHead>
+    <div class="more-grid">
+      {items.map((item) => <MoreCard lang={lang} {...item} />)}
+    </div>
+  </div>
+</section>

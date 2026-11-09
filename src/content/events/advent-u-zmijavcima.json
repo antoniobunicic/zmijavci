@@ -1,0 +1,89 @@
+{
+  "order": 1,
+  "slugs": {
+    "hr": "advent-u-zmijavcima",
+    "en": "advent-in-zmijavci"
+  },
+  "start": "2026-12-19",
+  "end": "2027-01-03",
+  "image": "../../assets/images/advent.webp",
+  "awardImage": "../../assets/images/advent-priznanje.webp",
+  "hr": {
+    "title": "Advent u Zmijavcima",
+    "breadcrumb": "Advent u Zmijavcima",
+    "category": "Zima",
+    "place": "Zmijavci, središte",
+    "summary": "Klizalište, adventske kućice i druženje za cijelu obitelj pod tisućama lampica.",
+    "lead": "Od 19. prosinca do 3. siječnja središte Zmijavaca pretvara se u zimsku bajku — klizalište, adventske kućice i tisuće lampica.",
+    "description": "Advent u Zmijavcima, od 19. prosinca do 3. siječnja: klizalište, adventske kućice i tisuće lampica. Najljepši advent u Hrvatskoj 2025./2026. u kategoriji općina.",
+    "imageAlt": "Adventsko klizalište i rasvjeta u Zmijavcima iz zraka",
+    "readMoreLabel": "Saznaj više o Adventu u Zmijavcima",
+    "sections": [
+      {
+        "heading": "O događaju",
+        "paragraphs": [
+          "Advent u Zmijavcima okuplja mještane i goste iz cijele Imotske krajine. Središte mjesta zasja pod svjetlećim zvijezdama, a oko klizališta, šatora i adventskih kućica druži se cijela obitelj.",
+          "Svjetleći natpis i okićena stabla čine kulisu za zimske večeri koje se pamte."
+        ]
+      },
+      {
+        "heading": "Program",
+        "paragraphs": [],
+        "placeholder": "[Program po danima bit će objavljen uskoro]"
+      }
+    ],
+    "award": {
+      "imageAlt": "Priznanje Najljepši advent u Hrvatskoj 2025./2026. za Advent u Zmijavcima",
+      "eyebrow": "Priznanje",
+      "title": "Najljepši advent u Hrvatskoj",
+      "text": "Advent u Zmijavcima osvojio je 1. mjesto u kategoriji općina na izboru za najljepši advent u Hrvatskoj 2025./2026. portala Načelnik.hr."
+    }
+  },
+  "en": {
+    "title": "Advent in Zmijavci",
+    "breadcrumb": "Advent in Zmijavci",
+    "category": "Winter",
+    "place": "Zmijavci, village centre",
+    "summary": "An ice rink, Advent stalls and time together for the whole family under thousands of lights.",
+    "lead": "From 19 December to 3 January, the centre of Zmijavci turns into a winter fairy tale — an ice rink, Advent stalls and thousands of lights.",
+    "description": "Advent in Zmijavci, 19 December to 3 January: an ice rink, Advent stalls and thousands of lights. Most Beautiful Advent in Croatia 2025/2026 in the municipality category.",
+    "imageAlt": "The Advent ice rink and lights in Zmijavci from above",
+    "readMoreLabel": "Read more about Advent in Zmijavci",
+    "sections": [
+      {
+        "heading": "About the event",
+        "paragraphs": [
+          "Advent in Zmijavci brings together locals and visitors from across the Imotski region. The village centre glows under illuminated stars, and the whole family gathers around the ice rink, the marquee and the Advent stalls.",
+          "The illuminated sign and decorated trees set the scene for winter evenings to remember."
+        ]
+      },
+      {
+        "heading": "Programme",
+        "paragraphs": [],
+        "placeholder": "[The daily programme will be published soon]"
+      }
+    ],
+    "award": {
+      "imageAlt": "Most Beautiful Advent in Croatia 2025/2026 award for Advent in Zmijavci",
+      "eyebrow": "Award",
+      "title": "Most Beautiful Advent in Croatia",
+      "text": "Advent in Zmijavci won first place in the municipality category of the 2025/2026 Most Beautiful Advent in Croatia selection by the Načelnik.hr portal."
+    }
+  },
+  "gallery": [
+    {
+      "image": "../../assets/images/advent-natpis.webp",
+      "alt": {
+        "hr": "Svjetleći natpis Advent Zmijavci",
+        "en": "The illuminated Advent Zmijavci sign"
+      }
+    },
+    {
+      "image": "../../assets/images/advent.webp",
+      "alt": {
+        "hr": "Klizalište i adventske kućice iz zraka",
+        "en": "The ice rink and Advent stalls from above"
+      }
+    }
+  ]
+}

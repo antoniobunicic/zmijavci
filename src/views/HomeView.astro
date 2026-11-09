@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SkipLink from '../components/layout/SkipLink.astro';
+import SiteHeader from '../components/layout/SiteHeader.astro';
+import SiteFooter from '../components/layout/SiteFooter.astro';
+import Hero from '../components/home/Hero.astro';
+import IntroSection from '../components/home/IntroSection.astro';
+import EventsSection from '../components/home/EventsSection.astro';
+import StaysSection from '../components/home/StaysSection.astro';
+import GastronomySection from '../components/home/GastronomySection.astro';
+import TripsSection from '../components/home/TripsSection.astro';
+import { homePath, sectionId } from '../i18n/routes';
+import { ui, type Lang } from '../i18n/ui';
+import { getEvents, getLandmarks } from '../lib/content';
+import { socialImageUrl } from '../lib/social-image';
+import { destinationSchema, websiteSchema } from '../lib/structured-data';
+import socialSource from '../assets/images/bazilika.webp';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const [landmarks, events] = await Promise.all([getLandmarks(), getEvents()]);
+const path = homePath(lang);
+const alternatePath = homePath(lang === 'hr' ? 'en' : 'hr');
+const url = new URL(path, Astro.site).href;
+const socialImage = await socialImageUrl(socialSource, Astro.site!);
+---
+
+<BaseLayout
+  lang={lang}
+  title={ui[lang].homeTitle}
+  description={ui[lang].homeDescription}
+  path={path}
+  alternatePath={alternatePath}
+  socialImage={socialImage}
+  structuredData={[websiteSchema(lang, url), destinationSchema(lang, url, socialImage)]}
+>
+  <SkipLink lang={lang} target={sectionId('intro', lang)} />
+  <Hero lang={lang}>
+    <SiteHeader lang={lang} variant="home" alternatePath={alternatePath} />
+  </Hero>
+  <main>
+    <IntroSection lang={lang} landmarks={landmarks} />
+    <EventsSection lang={lang} events={events} />
+    <StaysSection lang={lang} />
+    <GastronomySection lang={lang} />
+    <TripsSection lang={lang} />
+  </main>
+  <SiteFooter lang={lang} onHome />
+</BaseLayout>

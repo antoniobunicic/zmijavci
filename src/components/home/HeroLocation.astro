@@ -1,0 +1,64 @@
+---
+import outline from '../../assets/images/obris-zmijavci.svg';
+import { heroCopy, heroShots } from '../../data/hero';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const copy = heroCopy[lang];
+const total = heroShots.length;
+const pad = (value: number) => String(value).padStart(2, '0');
+---
+
+<div class="hero__footer">
+  <div class="hero__location">
+    <div class="hero__meta">
+      <span class="label">{copy.nowShowing}</span>
+      <span class="hero__place" data-shot-name aria-live="polite">{heroShots[0].name[lang]}</span>
+      <div class="hero__controls">
+        <div class="hero__segments">
+          {
+            heroShots.map((shot, index) => (
+              <button
+                type="button"
+                class:list={['segment', { 'is-active': index === 0 }]}
+                data-name={shot.name[lang]}
+                data-dot-x={shot.dot.x}
+                data-dot-y={shot.dot.y}
+                aria-label={copy.shotLabel(index + 1, total)}
+                aria-pressed={index === 0 ? 'true' : 'false'}
+              >
+                <span />
+              </button>
+            ))
+          }
+        </div>
+        <span class="hero__count"><span data-shot-num>01</span> <span class="dim">/ {pad(total)}</span></span>
+        <button type="button" class="hero__skip link-plain" data-shot-next aria-label={copy.nextShot}>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 5l10 7-10 7z"></path>
+            <line x1="19" y1="5" x2="19" y2="19"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="hero__map">
+      <img src={outline.src} alt={copy.mapAlt} width={outline.width} height={outline.height} />
+      <span class="hero__dot-pulse" data-dot aria-hidden="true"></span>
+      <span class="hero__dot" data-dot aria-hidden="true"></span>
+    </div>
+  </div>
+</div>

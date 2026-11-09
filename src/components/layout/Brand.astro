@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../assets/images/logo-white.png';
+import { ui, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  href: string;
+  label?: string;
+}
+
+const { lang, href, label } = Astro.props;
+---
+
+<a href={href} class="brand link-plain" aria-label={label}>
+  <Image src={logo} alt="" width={31} height={44} densities={[1, 2]} loading="eager" class="brand__mark" />
+  <span class="brand__word">
+    <span class="brand__name">Zmijavci</span>{' '}
+    <span class="brand__sub">{ui[lang].brandSub}</span>
+  </span>
+</a>

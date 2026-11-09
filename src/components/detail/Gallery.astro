@@ -1,0 +1,19 @@
+---
+import '../../styles/components/gallery.css';
+import type { ImageMetadata } from 'astro';
+import ResponsiveImage from '../ui/ResponsiveImage.astro';
+
+interface Props {
+  items: { image: ImageMetadata; alt: string }[];
+}
+---
+
+<div class="gallery">
+  {
+    Astro.props.items.map(({ image, alt }) => (
+      <figure>
+        <ResponsiveImage src={image} alt={alt} widths={[480, 800, 1280]} sizes="(max-width: 960px) 92vw, 640px" />
+      </figure>
+    ))
+  }
+</div>

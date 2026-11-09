@@ -1,0 +1,22 @@
+---
+import '../../styles/components/card.css';
+import '../../styles/components/venues.css';
+import VenueCard from './VenueCard.astro';
+import { gastronomyCopy, venues } from '../../data/gastronomy';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<div class="gastro__list">
+  <div class="list-head">
+    <h3>{gastronomyCopy[lang].venuesTitle}</h3>
+  </div>
+  <div class="venue-grid">
+    {venues.map((venue) => <VenueCard lang={lang} venue={venue} />)}
+  </div>
+</div>

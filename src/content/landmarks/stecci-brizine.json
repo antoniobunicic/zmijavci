@@ -1,0 +1,74 @@
+{
+  "order": 5,
+  "slugs": {
+    "hr": "stecci-brizine",
+    "en": "brizine-stecci"
+  },
+  "image": "../../assets/images/stecci-brizine.webp",
+  "hr": {
+    "name": "Stećci u Brižinama",
+    "category": "Arheološka baština",
+    "summary": "Srednjovjekovno groblje s najmanje 31 stećkom na prapovijesnom tumulu.",
+    "lead": "Srednjovjekovno groblje s najmanje 31 stećkom podignuto na prapovijesnom tumulu. Jedan stećak nosi uklesan križ, a drugi neobičan prikaz dviju osoba koje se drže za ruke.",
+    "imageAlt": "Stećci na lokalitetu Brižine–Balinjača iz zraka",
+    "facts": [
+      {
+        "label": "Lokalitet",
+        "value": "Brižine–Balinjača, kod zaseoka Milasi"
+      },
+      {
+        "label": "Stećci",
+        "value": "14. – 15. stoljeće"
+      },
+      {
+        "label": "Broj stećaka",
+        "value": "najmanje 31"
+      },
+      {
+        "label": "Zaštita",
+        "value": "Kulturno dobro Z-6491"
+      }
+    ],
+    "body": [
+      "Na brežuljku Brižine, sjeverozapadno od zaseoka Milasi u Zmijavcima, nalazi se arheološko nalazište Brižine–Balinjača, vrijedan spomenik koji čuva tragove života i pogrebnih običaja kroz različita povijesna razdoblja. Posebnu prepoznatljivost lokalitetu daju srednjovjekovni stećci, kameni nadgrobni spomenici karakteristični za područje današnje Hrvatske i susjednih zemalja.",
+      "Povijest ovoga mjesta seže znatno dalje od srednjega vijeka. Najstariji poznati sloj nalazišta čini prapovijesna grobna gomila, odnosno tumul, promjera približno 20 metara. Tijekom 14. i 15. stoljeća na njoj i oko nje razvilo se srednjovjekovno groblje sa stećcima, čime je ovaj prostor ponovno dobio važnu ulogu u životu lokalne zajednice.",
+      "Na lokalitetu je evidentiran najmanje 31 stećak, pretežno u obliku kamenih ploča i sanduka, uz primjerke sljemenjaka koji svojim oblikom podsjećaju na krov kuće. Većina je jednostavne, grublje obrade i bez ukrasa, no dva se spomenika posebno izdvajaju. Na jednom je uklesan križ, dok drugi nosi prikaz dviju osoba koje se drže za ruke. Taj neobičan motiv osobito privlači pozornost jer otvara prostor za promišljanje o ljudskim odnosima, simbolici i običajima srednjovjekovnog stanovništva.",
+      "Povijest Brižina nije završila sa srednjim vijekom. Tijekom ranoga novog vijeka na istom se prostoru razvijalo novo groblje, obilježeno jednostavnim kamenim nadgrobnim oznakama, poznatima kao učelci. Tako je ovaj brežuljak tijekom stoljeća ostao mjesto sjećanja na prethodne naraštaje.",
+      "Danas su Brižine–Balinjača zaštićeno kulturno dobro Republike Hrvatske i vrijedan dio arheološke baštine Imotske krajine. Njihova posebnost nije samo u broju sačuvanih stećaka, nego i u činjenici da se na istome mjestu mogu pratiti različiti slojevi povijesti, od prapovijesti do ranoga novog vijeka.",
+      "Stećci u Brižinama podsjećaju na bogatu prošlost Zmijavaca i trajnu povezanost čovjeka s prostorom u kojem živi, ostavljajući u kamenu svjedočanstva koja nadživljavaju stoljeća."
+    ]
+  },
+  "en": {
+    "name": "Stećci at Brižine",
+    "category": "Archaeological heritage",
+    "summary": "A medieval cemetery of at least 31 stećci on a prehistoric burial mound.",
+    "lead": "A medieval cemetery of at least 31 stećci, the carved medieval tombstones, set on a prehistoric burial mound. One bears a carved cross, another an unusual image of two figures holding hands.",
+    "imageAlt": "The stećci at Brižine–Balinjača from above",
+    "facts": [
+      {
+        "label": "Site",
+        "value": "Brižine–Balinjača, near the hamlet of Milasi"
+      },
+      {
+        "label": "Stećci",
+        "value": "14th – 15th century"
+      },
+      {
+        "label": "Number of stećci",
+        "value": "at least 31"
+      },
+      {
+        "label": "Protection",
+        "value": "Cultural property Z-6491"
+      }
+    ],
+    "body": [
+      "On the hill of Brižine, north-west of the hamlet of Milasi in Zmijavci, lies the archaeological site of Brižine–Balinjača, which preserves traces of life and burial customs from several periods of history. The site is best known for its stećci: medieval stone tombstones typical of present-day Croatia and its neighbouring countries.",
+      "The history of this place reaches far beyond the Middle Ages. The oldest known layer is a prehistoric burial mound, or tumulus, about 20 metres across. In the 14th and 15th centuries a medieval cemetery with stećci grew up on and around it, giving the place an important role in the life of the local community once again.",
+      "At least 31 stećci have been recorded here, mostly stone slabs and chests, along with gabled tombstones shaped like the roof of a house. Most are plain and roughly worked, but two stand out: one is carved with a cross, while the other shows two figures holding hands. This unusual motif draws particular attention, inviting reflection on the relationships, symbols and customs of the medieval people who lived here.",
+      "The story of Brižine did not end with the Middle Ages. In the early modern period a new cemetery developed on the same ground, marked by simple stone grave markers known locally as učelci. Over the centuries the hill has remained a place for remembering earlier generations.",
+      "Today Brižine–Balinjača is a protected cultural property of the Republic of Croatia and a valuable part of the archaeological heritage of the Imotski region. It is special not only for the number of surviving stećci, but because layers of history from prehistory to the early modern period can be traced in a single place.",
+      "The stećci at Brižine are a reminder of Zmijavci's rich past and of the lasting bond between people and the land they live on, leaving testimony in stone that outlives the centuries."
+    ]
+  }
+}

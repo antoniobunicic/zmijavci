@@ -1,0 +1,17 @@
+---
+import '../../styles/components/photo-placeholder.css';
+import outline from '../../assets/images/obris-zmijavci.svg';
+import { ui, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  class: string;
+}
+
+const { lang, class: className } = Astro.props;
+---
+
+<figure class:list={[className, 'photo-soon']}>
+  <img src={outline.src} alt="" width={outline.width} height={outline.height} />
+  <figcaption>{ui[lang].photoSoon}</figcaption>
+</figure>

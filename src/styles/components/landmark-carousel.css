@@ -1,0 +1,34 @@
+.carousel-head {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;
+  margin-top: clamp(56px, 7vw, 96px); margin-bottom: 28px;
+}
+.carousel-nav { display: flex; gap: 8px; }
+.round-btn {
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 1px solid #CFCCC3; background: transparent; color: var(--ink);
+  font-size: 18px; cursor: pointer; transition: background .2s, color .2s, opacity .2s;
+}
+.round-btn:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+.round-btn--dark { background: var(--ink); color: var(--white); border-color: var(--ink); }
+.round-btn--dark:hover { opacity: .8; }
+.round-btn:disabled { opacity: .3; cursor: default; background: transparent; color: var(--ink); border-color: #CFCCC3; }
+
+.carousel {
+  display: flex; gap: 24px; overflow-x: auto;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
+  margin: 0 calc(-1 * var(--gutter));
+  /* Postoci se različito računaju: padding od sekcije (bez gutera), scroll-padding od same trake (puna širina). */
+  padding: 0 var(--gutter) 8px max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+  scroll-padding-left: max(var(--gutter), calc((100% - var(--max)) / 2));
+}
+.carousel::-webkit-scrollbar { display: none; }
+.carousel::after { content: ""; flex: 0 0 1px; }
+.place { flex: 0 0 min(600px, 84%); scroll-snap-align: start; display: flex; flex-direction: column; gap: 18px; }
+.place__img { overflow: hidden; border-radius: 4px; background: #E4E1D8; }
+.place__img img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.place h3 { font-family: var(--font-display); font-weight: var(--display-weight); font-size: 28px; line-height: 1.05; letter-spacing: -0.02em; }
+.place p { margin-top: -8px; font-size: 18px; line-height: 1.45; color: var(--ink-soft); max-width: 520px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel { scroll-behavior: auto; }
+}

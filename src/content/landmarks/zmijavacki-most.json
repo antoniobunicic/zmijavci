@@ -1,0 +1,77 @@
+{
+  "order": 2,
+  "slugs": {
+    "hr": "zmijavacki-most",
+    "en": "zmijavci-bridge"
+  },
+  "image": "../../assets/images/zmijavacki-most.webp",
+  "hr": {
+    "name": "Zmijavački most",
+    "category": "Graditeljska baština",
+    "summary": "Kameni most sa šest lukova preko Vrljike, s početka 19. stoljeća.",
+    "lead": "Kameni most sa šest lukova preko Vrljike, podignut početkom 19. stoljeća od priklesanog lokalnog kamena. Jedan od najvrjednijih primjera povijesne mostogradnje u Imotskoj krajini.",
+    "imageAlt": "Kameni most na lukovima preko rijeke Vrljike",
+    "facts": [
+      {
+        "label": "Izgrađen",
+        "value": "Početak 19. stoljeća"
+      },
+      {
+        "label": "Duljina",
+        "value": "oko 23,5 m"
+      },
+      {
+        "label": "Lukovi",
+        "value": "6"
+      },
+      {
+        "label": "Zaštita",
+        "value": "Kulturno dobro Z-7040"
+      }
+    ],
+    "body": [
+      "Na rijeci Vrljici, ondje gdje se susreću područja Zmijavaca i Runovića, smjestio se Zmijavački most, jedan od najvrjednijih primjera povijesne mostogradnje u Imotskoj krajini. Svojim prepoznatljivim kamenim lukovima i skladnim uklapanjem u riječni krajolik, most predstavlja vrijedan dio graditeljske baštine i svjedočanstvo vremena u kojem su se prometne veze stvarale znanjem, iskustvom i vještinom domaćih graditelja.",
+      "Most je podignut početkom 19. stoljeća, a izgrađen je od priklesanih blokova lokalnog kamena. Dug je približno 23,5 metara i širok 5,5 metara, a njegovu konstrukciju čini šest kamenih lukova oslonjenih na masivne nosače. Posebnost mosta predstavljaju kameni elementi oblikovani tako da usmjeravaju riječni tok i ublažavaju udar vode, čime su graditelji osigurali stabilnost građevine i njezinu dugotrajnost.",
+      "Iako jednostavan u svojoj osnovnoj namjeni, Zmijavački most odlikuje se promišljenim graditeljskim rješenjima. Njegovi lukovi, kameni nosači i zidani parapeti oblikuju skladnu cjelinu koja se prirodno nadovezuje na obale Vrljike. Upravo ta povezanost funkcionalnosti, tradicionalnih materijala i krajolika čini ga vrijednim primjerom povijesne inženjerske arhitekture.",
+      "Kroz svoju povijest most je imao važnu ulogu u povezivanju naselja, ljudi i poljoprivrednih površina uz rijeku. U vremenu kada je život stanovništva Imotske krajine bio snažno povezan sa zemljoradnjom, stočarstvom i korištenjem vodnih resursa, ovakvi su prijelazi bili važan dio svakodnevice. Mostovi nisu samo omogućavali prelazak preko vode, nego su povezivali obitelji, susjedna mjesta i gospodarske aktivnosti.",
+      "Zmijavački most pripada bogatoj graditeljskoj baštini uz Vrljiku, koju dodatno obilježavaju povijesne mlinice, kameni prijelazi i drugi objekti nastali u neposrednoj povezanosti s rijekom. Zajedno s obližnjim Mostom na Bublinu svjedoči o nekadašnjem načinu života i važnosti vode u razvoju Zmijavaca.",
+      "Zbog svoje povijesne, arhitektonske i ambijentalne vrijednosti Zmijavački most zaštićen je kao kulturno dobro Republike Hrvatske. Njegova izvorna kamena konstrukcija i prepoznatljiv izgled predstavljaju dragocjen dio lokalne baštine koji zaslužuje očuvanje za buduće naraštaje.",
+      "Danas Zmijavački most nije samo povijesni prijelaz preko Vrljike, nego i mjesto na kojem se može doživjeti sklad tradicijskog graditeljstva i prirode. Okružen riječnim krajolikom, podsjeća na stoljeća suživota čovjeka i vode te na umijeće graditelja čiji rad i danas oblikuje prepoznatljivu sliku Zmijavaca."
+    ]
+  },
+  "en": {
+    "name": "Zmijavci Bridge",
+    "category": "Built heritage",
+    "summary": "A six-arched stone bridge over the Vrljika from the early 19th century.",
+    "lead": "A six-arched stone bridge over the Vrljika, built in the early 19th century from dressed local stone. One of the finest examples of historic bridge-building in the Imotski region.",
+    "imageAlt": "The arched stone bridge over the Vrljika river",
+    "facts": [
+      {
+        "label": "Built",
+        "value": "Early 19th century"
+      },
+      {
+        "label": "Length",
+        "value": "approx. 23.5 m"
+      },
+      {
+        "label": "Arches",
+        "value": "6"
+      },
+      {
+        "label": "Protection",
+        "value": "Cultural property Z-7040"
+      }
+    ],
+    "body": [
+      "On the Vrljika river, where the lands of Zmijavci and Runovići meet, stands Zmijavci Bridge — one of the finest examples of historic bridge-building in the Imotski region. With its distinctive stone arches and the way it settles into the river landscape, the bridge is a valuable piece of built heritage and a reminder of a time when roads were made with the knowledge, experience and skill of local builders.",
+      "The bridge was raised in the early 19th century from dressed blocks of local stone. It is about 23.5 metres long and 5.5 metres wide, carried on six stone arches resting on massive piers. Its special feature is the stone cutwaters, shaped to guide the current and soften the force of the water, which gave the structure its stability and long life.",
+      "Simple as its purpose is, Zmijavci Bridge shows carefully thought-out construction. Its arches, stone piers and masonry parapets form a harmonious whole that flows naturally into the banks of the Vrljika. This blend of function, traditional materials and landscape makes it a valuable example of historic engineering.",
+      "Throughout its history the bridge has linked villages, people and the farmland along the river. When life in the Imotski region depended on farming, herding and the use of water, crossings like this were part of everyday life. Bridges did more than carry people over the water: they connected families, neighbouring villages and their livelihoods.",
+      "Zmijavci Bridge belongs to the rich built heritage along the Vrljika, together with historic watermills, stone crossings and other structures that grew up around the river. Along with the nearby Bublin Bridge, it tells of a former way of life and of the importance of water in the development of Zmijavci.",
+      "For its historic, architectural and landscape value, Zmijavci Bridge is protected as a cultural property of the Republic of Croatia. Its original stone structure and recognisable form are a precious part of local heritage, worth preserving for generations to come.",
+      "Today Zmijavci Bridge is not only a historic crossing over the Vrljika but also a place to experience the harmony of traditional building and nature. Surrounded by the river landscape, it recalls centuries of life alongside the water and the craft of builders whose work still shapes the image of Zmijavci."
+    ]
+  },
+  "imageFocus": 62
+}

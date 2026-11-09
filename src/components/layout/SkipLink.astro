@@ -1,0 +1,12 @@
+---
+import { ui, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  target: string;
+}
+
+const { lang, target } = Astro.props;
+---
+
+<a class="skip-link" href={`#${target}`}>{ui[lang].skipToContent}</a>

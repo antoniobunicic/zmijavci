@@ -1,0 +1,47 @@
+---
+import '../../styles/components/card.css';
+import EventDate from '../shared/EventDate.astro';
+import ResponsiveImage from '../ui/ResponsiveImage.astro';
+import TextLink from '../ui/TextLink.astro';
+import { eventPath } from '../../i18n/routes';
+import { ui, type Lang } from '../../i18n/ui';
+import type { EventEntry } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  event: EventEntry;
+}
+
+const { lang, event } = Astro.props;
+const { image, slugs, start, end } = event.data;
+const text = event.data[lang];
+const href = eventPath(slugs, lang);
+const location = [text.place, text.time].filter(Boolean).join(' · ');
+---
+
+<article class="event card card--linked">
+  <div class="event__main">
+    <div class="event__top">
+      <EventDate lang={lang} range={{ start, end }} />
+      <span class="tag tag--light">{text.category}</span>
+    </div>
+    <div class="event__body">
+      <h3><a href={href}>{text.title}</a></h3>
+      <p>{text.summary}</p>
+    </div>
+    <div class="event__foot">
+      <span>{location}</span>
+      <TextLink href={href} label={text.readMoreLabel}>{ui[lang].readMore}</TextLink>
+    </div>
+  </div>
+  <figure class="event__img">
+    <a href={href} tabindex="-1" aria-hidden="true">
+      <ResponsiveImage
+        src={image}
+        alt=""
+        widths={[480, 800, 1240]}
+        sizes="(max-width: 1100px) 92vw, 620px"
+      />
+    </a>
+  </figure>
+</article>

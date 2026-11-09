@@ -1,0 +1,46 @@
+---
+import '@fontsource-variable/familjen-grotesk/index.css';
+import '@fontsource-variable/inter-tight/index.css';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/typography.css';
+import displayFont from '@fontsource-variable/familjen-grotesk/files/familjen-grotesk-latin-wght-normal.woff2?url';
+import bodyFont from '@fontsource-variable/inter-tight/files/inter-tight-latin-wght-normal.woff2?url';
+import { getImage } from 'astro:assets';
+import type { Lang } from '../i18n/ui';
+import type { JsonLd } from '../lib/structured-data';
+import Seo from '../components/seo/Seo.astro';
+import coat from '../assets/images/grb.jpg';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  path: string;
+  alternatePath?: string;
+  socialImage?: string;
+  noindex?: boolean;
+  ogType?: 'website' | 'article';
+  structuredData?: JsonLd[];
+}
+
+const { lang, ...seo } = Astro.props;
+const appleIcon = await getImage({ src: coat, width: 180, format: 'png' });
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0E1420" />
+    <link rel="preload" href={displayFont} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={bodyFont} as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href={appleIcon.src} />
+    <Seo lang={lang} {...seo} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,79 @@
+{
+  "order": 8,
+  "slugs": {
+    "hr": "dogica-mlinica",
+    "en": "dogic-watermill"
+  },
+  "hr": {
+    "name": "Đogića mlinica",
+    "category": "Graditeljska baština",
+    "summary": "Kamena vodenica na Vrljici s drvenim mlinskim kolom.",
+    "lead": "Kamena vodenica na Vrljici, koju mještani zovu Matica, s drvenim mlinskim kolom koje pokreće snaga rijeke. Jedan od najbolje sačuvanih primjera tradicijskog graditeljstva u Zmijavcima.",
+    "facts": [
+      {
+        "label": "Nastala",
+        "value": "Kraj 19. ili početak 20. st."
+      },
+      {
+        "label": "Rijeka",
+        "value": "Vrljika (Matica)"
+      },
+      {
+        "label": "Mlinsko kolo",
+        "value": "Tumbaz"
+      },
+      {
+        "label": "Zaštita",
+        "value": "Kulturno dobro"
+      }
+    ],
+    "body": [
+      "Na rijeci Vrljici nalazi se Đogića mlinica, jedan od najvrjednijih sačuvanih primjera tradicijske graditeljske baštine Zmijavaca. Ova kamena vodenica svjedoči o vremenu kada je snaga rijeke bila nezamjenjiv dio svakodnevnog života, a mlinice važna mjesta rada, susreta i zajedništva lokalnog stanovništva.",
+      "Nastala je krajem 19. ili početkom 20. stoljeća, u razdoblju kada su vodenice bile neizostavan dio gospodarstva Imotske krajine. Uz rijeku Vrljiku, odnosno Maticu, kako se ovaj vodotok tradicionalno naziva u lokalnom govoru, djelovalo je više mlinica u kojima su stanovnici okolnih naselja mljeli žitarice i pripremali brašno za svakodnevnu prehranu.",
+      "Mlinica je izgrađena kao jednostavna kamena građevina pravokutnog tlocrta, s karakterističnim dvostrešnim krovom. Nekadašnji slamnati pokrov zamijenjen je kamenim pločama, dok je njezina osnovna arhitektonska struktura zadržala obilježja tradicionalnog graditeljstva dalmatinskoga zaleđa.",
+      "Posebnost Đogića mlinice njezin je izvorni način rada. Na vanjskoj strani građevine nalazi se drveno mlinsko kolo, u narodu poznato kao tumbaz, koje pokreće snaga riječne vode. Okretanjem kola energija se preko sustava zupčanika prenosi na kamene žrvnjeve smještene u unutrašnjosti mlinice. Između njih usipavalo se zrnje koje se mljevenjem pretvaralo u brašno.",
+      "U mlinicama uz Maticu najčešće su se mljeli kukuruz, proso i sirak, dok su pšenica i ječam bili rjeđi. Brašno dobiveno mljevenjem bilo je temelj prehrane mnogih obitelji, osobito za pripremu tradicionalnih jela poput pure. Mlinice su zato imale važnu ulogu u prehrani, gospodarstvu i svakodnevici stanovnika Zmijavaca.",
+      "No njihova važnost nije bila isključivo gospodarska. Mlinice su bile i mjesta društvenog života, na kojima su se ljudi susretali, razmjenjivali vijesti i razgovarali čekajući svoj red za mljevenje. Uz šum vode i okretanje mlinskog kola odvijao se dio svakodnevice koji je tijekom stoljeća oblikovao identitet ovoga kraja.",
+      "Đogića mlinica posebno je vrijedna jer je sačuvala prepoznatljiva obilježja tradicionalne vodenice. Zahvaljujući obnovi i konzervatorskim zahvatima, očuvana je kao svjedočanstvo nekadašnjeg načina korištenja vodne snage. Njezina povijesna, arhitektonska i etnografska vrijednost prepoznata je upisom u Registar kulturnih dobara Republike Hrvatske.",
+      "Osim same građevine, posebnu privlačnost lokalitetu daje okolni riječni krajolik. Vrljika, kameni zidovi mlinice i zelenilo uz obale stvaraju autentičan ambijent koji podsjeća na nekadašnji suživot čovjeka i prirode.",
+      "Danas Đogića mlinica predstavlja mnogo više od stare građevine uz rijeku. Ona je sačuvani dio gospodarske i kulturne povijesti Zmijavaca, podsjetnik na generacije mlinara i težaka te na vrijeme kada je voda pokretala svakodnevni život.",
+      "Posjet ovom lokalitetu prilika je za upoznavanje tradicijskog načina života Imotske krajine i otkrivanje baštine u kojoj se jednostavnost gradnje, ljudska domišljatost i snaga prirode spajaju u jedinstvenu priču."
+    ]
+  },
+  "en": {
+    "name": "Đogić Watermill",
+    "category": "Built heritage",
+    "summary": "A stone watermill on the Vrljika with a wooden water wheel.",
+    "lead": "A stone watermill on the Vrljika, known locally as the Matica, with a wooden wheel turned by the river. One of the best-preserved examples of traditional building in Zmijavci.",
+    "facts": [
+      {
+        "label": "Built",
+        "value": "Late 19th or early 20th c."
+      },
+      {
+        "label": "River",
+        "value": "Vrljika (Matica)"
+      },
+      {
+        "label": "Mill wheel",
+        "value": "Tumbaz"
+      },
+      {
+        "label": "Protection",
+        "value": "Cultural property"
+      }
+    ],
+    "body": [
+      "On the Vrljika river stands the Đogić watermill, one of the most valuable surviving examples of traditional building in Zmijavci. This stone mill recalls a time when the power of the river was an essential part of daily life, and mills were important places of work, meeting and community.",
+      "It was built at the end of the 19th or the beginning of the 20th century, when watermills were an essential part of the economy of the Imotski region. Along the Vrljika — or the Matica, as the river is traditionally called in the local dialect — several mills worked, where people from the surrounding villages ground grain into flour for their daily bread.",
+      "The mill is a simple stone building with a rectangular plan and a characteristic pitched roof. The old thatch has been replaced by stone slabs, while the basic structure keeps the hallmarks of traditional building in the Dalmatian hinterland.",
+      "What makes the Đogić watermill special is the way it originally worked. On the outside of the building is a wooden mill wheel, known locally as the tumbaz, driven by the river. As the wheel turns, its power is carried through a system of gears to the millstones inside. Grain was poured between them and ground into flour.",
+      "The mills along the Matica mostly ground maize, millet and sorghum; wheat and barley were rarer. The flour was the basis of many families' diet, especially for traditional dishes such as pura, a maize porridge. The mills therefore played an important part in the food, economy and everyday life of Zmijavci.",
+      "But their importance was not only economic. Mills were also places of social life, where people met, swapped news and talked while waiting their turn to grind. To the sound of the water and the turning wheel, a part of daily life unfolded that shaped the identity of this area over the centuries.",
+      "The Đogić watermill is especially valuable because it has kept the recognisable features of a traditional watermill. Thanks to restoration and conservation work, it survives as a witness to the old ways of using water power. Its historic, architectural and ethnographic value is recognised by its entry in the Register of Cultural Property of the Republic of Croatia.",
+      "Beyond the building itself, the surrounding river landscape gives the site its special charm. The Vrljika, the mill's stone walls and the greenery along the banks create an authentic setting that recalls the old harmony between people and nature.",
+      "Today the Đogić watermill is much more than an old building by the river. It is a preserved piece of the economic and cultural history of Zmijavci, a reminder of generations of millers and farmers, and of a time when water drove everyday life.",
+      "A visit is a chance to learn about the traditional way of life in the Imotski region and to discover a heritage where simple building, human ingenuity and the power of nature come together in one story."
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+---
+import PhotoPlaceholder from '../ui/PhotoPlaceholder.astro';
+import ResponsiveImage from '../ui/ResponsiveImage.astro';
+import { landmarkPath } from '../../i18n/routes';
+import type { Lang } from '../../i18n/ui';
+import type { Landmark } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  landmark: Landmark;
+}
+
+const { lang, landmark } = Astro.props;
+const { image, imageFocus, slugs } = landmark.data;
+const text = landmark.data[lang];
+---
+
+<article class="place card card--linked">
+  {
+    image ? (
+      <figure class="place__img">
+        <ResponsiveImage
+          src={image}
+          alt={text.imageAlt ?? ''}
+          focus={imageFocus}
+          widths={[480, 800, 1200]}
+          sizes="(max-width: 714px) 84vw, 600px"
+        />
+      </figure>
+    ) : (
+      <PhotoPlaceholder lang={lang} class="place__img" />
+    )
+  }
+  <h3><a href={landmarkPath(slugs, lang)}>{text.name}</a></h3>
+  <p>{text.summary}</p>
+</article>

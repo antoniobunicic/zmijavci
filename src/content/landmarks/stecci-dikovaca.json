@@ -1,0 +1,71 @@
+{
+  "order": 6,
+  "slugs": {
+    "hr": "stecci-dikovaca",
+    "en": "dikovaca-stecci"
+  },
+  "hr": {
+    "name": "Stećci na Dikovači",
+    "category": "Arheološka baština",
+    "summary": "Osam ukrašenih stećaka na uzvisini od 290 metara.",
+    "lead": "Uzvisina na 290 metara s osam srednjovjekovnih stećaka ukrašenih polumjesecom, rozetom, ljiljanom i prizorom kola. Tragovi naselja sežu sve do brončanog i željeznog doba.",
+    "facts": [
+      {
+        "label": "Nadmorska visina",
+        "value": "oko 290 m"
+      },
+      {
+        "label": "Stećci",
+        "value": "8"
+      },
+      {
+        "label": "Najstariji nalazi",
+        "value": "Brončano i željezno doba"
+      },
+      {
+        "label": "Zaštita",
+        "value": "Kulturno dobro Z-7197"
+      }
+    ],
+    "body": [
+      "Na istaknutoj uzvisini Dikovača, koja se uzdiže na približno 290 metara nadmorske visine, nalazi se jedno od najzanimljivijih arheoloških nalazišta Zmijavaca. Ovaj prostor, koji je tijekom tisućljeća imao važnu ulogu u životu lokalnog stanovništva, čuva tragove prapovijesnih zajednica, antičkog razdoblja i srednjovjekovne baštine.",
+      "Posebnu vrijednost Dikovače predstavljaju srednjovjekovni stećci, monumentalni kameni nadgrobni spomenici karakteristični za područje Imotske krajine i šireg dinarskog prostora. Na zaravnjenom vrhu brežuljka, njegovim padinama i okolnom prostoru tijekom srednjega vijeka razvilo se groblje s različitim oblicima grobova, među kojima se ističu oni obilježeni stećcima.",
+      "Na lokalitetu je evidentirano osam grobova prekrivenih stećcima, među kojima se nalazi pet sljemenjaka, jedan sanduk i dvije ploče. Sljemenjaci su osobito prepoznatljivi po svojem obliku koji podsjeća na krov kuće, dok su sanduci i ploče jednostavnije kamene forme.",
+      "Pojedini stećci s Dikovače bili su ukrašeni simboličkim prikazima, među kojima se spominju polumjesec, rozeta, stilizirani ljiljan i prizor kola. Ti motivi predstavljaju vrijedan trag srednjovjekovne umjetnosti i duhovnog svijeta stanovništva koje je nekada živjelo na ovom području.",
+      "No povijesna važnost Dikovače znatno nadilazi njezinu srednjovjekovnu nekropolu. Arheološki nalazi, uključujući ulomke keramičkih posuda iz brončanog i željeznog doba te ostatke građevinskog materijala, potvrđuju korištenje ovoga prostora još u prapovijesti. Na vrhu brežuljka nalazi se zaravnjeni plato nepravilnog ovalnog oblika, uz čije su rubove sačuvani dijelovi kamenih konstrukcija koje bi mogle predstavljati ostatke nekadašnjeg obrambenog zida.",
+      "Danas je Dikovača zaštićeno kulturno dobro Republike Hrvatske i važan dio arheološke baštine Zmijavaca. Njezini stećci i ostali arheološki ostaci podsjećaju na generacije koje su tijekom stoljeća oblikovale identitet ovoga kraja, ostavljajući iza sebe vrijedne tragove sačuvane u kamenu."
+    ]
+  },
+  "en": {
+    "name": "Stećci at Dikovača",
+    "category": "Archaeological heritage",
+    "summary": "Eight decorated medieval stećci on a 290-metre hilltop.",
+    "lead": "A 290-metre hilltop with eight medieval stećci decorated with a crescent moon, a rosette, a lily and a kolo circle dance. Traces of settlement go back to the Bronze and Iron Ages.",
+    "facts": [
+      {
+        "label": "Elevation",
+        "value": "approx. 290 m"
+      },
+      {
+        "label": "Stećci",
+        "value": "8"
+      },
+      {
+        "label": "Earliest finds",
+        "value": "Bronze and Iron Age"
+      },
+      {
+        "label": "Protection",
+        "value": "Cultural property Z-7197"
+      }
+    ],
+    "body": [
+      "On the prominent hill of Dikovača, about 290 metres above sea level, lies one of the most interesting archaeological sites in Zmijavci. Important to local people for thousands of years, this place preserves traces of prehistoric communities, of the Roman period and of medieval heritage.",
+      "Dikovača is especially valued for its stećci, the monumental medieval stone tombstones typical of the Imotski region and the wider Dinaric area. In the Middle Ages a cemetery with graves of various forms grew up on the flattened hilltop, its slopes and the surrounding ground, the most striking of them marked with stećci.",
+      "Eight graves covered with stećci have been recorded here: five gabled tombstones, one chest and two slabs. The gabled stones are especially recognisable, shaped like the roof of a house, while the chests and slabs are simpler stone forms.",
+      "Some of the Dikovača stećci were decorated with symbolic images, among them a crescent moon, a rosette, a stylised lily and a kolo, the traditional circle dance. These motifs are a precious trace of the medieval art and spiritual world of the people who once lived here.",
+      "Yet Dikovača's historical importance reaches far beyond its medieval necropolis. Archaeological finds, including fragments of Bronze and Iron Age pottery and remains of building material, confirm that the hill was used in prehistory. On the summit is a flattened plateau of irregular oval shape, along whose edges parts of stone structures survive that may be the remains of an old defensive wall.",
+      "Today Dikovača is a protected cultural property of the Republic of Croatia and an important part of the archaeological heritage of Zmijavci. Its stećci and other remains recall the generations who shaped the identity of this area over the centuries, leaving behind valuable traces preserved in stone."
+    ]
+  }
+}

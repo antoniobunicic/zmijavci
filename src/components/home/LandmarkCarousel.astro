@@ -1,0 +1,30 @@
+---
+import '../../styles/components/card.css';
+import '../../styles/components/landmark-carousel.css';
+import LandmarkCard from './LandmarkCard.astro';
+import { introCopy } from '../../data/intro';
+import { sectionId } from '../../i18n/routes';
+import type { Lang } from '../../i18n/ui';
+import type { Landmark } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  landmarks: Landmark[];
+}
+
+const { lang, landmarks } = Astro.props;
+const copy = introCopy[lang];
+---
+
+<div class="container carousel-head" id={sectionId('landmarks', lang)}>
+  <h2 class="small-title">{copy.landmarksTitle}</h2>
+  <div class="carousel-nav">
+    <button type="button" class="round-btn" data-carousel-prev aria-label={copy.previous}>←</button>
+    <button type="button" class="round-btn round-btn--dark" data-carousel-next aria-label={copy.next}>→</button>
+  </div>
+</div>
+<div class="carousel" data-carousel>
+  {landmarks.map((landmark) => <LandmarkCard lang={lang} landmark={landmark} />)}
+</div>
+
+<script src="../../scripts/carousel.ts"></script>

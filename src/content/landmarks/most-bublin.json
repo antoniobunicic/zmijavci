@@ -1,0 +1,75 @@
+{
+  "order": 7,
+  "slugs": {
+    "hr": "most-bublin",
+    "en": "bublin-bridge"
+  },
+  "hr": {
+    "name": "Most na Bublinu",
+    "category": "Graditeljska baština",
+    "summary": "Kameni most s kraja 19. stoljeća, uz povijesnu Petrovića mlinicu.",
+    "lead": "Kameni most preko Vrljike s kraja 19. stoljeća, uz povijesnu Petrovića mlinicu. Zajedno s mlinicom i riječnim krajolikom čini jednu od najautentičnijih cjelina u Zmijavcima.",
+    "facts": [
+      {
+        "label": "Izgrađen",
+        "value": "Kraj 19. stoljeća"
+      },
+      {
+        "label": "Duljina",
+        "value": "oko 23,4 m"
+      },
+      {
+        "label": "Lukovi",
+        "value": "6"
+      },
+      {
+        "label": "Zaštita",
+        "value": "Kulturno dobro"
+      }
+    ],
+    "body": [
+      "Na rijeci Vrljici, u neposrednoj blizini povijesne Petrovića mlinice, smjestio se Most na Bublinu, jedan od najljepših primjera tradicijske kamene mostogradnje u Zmijavcima. Svojim skladnim lukovima, jednostavnom konstrukcijom i prirodnim okruženjem, most predstavlja vrijedan dio kulturno-povijesne baštine Imotske krajine i svjedočanstvo nekadašnjeg života uz rijeku.",
+      "Most je izgrađen krajem 19. stoljeća, u vrijeme kada je Vrljika imala važnu ulogu u svakodnevnom životu stanovništva. Rijeka je pokretala mlinice, omogućavala navodnjavanje poljoprivrednih površina i oblikovala gospodarski razvoj okolnih naselja. U takvom okruženju mostovi su bili mnogo više od običnih prijelaza preko vode – predstavljali su važne poveznice između ljudi, zemljišta i mjesta svakodnevnog rada.",
+      "Izvorno je Most na Bublinu imao pet kamenih lukova, a sredinom 20. stoljeća proširen je za još jedan luk prema obližnjoj mlinici. Današnja konstrukcija duga je približno 23,4 metra, dok širina kolne površine s kamenim ogradama iznosi oko 4,85 metara.",
+      "Lukovi mosta oslanjaju se na izdužene pravokutne kamene nosače, opremljene posebno oblikovanim klinovima koji razbijaju riječnu bujicu i smanjuju pritisak vode na konstrukciju. Kameni potporni zidovi dodatno povezuju most s riječnim koritom i pristupnim putem, stvarajući skladnu i funkcionalnu graditeljsku cjelinu.",
+      "Posebnost Mosta na Bublinu njegova je neposredna povezanost s Petrovića mlinicom, tradicionalnom vodenicom koja je nekada koristila snagu riječne vode za mljevenje žitarica. Most i mlinica zajedno svjedoče o razdoblju u kojem je Vrljika bila jedno od središta gospodarskog života Zmijavaca, a njezine obale mjesta susreta, rada i svakodnevne komunikacije.",
+      "Upravo sklad mosta, mlinice i riječnog krajolika čini Bublin posebno vrijednim prostorom. Kameni lukovi, mirna riječna površina i tragovi nekadašnjeg mlinarskog života stvaraju autentičan ambijent u kojem se prirodna i graditeljska baština međusobno nadopunjuju.",
+      "Zbog svojih povijesnih, arhitektonskih i ambijentalnih vrijednosti Most na Bublinu zaštićen je kao kulturno dobro Republike Hrvatske. Njegova očuvana kamena konstrukcija predstavlja vrijedan primjer graditeljskog znanja i vještina koje su obilježile razvoj Imotske krajine.",
+      "Danas Most na Bublinu pruža priliku za upoznavanje tradicijske arhitekture Zmijavaca i otkrivanje povijesne povezanosti lokalnog stanovništva s rijekom Vrljikom. Kao dio jedinstvene cjeline s Petrovića mlinicom, ostaje trajni podsjetnik na vrijeme kada je život uz rijeku bio neraskidivo povezan s njezinom snagom i prirodnim ritmom."
+    ]
+  },
+  "en": {
+    "name": "Bublin Bridge",
+    "category": "Built heritage",
+    "summary": "A late 19th-century stone bridge beside the historic Petrović watermill.",
+    "lead": "A late 19th-century stone bridge over the Vrljika beside the historic Petrović watermill. With the mill and the river it forms one of the most authentic settings in Zmijavci.",
+    "facts": [
+      {
+        "label": "Built",
+        "value": "Late 19th century"
+      },
+      {
+        "label": "Length",
+        "value": "approx. 23.4 m"
+      },
+      {
+        "label": "Arches",
+        "value": "6"
+      },
+      {
+        "label": "Protection",
+        "value": "Cultural property"
+      }
+    ],
+    "body": [
+      "On the Vrljika river, right beside the historic Petrović watermill, stands Bublin Bridge, one of the most beautiful examples of traditional stone bridge-building in Zmijavci. With its graceful arches, simple structure and natural setting, the bridge is a valuable part of the Imotski region's heritage and a reminder of life as it once was along the river.",
+      "The bridge was built at the end of the 19th century, when the Vrljika played a central role in everyday life. The river turned the mills, watered the fields and shaped the economy of the surrounding villages. In that world, bridges were far more than crossings: they were vital links between people, their land and their places of work.",
+      "Bublin Bridge originally had five stone arches; in the mid-20th century a sixth was added towards the nearby mill. Today the structure is about 23.4 metres long, and the roadway between its stone parapets is about 4.85 metres wide.",
+      "The arches rest on long rectangular stone piers with specially shaped cutwaters that break the current and reduce the pressure of the water on the structure. Stone retaining walls tie the bridge to the riverbed and the approach road, creating a harmonious and practical whole.",
+      "What makes Bublin Bridge special is its close bond with the Petrović watermill, a traditional mill that once used the force of the river to grind grain. Together, bridge and mill recall a time when the Vrljika was one of the centres of economic life in Zmijavci and its banks were places to meet, work and talk.",
+      "It is this harmony of bridge, mill and river landscape that makes Bublin so special. The stone arches, the calm surface of the water and the traces of old milling life create an authentic setting where natural and built heritage complement each other.",
+      "For its historic, architectural and landscape value, Bublin Bridge is protected as a cultural property of the Republic of Croatia. Its well-preserved stone structure is a fine example of the building knowledge and skill that shaped the Imotski region.",
+      "Today Bublin Bridge is a chance to discover the traditional architecture of Zmijavci and the historic bond between local people and the Vrljika. Together with the Petrović watermill, it remains a lasting reminder of a time when life along the river was inseparable from its power and natural rhythm."
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+---
+import '../../styles/components/panorama.css';
+
+interface Props {
+  url: string;
+  heading: string;
+  frameTitle: string;
+  caption: string;
+}
+
+const { url, heading, frameTitle, caption } = Astro.props;
+---
+
+<figure class="panorama">
+  <h2>{heading}</h2>
+  <div class="panorama__frame">
+    <iframe
+      src={url}
+      title={frameTitle}
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+  <figcaption>{caption}</figcaption>
+</figure>

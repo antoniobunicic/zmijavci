@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/layout/SiteHeader.astro';
+import Eyebrow from '../components/ui/Eyebrow.astro';
+import ButtonLink from '../components/ui/ButtonLink.astro';
+import '../styles/components/not-found.css';
+---
+
+<BaseLayout
+  lang="hr"
+  title="Stranica nije pronađena — Zmijavci turistički vodič"
+  description="Stranica koju tražite ne postoji ili je premještena."
+  path="/404.html"
+  noindex
+>
+  <SiteHeader lang="hr" variant="solid" />
+  <main class="section section--dark not-found">
+    <div class="container">
+      <Eyebrow tone="gold">404</Eyebrow>
+      <h1 class="display display--xl two-tone">Ovaj put ne vodi <em>nikamo.</em></h1>
+      <p class="lead">
+        Stranica koju tražite ne postoji ili je premještena. Vratite se na naslovnicu i nastavite
+        istraživati Zmijavce.
+      </p>
+      <ButtonLink href="/">Na naslovnicu</ButtonLink>
+    </div>
+  </main>
+</BaseLayout>

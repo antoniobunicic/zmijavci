@@ -1,0 +1,47 @@
+---
+import avif1280 from '../../assets/hero/hero-poster-1280.avif';
+import avif1920 from '../../assets/hero/hero-poster-1920.avif';
+import avif2560 from '../../assets/hero/hero-poster-2560.avif';
+import webp1280 from '../../assets/hero/hero-poster-1280.webp';
+import webp1920 from '../../assets/hero/hero-poster-1920.webp';
+import { heroCopy, heroShots } from '../../data/hero';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const SIZES = '110vw'; // sloj je 5 % veći od kadra sa svake strane
+const avifSet = `${avif1280.src} 1280w, ${avif1920.src} 1920w, ${avif2560.src} 2560w`;
+const webpSet = `${webp1280.src} 1280w, ${webp1920.src} 1920w`;
+---
+
+<div class="hero__layer" data-hero-layer>
+  <picture>
+    <source type="image/avif" srcset={avifSet} sizes={SIZES} />
+    <img
+      class="hero__poster"
+      src={webp1920.src}
+      srcset={webpSet}
+      sizes={SIZES}
+      width={webp1920.width}
+      height={webp1920.height}
+      alt={heroCopy[lang].posterAlt}
+      fetchpriority="high"
+      decoding="async"
+    />
+  </picture>
+  {
+    heroShots.map((shot, index) => (
+      <video
+        class:list={['hero__video', { 'is-active': index === 0 }]}
+        data-video={shot.video}
+        muted
+        playsinline
+        preload="none"
+        aria-hidden="true"
+      />
+    ))
+  }
+</div>

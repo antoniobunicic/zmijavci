@@ -1,0 +1,6 @@
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 12px; min-height: 52px; padding: 0 32px;
+  margin-top: clamp(56px, 6vw, 88px);
+  border: 1px solid var(--ink); border-radius: 999px;
+  font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+}

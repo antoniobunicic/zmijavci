@@ -1,0 +1,10 @@
+.card img { transition: transform .8s var(--ease-out); }
+@media (hover: hover) {
+  .card:hover img { transform: scale(1.04); }
+}
+
+/* Cijela kartica je klikabilna: link u naslovu se rasteže preko kartice. */
+.card--linked { position: relative; }
+.card--linked h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.card--linked h3 a { color: inherit; text-decoration: none; }
+.card--linked h3 a:hover { opacity: 1; }

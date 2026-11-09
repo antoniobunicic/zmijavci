@@ -1,0 +1,24 @@
+---
+import '../../styles/components/hero.css';
+import HeroMedia from './HeroMedia.astro';
+import HeroLocation from './HeroLocation.astro';
+import { heroCopy } from '../../data/hero';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const copy = heroCopy[lang];
+---
+
+<section class="hero" data-hero aria-label={copy.regionLabel}>
+  <h1 class="visually-hidden">{copy.h1}</h1>
+  <HeroMedia lang={lang} />
+  <div class="hero__scrim" aria-hidden="true"></div>
+  <slot />
+  <HeroLocation lang={lang} />
+</section>
+
+<script src="../../scripts/hero/index.ts"></script>

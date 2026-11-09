@@ -1,0 +1,6 @@
+.event-content { padding: clamp(32px, 4vw, 56px) var(--gutter) clamp(80px, 9vw, 136px); }
+.prose { max-width: 680px; }
+.prose h2 { margin: 48px 0 16px; font-family: var(--font-display); font-weight: var(--display-weight); font-size: 32px; letter-spacing: -0.03em; }
+.prose h2:first-child { margin-top: 0; }
+.prose p { margin-bottom: 18px; font-size: 18px; line-height: 1.7; color: var(--ink-soft); }
+.placeholder { padding: 20px 24px; border: 1px dashed var(--line-warm); border-radius: 4px; color: var(--muted); font-size: 15px; }

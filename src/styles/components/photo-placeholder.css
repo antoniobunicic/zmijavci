@@ -1,0 +1,5 @@
+/* Znamenitosti bez fotografije: tamna ploha s obrisom općine. */
+.photo-soon { position: relative; aspect-ratio: 4 / 3; background: var(--night); color: var(--on-dark-muted); }
+.more-card__img.photo-soon { aspect-ratio: 3 / 2; }
+.photo-soon img, .card:hover .photo-soon img { position: absolute; inset: 0; margin: auto; width: auto; height: 58%; aspect-ratio: auto; opacity: .3; transform: none; }
+.photo-soon figcaption { position: absolute; left: 20px; bottom: 18px; margin: 0; font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--on-dark-muted); }

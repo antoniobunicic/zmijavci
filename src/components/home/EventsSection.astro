@@ -1,0 +1,34 @@
+---
+import '../../styles/components/events.css';
+import Eyebrow from '../ui/Eyebrow.astro';
+import SectionHead from '../ui/SectionHead.astro';
+import TextLink from '../ui/TextLink.astro';
+import EventRow from './EventRow.astro';
+import { eventsCopy } from '../../data/intro';
+import { sectionHref, sectionId } from '../../i18n/routes';
+import type { Lang } from '../../i18n/ui';
+import type { EventEntry } from '../../lib/content';
+
+interface Props {
+  lang: Lang;
+  events: EventEntry[];
+}
+
+const { lang, events } = Astro.props;
+const copy = eventsCopy[lang];
+---
+
+<section id={sectionId('events', lang)} class="section section--dark events">
+  <div class="container">
+    <SectionHead>
+      <div>
+        <Eyebrow tone="gold">{copy.eyebrow}</Eyebrow>
+        <h2 class="display">{copy.title}</h2>
+      </div>
+      <TextLink href={sectionHref('events', lang, true)}>{copy.calendar}</TextLink>
+    </SectionHead>
+    <div class="event-list">
+      {events.map((event) => <EventRow lang={lang} event={event} />)}
+    </div>
+  </div>
+</section>

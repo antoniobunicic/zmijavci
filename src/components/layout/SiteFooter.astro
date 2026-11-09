@@ -1,0 +1,48 @@
+---
+import '../../styles/components/site-footer.css';
+import Brand from './Brand.astro';
+import { homePath, navLabel, navOrder, sectionHref } from '../../i18n/routes';
+import { ui, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  onHome?: boolean;
+}
+
+const { lang, onHome = false } = Astro.props;
+const { footer } = ui[lang];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__cta">
+        <p class="display display--sm two-tone">{footer.claim} <em>{footer.claimAccent}</em></p>
+      </div>
+      <div class="site-footer__cols">
+        <div>
+          <span class="label label--muted">{footer.explore}</span>
+          {
+            navOrder.map((section) => (
+              <a href={sectionHref(section, lang, onHome)} class="link-plain">
+                {navLabel(section, lang)}
+              </a>
+            ))
+          }
+        </div>
+        <div>
+          <span class="label label--muted">{footer.contact}</span>
+          {footer.contactLines.map((line) => <span>{line}</span>)}
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <Brand
+        lang={lang}
+        href={onHome ? '#' : homePath(lang)}
+        label={onHome ? footer.backToTop : footer.backHome}
+      />
+      <span>{footer.copyright}</span>
+    </div>
+  </div>
+</footer>

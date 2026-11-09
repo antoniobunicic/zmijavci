@@ -1,0 +1,29 @@
+---
+import ExternalLink from '../ui/ExternalLink.astro';
+import ResponsiveImage from '../ui/ResponsiveImage.astro';
+import { gastronomyCopy, type Venue } from '../../data/gastronomy';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  venue: Venue;
+}
+
+const { lang, venue } = Astro.props;
+---
+
+<article class="venue card">
+  <figure class="venue__img">
+    <ResponsiveImage
+      src={venue.image}
+      alt={venue.alt[lang]}
+      widths={[400, 840, 1200]}
+      sizes="(max-width: 560px) 92vw, (max-width: 1000px) 46vw, 420px"
+    />
+  </figure>
+  <h4 class="venue__name">{venue.name[lang]}</h4>
+  <div class="venue__meta">
+    <span class="venue__info">{venue.address}</span>
+    <ExternalLink href={venue.mapUrl}>{gastronomyCopy[lang].map} →</ExternalLink>
+  </div>
+</article>

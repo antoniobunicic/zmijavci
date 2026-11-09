@@ -1,0 +1,47 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: var(--accent); }
+a:hover { color: #0F3E7C; }
+h1, h2, h3, p, figure { margin: 0; }
+button { font: inherit; }
+
+.link-plain { color: inherit; text-decoration: none; transition: opacity .2s; }
+.link-plain:hover { color: inherit; opacity: .65; }
+
+.skip-link {
+  position: absolute; left: 16px; top: -60px; z-index: 50;
+  padding: 12px 18px; border-radius: 999px;
+  background: var(--white); color: var(--ink); text-decoration: none; font-weight: 600;
+}
+.skip-link:focus { top: 16px; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.section--dark :focus-visible, .hero :focus-visible, .site-footer :focus-visible { outline-color: var(--white); }
+
+.container { max-width: var(--max); margin: 0 auto; }
+.section { padding: clamp(80px, 9vw, 136px) var(--gutter); }
+.section--dark { background: var(--night); color: var(--on-dark); }
+.section--white { background: var(--white); }
+.center { display: flex; justify-content: center; }
+
+/* Pomak fotografije unutar okvira, kad je glavni motiv ispod ili iznad sredine. */
+.object-y-30 { object-position: center 30%; }
+.object-y-62 { object-position: center 62%; }
+.object-y-75 { object-position: center 75%; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

@@ -1,0 +1,28 @@
+---
+import '../../styles/components/gastro.css';
+import Eyebrow from '../ui/Eyebrow.astro';
+import DishShowcase from './DishShowcase.astro';
+import VenueList from './VenueList.astro';
+import { gastronomyCopy } from '../../data/gastronomy';
+import { sectionId } from '../../i18n/routes';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const copy = gastronomyCopy[lang];
+---
+
+<section id={sectionId('food', lang)} class="section section--white">
+  <div class="container gastro">
+    <div class="gastro__intro">
+      <Eyebrow tone="accent">{copy.eyebrow}</Eyebrow>
+      <h2 class="display">{copy.title}</h2>
+      <p class="lead">{copy.lead}</p>
+      <DishShowcase lang={lang} />
+    </div>
+    <VenueList lang={lang} />
+  </div>
+</section>

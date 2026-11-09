@@ -1,0 +1,57 @@
+{
+  "order": 3,
+  "slugs": {
+    "hr": "memorijalni-turnir-marijan-suto-mrma",
+    "en": "marijan-suto-mrma-memorial-tournament"
+  },
+  "start": "2027-07-31",
+  "image": "../../assets/images/turnir.webp",
+  "hr": {
+    "title": "Memorijalni turnir „Marijan Šuto Mrma”",
+    "breadcrumb": "Memorijalni turnir",
+    "category": "Sport",
+    "place": "Zmijavci",
+    "summary": "Nogometni turnir posvećen igraču Croatie Zmijavci i hrvatskom branitelju poginulom u Domovinskom ratu.",
+    "lead": "Posljednjeg dana srpnja u Zmijavcima se održava memorijalni nogometni turnir, posvećen igraču Croatie Zmijavci i hrvatskom branitelju poginulom u Domovinskom ratu.",
+    "description": "Memorijalni nogometni turnir „Marijan Šuto Mrma” u Zmijavcima, 31. srpnja, posvećen igraču Croatie Zmijavci i hrvatskom branitelju.",
+    "imageAlt": "Utakmica NK Croatia Zmijavci",
+    "readMoreLabel": "Saznaj više o memorijalnom turniru",
+    "sections": [
+      {
+        "heading": "O turniru",
+        "paragraphs": [
+          "Turnir nosi ime Marijana Šute Mrme, igrača Croatie Zmijavci i hrvatskog branitelja poginulog u Domovinskom ratu. Svake godine okuplja ekipe i navijače koji uz nogomet čuvaju sjećanje na njega."
+        ]
+      },
+      {
+        "heading": "Raspored utakmica",
+        "paragraphs": [],
+        "placeholder": "[Ekipe i raspored utakmica bit će objavljeni uskoro]"
+      }
+    ]
+  },
+  "en": {
+    "title": "Marijan Šuto Mrma Memorial Tournament",
+    "breadcrumb": "Memorial Tournament",
+    "category": "Sport",
+    "place": "Zmijavci",
+    "summary": "A football tournament honouring a Croatia Zmijavci player and Croatian defender who fell in the Homeland War.",
+    "lead": "On the last day of July, Zmijavci hosts a memorial football tournament honouring a Croatia Zmijavci player and Croatian defender who fell in the Homeland War.",
+    "description": "The Marijan Šuto Mrma memorial football tournament in Zmijavci, 31 July, honouring a Croatia Zmijavci player and Croatian defender.",
+    "imageAlt": "A Croatia Zmijavci football match",
+    "readMoreLabel": "Read more about the memorial tournament",
+    "sections": [
+      {
+        "heading": "About the tournament",
+        "paragraphs": [
+          "The tournament bears the name of Marijan Šuto Mrma, a Croatia Zmijavci player and Croatian defender who fell in the Homeland War. Every year it brings together teams and fans who keep his memory alive through football."
+        ]
+      },
+      {
+        "heading": "Match schedule",
+        "paragraphs": [],
+        "placeholder": "[Teams and the match schedule will be published soon]"
+      }
+    ]
+  }
+}

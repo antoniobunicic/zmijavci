@@ -1,0 +1,50 @@
+---
+import '../../styles/components/site-header.css';
+import Brand from './Brand.astro';
+import { homePath, navLabel, navOrder, sectionHref, type NavSection } from '../../i18n/routes';
+import { ui, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  variant: 'home' | 'overlay' | 'solid';
+  /** Adresa iste stranice na drugom jeziku. */
+  alternatePath?: string;
+  currentSection?: NavSection;
+}
+
+const { lang, variant, alternatePath, currentSection } = Astro.props;
+const onHome = variant === 'home';
+const { otherLanguage, mainNavigation } = ui[lang];
+---
+
+<header class:list={['site-header', !onHome && `site-header--${variant}`]}>
+  <Brand lang={lang} href={onHome ? sectionHref('intro', lang, true) : homePath(lang)} />
+  <nav class="site-nav" aria-label={mainNavigation}>
+    {
+      navOrder.map((section) => (
+        <a
+          href={sectionHref(section, lang, onHome)}
+          class="link-plain"
+          aria-current={section === currentSection ? 'true' : undefined}
+        >
+          {navLabel(section, lang)}
+        </a>
+      ))
+    }
+  </nav>
+  <div class="site-header__actions">
+    {
+      alternatePath && (
+        <a
+          href={alternatePath}
+          lang={otherLanguage.code}
+          hreflang={otherLanguage.code}
+          aria-label={`${otherLanguage.short} — ${otherLanguage.name}`}
+          class="lang link-plain"
+        >
+          {otherLanguage.short}
+        </a>
+      )
+    }
+  </div>
+</header>

@@ -1,0 +1,9 @@
+---
+interface Props {
+  tone?: 'accent' | 'gold' | 'muted';
+}
+
+const { tone } = Astro.props;
+---
+
+<p class:list={['eyebrow', tone && `eyebrow--${tone}`]}><slot /></p>

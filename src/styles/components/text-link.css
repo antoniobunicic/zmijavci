@@ -1,0 +1,5 @@
+.text-link {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px;
+  font-size: 14px; font-weight: 600; border-bottom: 1px solid rgba(243,241,236,.5);
+}
+.text-link--dark { border-bottom-color: var(--ink); }

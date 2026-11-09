@@ -1,0 +1,63 @@
+---
+import { ui, type Lang } from '../../i18n/ui';
+import type { JsonLd as JsonLdData } from '../../lib/structured-data';
+import { socialImageUrl } from '../../lib/social-image';
+import JsonLd from './JsonLd.astro';
+import defaultImage from '../../assets/images/bazilika.webp';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  path: string;
+  alternatePath?: string;
+  socialImage?: string;
+  noindex?: boolean;
+  ogType?: 'website' | 'article';
+  structuredData?: JsonLdData[];
+}
+
+const {
+  lang,
+  title,
+  description,
+  path,
+  alternatePath,
+  socialImage,
+  noindex = false,
+  ogType = 'website',
+  structuredData = [],
+} = Astro.props;
+
+const site = Astro.site!;
+const absolute = (target: string) => new URL(target, site).href;
+const canonical = absolute(path);
+const image = socialImage ?? (await socialImageUrl(defaultImage, site));
+const otherLang = ui[lang].otherLanguage.code;
+const defaultUrl = lang === 'hr' ? canonical : alternatePath && absolute(alternatePath);
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+{noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+{
+  alternatePath && (
+    <>
+      <link rel="alternate" hreflang={lang} href={canonical} />
+      <link rel="alternate" hreflang={otherLang} href={absolute(alternatePath)} />
+      <link rel="alternate" hreflang="x-default" href={defaultUrl} />
+    </>
+  )
+}
+<meta property="og:site_name" content={ui[lang].siteName} />
+<meta property="og:locale" content={ui[lang].locale} />
+<meta property="og:locale:alternate" content={ui[otherLang].locale} />
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={image} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+{structuredData.map((data) => <JsonLd data={data} />)}

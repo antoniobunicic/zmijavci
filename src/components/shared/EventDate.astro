@@ -1,0 +1,30 @@
+---
+import '../../styles/components/event-date.css';
+import { dateParts, formatLong, type DateRange } from '../../lib/dates';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  range: DateRange;
+}
+
+const { lang, range } = Astro.props;
+const parts = dateParts(range, lang);
+---
+
+<p class="event__date" aria-label={formatLong(range, lang)}>
+  {
+    parts.map((part, index) => (
+      <>
+        {index > 0 && <span class="date-dash" aria-hidden="true">–</span>}
+        <span class="date-part">
+          <span class="date-day">{part.day}</span>
+          <span class="date-my">
+            <span>{part.month}</span>
+            <span>{part.year}</span>
+          </span>
+        </span>
+      </>
+    ))
+  }
+</p>

@@ -1,0 +1,15 @@
+---
+import type { GetStaticPaths } from 'astro';
+import LandmarkView from '../../../views/LandmarkView.astro';
+import { getLandmarks } from '../../../lib/content';
+
+export const getStaticPaths = (async () =>
+  (await getLandmarks()).map((landmark) => ({
+    params: { slug: landmark.data.slugs.en },
+    props: { landmark },
+  }))) satisfies GetStaticPaths;
+
+const { landmark } = Astro.props;
+---
+
+<LandmarkView lang="en" landmark={landmark} />

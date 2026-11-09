@@ -1,0 +1,11 @@
+.award {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 32px 56px;
+  margin: clamp(56px, 7vw, 96px) 0; padding: clamp(24px, 3vw, 40px);
+  background: var(--stone); border-radius: 4px;
+}
+.award__img { flex: 1 1 320px; max-width: 520px; overflow: hidden; border-radius: 2px; }
+.award__img img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.award__text { flex: 1 1 320px; }
+.award__text .eyebrow { color: var(--muted-warm); }
+.award__text h2 { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(30px, 3.2vw, 46px); line-height: 1.02; letter-spacing: -0.035em; margin-bottom: 18px; }
+.award__text p { font-size: 17px; line-height: 1.65; color: var(--ink-soft); max-width: 460px; }

@@ -1,0 +1,12 @@
+---
+import '../../styles/components/button.css';
+
+interface Props {
+  href: string;
+}
+---
+
+<a href={Astro.props.href} class="btn-outline link-plain">
+  <slot />
+  <span aria-hidden="true">→</span>
+</a>

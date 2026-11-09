@@ -1,0 +1,7 @@
+.facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 0 0 clamp(56px, 7vw, 96px); border-bottom: 1px solid var(--line);
+}
+.facts div { padding: 28px 24px 28px 0; }
+.facts dt { margin-bottom: 10px; font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: -0.02em; }

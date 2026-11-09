@@ -1,0 +1,33 @@
+---
+import '../../styles/components/trips.css';
+import Eyebrow from '../ui/Eyebrow.astro';
+import SectionHead from '../ui/SectionHead.astro';
+import TextLink from '../ui/TextLink.astro';
+import TripCard from './TripCard.astro';
+import { trips, tripsCopy } from '../../data/trips';
+import { sectionHref, sectionId } from '../../i18n/routes';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const copy = tripsCopy[lang];
+---
+
+<section id={sectionId('trips', lang)} class="section">
+  <div class="container">
+    <SectionHead>
+      <div class="section-head__text">
+        <Eyebrow tone="accent">{copy.eyebrow}</Eyebrow>
+        <h2 class="display">{copy.title}</h2>
+        <p class="lead">{copy.lead}</p>
+      </div>
+      <TextLink href={sectionHref('trips', lang, true)} dark>{copy.map}</TextLink>
+    </SectionHead>
+    <div class="trips">
+      {trips.map((trip, index) => <TripCard lang={lang} trip={trip} number={index + 1} />)}
+    </div>
+  </div>
+</section>

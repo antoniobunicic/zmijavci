@@ -1,0 +1,80 @@
+{
+  "order": 2,
+  "slugs": {
+    "hr": "zabarska-vecer",
+    "en": "frog-night"
+  },
+  "start": "2027-07-25",
+  "startTime": "20:00",
+  "endTime": "23:30",
+  "image": "../../assets/images/zabarska-vecer.webp",
+  "hr": {
+    "title": "Žabarska večer",
+    "breadcrumb": "Žabarska večer",
+    "category": "Gastro",
+    "place": "Zmijavci",
+    "time": "20:00 – 23:30",
+    "summary": "Tradicionalna gastronomska manifestacija uz glazbu i bogatu ponudu domaćih specijaliteta.",
+    "lead": "Tradicionalna gastronomska manifestacija uz glazbu i bogatu ponudu domaćih specijaliteta.",
+    "description": "Žabarska večer u Zmijavcima, 25. srpnja od 20:00 do 23:30: tradicionalna gastronomska manifestacija uz glazbu i domaće specijalitete.",
+    "imageAlt": "Publika prati natjecatelje u kanalu na Žabarskoj večeri",
+    "readMoreLabel": "Saznaj više o Žabarskoj večeri",
+    "sections": [
+      {
+        "heading": "O događaju",
+        "paragraphs": [
+          "Ljetna večer u Zmijavcima posvećena je žabama — iz kotlova na otvorenoj vatri, uz glazbu uživo i druženje do kasno u noć.",
+          "Uz bogatu ponudu domaćih specijaliteta, večer prate natjecanja uz kanal, uz bučno navijanje publike."
+        ]
+      },
+      {
+        "heading": "Program",
+        "paragraphs": [],
+        "placeholder": "[Program večeri i izvođači bit će objavljeni uskoro]"
+      }
+    ]
+  },
+  "en": {
+    "title": "Frog Night",
+    "pageTitle": "Frog Night (Žabarska večer)",
+    "breadcrumb": "Frog Night",
+    "category": "Food",
+    "place": "Zmijavci",
+    "time": "8 pm – 11:30 pm",
+    "summary": "Žabarska večer — a traditional food festival with music and a rich spread of local specialities.",
+    "lead": "Žabarska večer — a traditional food festival with music and a rich spread of local specialities.",
+    "description": "Frog Night in Zmijavci, 25 July from 8 pm to 11:30 pm: a traditional food festival with music and local specialities.",
+    "imageAlt": "The crowd watching competitors in the canal at Frog Night",
+    "readMoreLabel": "Read more about Frog Night",
+    "sections": [
+      {
+        "heading": "About the event",
+        "paragraphs": [
+          "A summer evening in Zmijavci dedicated to frogs — cooked in cauldrons over an open fire, with live music and company late into the night.",
+          "Alongside a rich spread of local specialities, the evening features contests by the canal, cheered on by a lively crowd."
+        ]
+      },
+      {
+        "heading": "Programme",
+        "paragraphs": [],
+        "placeholder": "[The evening's programme and performers will be published soon]"
+      }
+    ]
+  },
+  "gallery": [
+    {
+      "image": "../../assets/images/zabarska-kotao.webp",
+      "alt": {
+        "hr": "Kotao sa žabama pripremljenim na otvorenoj vatri",
+        "en": "A cauldron of frogs cooked over an open fire"
+      }
+    },
+    {
+      "image": "../../assets/images/zabarska-pozornica.webp",
+      "alt": {
+        "hr": "Glazbenik i mladi natjecatelji na pozornici Žabarske večeri",
+        "en": "A musician and young competitors on the Frog Night stage"
+      }
+    }
+  ]
+}

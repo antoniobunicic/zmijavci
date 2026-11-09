@@ -1,0 +1,18 @@
+---
+import '../../styles/components/facts.css';
+
+interface Props {
+  items: { label: string; value: string }[];
+}
+---
+
+<dl class="facts">
+  {
+    Astro.props.items.map((item) => (
+      <div>
+        <dt>{item.label}</dt>
+        <dd>{item.value}</dd>
+      </div>
+    ))
+  }
+</dl>

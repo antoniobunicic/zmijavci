@@ -1,0 +1,7 @@
+.more-events { padding: clamp(72px, 8vw, 120px) var(--gutter); }
+.more-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 48px 40px; }
+.more-card { display: flex; flex-direction: column; gap: 20px; }
+.more-card__img { overflow: hidden; border-radius: 4px; }
+.more-card__img img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.more-card__date { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.more-card h3 { margin-top: 8px; font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 2.6vw, 38px); line-height: 1.02; letter-spacing: -0.03em; }

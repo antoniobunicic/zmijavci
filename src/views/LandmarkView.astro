@@ -1,0 +1,86 @@
+---
+import DetailPage from './DetailPage.astro';
+import DetailHero from '../components/detail/DetailHero.astro';
+import Facts from '../components/detail/Facts.astro';
+import MoreSection from '../components/detail/MoreSection.astro';
+import Panorama from '../components/detail/Panorama.astro';
+import { homePath, landmarkPath, navLabel, sectionHref } from '../i18n/routes';
+import { ui, type Lang } from '../i18n/ui';
+import { getLandmarks, nextLandmarks, type Landmark } from '../lib/content';
+import { socialImageUrl } from '../lib/social-image';
+import { breadcrumbSchema, landmarkSchema } from '../lib/structured-data';
+
+interface Props {
+  lang: Lang;
+  landmark: Landmark;
+}
+
+const { lang, landmark } = Astro.props;
+const { slugs, image, imageFocus, panoramaUrl } = landmark.data;
+const text = landmark.data[lang];
+const copy = ui[lang];
+
+const site = Astro.site!;
+const path = landmarkPath(slugs, lang);
+const url = new URL(path, site).href;
+const socialImage = image ? await socialImageUrl(image, site) : undefined;
+const sectionLabel = navLabel('intro', lang);
+
+const moreItems = nextLandmarks(await getLandmarks(), landmark).map(({ data }) => ({
+  href: landmarkPath(data.slugs, lang),
+  image: data.image,
+  imageAlt: data[lang].imageAlt,
+  imageFocus: data.imageFocus,
+  meta: data[lang].category,
+  title: data[lang].name,
+}));
+---
+
+<DetailPage
+  lang={lang}
+  title={text.name}
+  description={text.lead}
+  path={path}
+  alternatePath={landmarkPath(slugs, lang === 'hr' ? 'en' : 'hr')}
+  socialImage={socialImage}
+  currentSection="intro"
+  structuredData={[
+    landmarkSchema(landmark, lang, url, socialImage),
+    breadcrumbSchema([
+      { name: copy.siteName, url: new URL(homePath(lang), site).href },
+      { name: sectionLabel, url: new URL(sectionHref('landmarks', lang), site).href },
+      { name: text.name, url },
+    ]),
+  ]}
+>
+  <DetailHero
+    lang={lang}
+    parent={{ label: sectionLabel, href: sectionHref('landmarks', lang) }}
+    breadcrumb={text.name}
+    title={text.name}
+    lead={text.lead}
+    image={image}
+    imageAlt={text.imageAlt}
+    imageFocus={imageFocus}
+  >
+    <div class="event__top"><span class="tag tag--light">{text.category}</span></div>
+  </DetailHero>
+
+  <section class="event-content">
+    <div class="container">
+      <Facts items={text.facts} />
+      <div class="prose">
+        {text.body.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+      {panoramaUrl && text.panorama && <Panorama url={panoramaUrl} {...text.panorama} />}
+    </div>
+  </section>
+
+  <MoreSection
+    lang={lang}
+    title={copy.moreLandmarks}
+    allLabel={copy.allLandmarks}
+    allHref={sectionHref('landmarks', lang)}
+    items={moreItems}
+  />
+</DetailPage>

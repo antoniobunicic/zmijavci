@@ -1,0 +1,15 @@
+---
+import type { GetStaticPaths } from 'astro';
+import EventView from '../../views/EventView.astro';
+import { getEvents } from '../../lib/content';
+
+export const getStaticPaths = (async () =>
+  (await getEvents()).map((event) => ({
+    params: { slug: event.data.slugs.hr },
+    props: { event },
+  }))) satisfies GetStaticPaths;
+
+const { event } = Astro.props;
+---
+
+<EventView lang="hr" event={event} />

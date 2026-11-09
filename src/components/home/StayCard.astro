@@ -1,0 +1,36 @@
+---
+import '../../styles/components/card.css';
+import ExternalLink from '../ui/ExternalLink.astro';
+import ResponsiveImage from '../ui/ResponsiveImage.astro';
+import { staysCopy, type Stay } from '../../data/stays';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  stay: Stay;
+}
+
+const { lang, stay } = Astro.props;
+const copy = staysCopy[lang];
+---
+
+<article class="stay card card--linked">
+  <figure class="stay__img">
+    <ResponsiveImage
+      src={stay.image}
+      alt={stay.alt[lang]}
+      widths={[480, 800, 1280]}
+      sizes="(max-width: 1100px) 92vw, 640px"
+    />
+  </figure>
+  <div class="stay__info">
+    <div class="stay__title">
+      <h3><ExternalLink href={stay.url[lang]} class="link-plain">{stay.name[lang]}</ExternalLink></h3>
+      <span class="stay__meta">{stay.meta[lang]}</span>
+    </div>
+    <p class="price">
+      {copy.priceFrom} <span class="price__num">{stay.price[lang]}</span>
+      {copy.perNight}
+    </p>
+  </div>
+</article>

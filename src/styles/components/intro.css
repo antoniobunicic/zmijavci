@@ -1,0 +1,8 @@
+.intro { padding-top: clamp(72px, 8vw, 120px); padding-bottom: clamp(64px, 8vw, 112px); overflow: hidden; }
+.intro__head { display: flex; flex-wrap: wrap; gap: 24px 64px; }
+.intro__head .eyebrow { flex: 1 1 180px; align-self: flex-start; padding-top: 14px; margin: 0; }
+.intro__lead {
+  flex: 999 1 640px; min-width: 0;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(30px, 3.4vw, 52px); line-height: 1.1; letter-spacing: -0.025em;
+}

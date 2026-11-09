@@ -1,0 +1,23 @@
+---
+import type { Trip } from '../../data/trips';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  trip: Trip;
+  number: number;
+}
+
+const { lang, trip, number } = Astro.props;
+---
+
+<article class="trip">
+  <div class="trip__top">
+    <span class="trip__num">{String(number).padStart(2, '0')}</span>
+    <span class="tag">{trip.tag[lang]}</span>
+  </div>
+  <div>
+    <h3>{trip.name[lang]}</h3>
+    <p>{trip.description[lang]}</p>
+  </div>
+</article>

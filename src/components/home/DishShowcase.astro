@@ -1,0 +1,41 @@
+---
+import '../../styles/components/dishes.css';
+import ResponsiveImage from '../ui/ResponsiveImage.astro';
+import { dishes } from '../../data/gastronomy';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const pad = (value: number) => String(value).padStart(2, '0');
+---
+
+<figure class="dish-stage" data-dish-stage>
+  {
+    dishes.map((dish, index) => (
+      <ResponsiveImage
+        src={dish.image}
+        alt={dish.alt[lang]}
+        focus={dish.imageFocus}
+        class={index === 0 ? 'is-active' : undefined}
+        widths={[400, 800]}
+        sizes="(max-width: 1000px) 92vw, 380px"
+      />
+    ))
+  }
+</figure>
+<div class="dishes">
+  {
+    dishes.map((dish, index) => (
+      <div class:list={['dish', { 'is-active': index === 0 }]} data-dish tabindex="0">
+        <span class="dish__num">{pad(index + 1)}</span>
+        <p class="dish__name">{dish.name[lang]}</p>
+        <p>{dish.description[lang]}</p>
+      </div>
+    ))
+  }
+</div>
+
+<script src="../../scripts/dish-showcase.ts"></script>

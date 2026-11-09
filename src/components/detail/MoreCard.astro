@@ -1,0 +1,40 @@
+---
+import type { ImageMetadata } from 'astro';
+import PhotoPlaceholder from '../ui/PhotoPlaceholder.astro';
+import ResponsiveImage from '../ui/ResponsiveImage.astro';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  href: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  imageFocus?: number;
+  meta: string;
+  title: string;
+}
+
+const { lang, href, image, imageAlt = '', imageFocus, meta, title } = Astro.props;
+---
+
+<a href={href} class="more-card card link-plain">
+  {
+    image ? (
+      <figure class="more-card__img">
+        <ResponsiveImage
+          src={image}
+          alt={imageAlt}
+          focus={imageFocus}
+          widths={[480, 800, 1280]}
+          sizes="(max-width: 960px) 92vw, 640px"
+        />
+      </figure>
+    ) : (
+      <PhotoPlaceholder lang={lang} class="more-card__img" />
+    )
+  }
+  <div>
+    <span class="more-card__date">{meta}</span>
+    <h3>{title}</h3>
+  </div>
+</a>

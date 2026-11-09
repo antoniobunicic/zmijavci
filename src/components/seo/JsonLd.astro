@@ -1,0 +1,12 @@
+---
+import type { JsonLd } from '../../lib/structured-data';
+
+interface Props {
+  data: JsonLd;
+}
+
+// Znak "<" se kodira da sadržaj nikad ne može zatvoriti <script> oznaku.
+const json = JSON.stringify(Astro.props.data).replace(/</g, '\\u003c');
+---
+
+<script is:inline type="application/ld+json" set:html={json} />

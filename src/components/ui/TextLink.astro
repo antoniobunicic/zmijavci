@@ -1,0 +1,16 @@
+---
+import '../../styles/components/text-link.css';
+
+interface Props {
+  href: string;
+  dark?: boolean;
+  label?: string;
+}
+
+const { href, dark = false, label } = Astro.props;
+---
+
+<a href={href} class:list={['text-link', { 'text-link--dark': dark }, 'link-plain']} aria-label={label}>
+  <slot />
+  <span aria-hidden="true">→</span>
+</a>

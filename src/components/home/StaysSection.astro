@@ -1,0 +1,32 @@
+---
+import '../../styles/components/stays.css';
+import Eyebrow from '../ui/Eyebrow.astro';
+import ButtonLink from '../ui/ButtonLink.astro';
+import StayCard from './StayCard.astro';
+import { stays, staysCopy } from '../../data/stays';
+import { sectionHref, sectionId } from '../../i18n/routes';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const copy = staysCopy[lang];
+---
+
+<section id={sectionId('stay', lang)} class="section stays">
+  <div class="container">
+    <div class="stays__head">
+      <Eyebrow tone="muted">{copy.eyebrow}</Eyebrow>
+      <h2 class="display">{copy.title}</h2>
+      <p class="stays__lead">{copy.lead}</p>
+    </div>
+    <div class="stay-grid">
+      {stays.map((stay) => <StayCard lang={lang} stay={stay} />)}
+    </div>
+    <div class="center">
+      <ButtonLink href={sectionHref('stay', lang, true)}>{copy.browseAll}</ButtonLink>
+    </div>
+  </div>
+</section>

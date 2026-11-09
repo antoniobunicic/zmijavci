@@ -1,0 +1,76 @@
+{
+  "order": 4,
+  "slugs": {
+    "hr": "todorica-gradina",
+    "en": "todorica-gradina"
+  },
+  "image": "../../assets/images/kriz.webp",
+  "hr": {
+    "name": "Todorića gradina",
+    "category": "Vidikovac",
+    "summary": "Vidikovac nad Imotskim poljem s petnaest metara visokim zavjetnim križem.",
+    "lead": "Vidikovac iznad Zmijavaca s pogledom preko Imotskog polja do Imotskog. Na vrhu se uzdiže petnaest metara visok zavjetni križ, podignut 1998., uz kameni oltar.",
+    "imageAlt": "Zavjetni križ na Todorića gradini iznad Zmijavaca iz zraka",
+    "facts": [
+      {
+        "label": "Zavjetni križ",
+        "value": "1998."
+      },
+      {
+        "label": "Visina križa",
+        "value": "oko 15 m"
+      },
+      {
+        "label": "Blagdan",
+        "value": "Sv. Lovre, 10. kolovoza"
+      },
+      {
+        "label": "Kategorija",
+        "value": "Vidikovac"
+      }
+    ],
+    "body": [
+      "Iznad Zmijavaca, na uzvisini s koje se pogled pruža preko prostranstva Imotskog polja prema Imotskom i okolnim brdima, smjestila se Todorića gradina, jedno od najprepoznatljivijih mjesta zmijavačkog krajolika. Ovaj istaknuti vidikovac spaja prirodnu ljepotu, povijesnu baštinu i duhovnu tradiciju, pružajući posjetiteljima priliku da Imotsku krajinu dožive iz sasvim drukčije perspektive.",
+      "Sam naziv gradina upućuje na povijesnu važnost uzvisine. Todorića gradina u lokalnoj se tradiciji povezuje s drevnom ilirskom prošlošću, a njezin istaknuti položaj svjedoči o prirodnim prednostima ovakvih mjesta, s kojih je bilo moguće nadzirati okolni prostor. Danas je gradina ponajprije poznata kao mjesto okupljanja, molitve i sjećanja te kao jedna od najljepših panoramskih točaka iznad Zmijavaca.",
+      "Njezinim vrhom dominira veliki zavjetni križ podignut 1998. godine, u znak zahvalnosti što su Zmijavci tijekom Domovinskog rata bili pošteđeni razaranja i progonstva te u spomen na stradale u Drugom svjetskom ratu, poraću i Domovinskom ratu. Monumentalni križ, visok približno 15 metara, vidljiv je iz velikog dijela okolnog prostora i postao je jedan od prepoznatljivih simbola mjesta. Uz njega je postavljen i kameni oltar, čime je gradina dobila posebno mjesto u vjerskom životu lokalne zajednice.",
+      "Todorića gradina povezana je i s tradicijom križnoga puta. Od 1999. godine na ovu se uzvisinu organiziraju korizmene pobožnosti, tijekom kojih se vjernici uspinju od naselja prema zavjetnom križu. Gradina je također mjesto misnih slavlja povezanih s blagdanom svetoga Lovre, zaštitnika Općine Zmijavci, koji se obilježava 10. kolovoza.",
+      "Osim svojega povijesnog i duhovnog značenja, Todorića gradina posebno privlači prostranim vidicima. S njezina se vrha otvara pogled na Zmijavce, plodnu ravnicu Imotskog polja, grad Imotski i okolne uzvisine. Izmjena obrađenih polja, naselja i kamenitih brda stvara karakterističan krajolik dalmatinskoga zaleđa, osobito dojmljiv u mirnim jutarnjim satima i pred zalazak sunca.",
+      "Za posjetitelje koji žele upoznati Zmijavce izvan uobičajenih turističkih ruta, Todorića gradina predstavlja mjesto na kojem se susreću priroda, povijest i tradicija. Njezin panoramski položaj pruža priliku za fotografiranje, uživanje u krajoliku i upoznavanje prostora koji je stoljećima oblikovao život stanovnika Imotske krajine.",
+      "Todorića gradina tako nije samo vidikovac, nego i mjesto snažne simbolike, s kojeg se može doživjeti ljepota Zmijavaca i osjetiti povezanost lokalne zajednice s vlastitom prošlošću."
+    ]
+  },
+  "en": {
+    "name": "Todorića gradina",
+    "category": "Viewpoint",
+    "summary": "A viewpoint over the Imotski plain with a fifteen-metre votive cross.",
+    "lead": "A viewpoint above Zmijavci looking across the Imotski plain to Imotski. On the summit stands a fifteen-metre votive cross, raised in 1998, beside a stone altar.",
+    "imageAlt": "The votive cross on Todorića gradina above Zmijavci from above",
+    "facts": [
+      {
+        "label": "Votive cross",
+        "value": "1998"
+      },
+      {
+        "label": "Cross height",
+        "value": "approx. 15 m"
+      },
+      {
+        "label": "Feast day",
+        "value": "St Lawrence, 10 August"
+      },
+      {
+        "label": "Category",
+        "value": "Viewpoint"
+      }
+    ],
+    "body": [
+      "High above Zmijavci, on a hilltop with views across the wide Imotski plain towards Imotski and the surrounding hills, stands Todorića gradina, one of the most recognisable places in the local landscape. This prominent viewpoint brings together natural beauty, history and spiritual tradition, and offers visitors a completely different perspective on the Imotski region.",
+      "The name gradina — a hillfort — hints at the hill's historical importance. Local tradition links Todorića gradina to the ancient Illyrian past, and its commanding position shows the natural advantages of such places, from which the surrounding land could be watched over. Today the gradina is best known as a place of gathering, prayer and remembrance, and as one of the most beautiful panoramic spots above Zmijavci.",
+      "The summit is dominated by a large votive cross raised in 1998, in thanks that Zmijavci was spared destruction and exile during the Croatian War of Independence, and in memory of those who died in the Second World War, its aftermath and the Homeland War. About 15 metres tall, the cross can be seen from much of the surrounding area and has become one of the village's landmarks. A stone altar stands beside it, giving the gradina a special place in the religious life of the community.",
+      "Todorića gradina is also tied to the tradition of the Way of the Cross. Since 1999, Lenten devotions have been held here, with the faithful climbing from the village up to the votive cross. The gradina is also the setting for masses on the feast of St Lawrence, patron of the Municipality of Zmijavci, celebrated on 10 August.",
+      "Beyond its historical and spiritual meaning, Todorića gradina draws visitors with its sweeping views. From the top you can see Zmijavci, the fertile Imotski plain, the town of Imotski and the surrounding heights. The patchwork of fields, villages and stony hills makes up the typical landscape of the Dalmatian hinterland, especially striking in the calm of early morning and before sunset.",
+      "For visitors who want to discover Zmijavci off the usual tourist routes, Todorića gradina is a place where nature, history and tradition meet. Its panoramic position is ideal for photography, for enjoying the landscape and for getting to know the land that has shaped life in the Imotski region for centuries.",
+      "Todorića gradina is more than a viewpoint: it is a place of strong symbolism, where you can take in the beauty of Zmijavci and feel the community's bond with its own past."
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+/* Stupci završavaju u istoj liniji, pa "Ugostiteljstvo" ne stoji u visini oznake sekcije. */
+.gastro { display: flex; flex-wrap: wrap; gap: 48px 80px; align-items: flex-end; }
+.gastro__intro { flex: 1 1 380px; min-width: 0; }
+.gastro__intro .lead { margin: 22px 0 36px; max-width: 440px; }
+.gastro__list { flex: 999 1 520px; min-width: 0; }

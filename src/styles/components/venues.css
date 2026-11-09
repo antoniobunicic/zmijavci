@@ -1,0 +1,12 @@
+.list-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid var(--ink); }
+.list-head h3 { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.list-head a, .venue a { font-size: 14px; font-weight: 600; text-decoration: none; }
+.venue-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 32px; margin-top: 28px; }
+@media (max-width: 560px) { .venue-grid { grid-template-columns: minmax(0, 1fr); } }
+.venue { display: flex; flex-direction: column; min-width: 0; }
+.venue__img { overflow: hidden; border-radius: 2px; background: #DDD6CA; margin-bottom: 18px; }
+.venue__img img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.venue__name { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-size: 26px; line-height: 1.05; letter-spacing: -0.02em; }
+.venue__meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 16px; margin-top: auto; padding-top: 4px; }
+.venue__info { font-size: 14px; color: var(--muted); }
+.venue a { min-height: 44px; display: inline-flex; align-items: center; }
