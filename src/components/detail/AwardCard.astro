@@ -9,18 +9,30 @@ interface Props {
   eyebrow: string;
   title: string;
   text: string;
+  rank?: { number: string; label: string; detail: string };
 }
 
-const { image, imageAlt, eyebrow, title, text } = Astro.props;
+const { image, imageAlt, eyebrow, title, text, rank } = Astro.props;
 ---
 
 <div class="award">
-  <figure class="award__img">
-    <ResponsiveImage src={image} alt={imageAlt} widths={[520, 1040]} sizes="(max-width: 640px) 92vw, 520px" />
-  </figure>
   <div class="award__text">
     <p class="eyebrow">{eyebrow}</p>
+    {
+      rank && (
+        <p class="award__rank">
+          <span class="award__number">{rank.number}</span>
+          <span class="award__place">
+            <span>{rank.label}</span>
+            <span>{rank.detail}</span>
+          </span>
+        </p>
+      )
+    }
     <h2>{title}</h2>
-    <p>{text}</p>
+    <p class="award__copy">{text}</p>
   </div>
+  <figure class="award__img">
+    <ResponsiveImage src={image} alt={imageAlt} widths={[720, 1080, 1440]} sizes="(max-width: 860px) 92vw, 900px" />
+  </figure>
 </div>

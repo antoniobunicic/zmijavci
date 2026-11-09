@@ -1,0 +1,38 @@
+---
+import '../../styles/components/event-programme.css';
+import { programmeDate } from '../../lib/dates';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  items: { date: string; performer: string; occasion?: { hr: string; en: string } }[];
+  copy: { heading: string; notes: string[]; freeEntry: string };
+}
+
+const { lang, items, copy } = Astro.props;
+---
+
+<section class="programme">
+  <h2 class="programme__heading">{copy.heading}</h2>
+  <div class="prose programme__notes">
+    {copy.notes.map((note) => <p>{note}</p>)}
+    <p class="programme__free">{copy.freeEntry}</p>
+  </div>
+  <ol class="programme__list">
+    {
+      items.map(({ date, performer, occasion }) => {
+        const { date: dayAndMonth, weekday } = programmeDate(date, lang);
+        return (
+          <li class="programme__item">
+            <time class="programme__date" datetime={date}>
+              <span class="programme__day">{dayAndMonth}</span>
+              <span class="programme__weekday">{weekday}</span>
+            </time>
+            <span class="programme__performer">{performer}</span>
+            {occasion && <span class="programme__occasion">{occasion[lang]}</span>}
+          </li>
+        );
+      })
+    }
+  </ol>
+</section>

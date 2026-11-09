@@ -47,6 +47,15 @@ export const dateParts = (range: DateRange, lang: Lang) =>
     year: iso.slice(0, 4),
   }));
 
+/** Datum i dan u tjednu u programu, npr. "18. 12." i "petak"; na engleskom "18 Dec" zbog nedvosmislenosti. */
+export function programmeDate(iso: string, lang: Lang) {
+  const [, month, day] = iso.split('-');
+  return {
+    date: lang === 'hr' ? `${day}. ${month}.` : format(iso, lang, { day: 'numeric', month: 'short' }),
+    weekday: format(iso, lang, { weekday: 'long' }),
+  };
+}
+
 /** ISO 8601 s vremenskom zonom Zmijavaca, za strukturirane podatke. */
 export function toZonedIso(date: string, time?: string): string {
   if (!time) return date;

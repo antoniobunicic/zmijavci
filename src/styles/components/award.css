@@ -1,11 +1,27 @@
 .award {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 32px 56px;
-  margin: clamp(56px, 7vw, 96px) 0; padding: clamp(24px, 3vw, 40px);
-  background: var(--stone); border-radius: 4px;
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  margin: clamp(56px, 7vw, 96px) 0; overflow: hidden; border-radius: 4px;
+  background: radial-gradient(120% 110% at 0 0, #151B3D 0%, #080A17 75%);
+  color: var(--on-dark);
 }
-.award__img { flex: 1 1 320px; max-width: 520px; overflow: hidden; border-radius: 2px; }
-.award__img img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
-.award__text { flex: 1 1 320px; }
-.award__text .eyebrow { color: var(--muted-warm); }
-.award__text h2 { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(30px, 3.2vw, 46px); line-height: 1.02; letter-spacing: -0.035em; margin-bottom: 18px; }
-.award__text p { font-size: 17px; line-height: 1.65; color: var(--ink-soft); max-width: 460px; }
+.award:last-child { margin-bottom: 0; }
+.award__text { display: flex; flex-direction: column; justify-content: center; padding: clamp(32px, 5vw, 72px); }
+.award__text .eyebrow { margin-bottom: clamp(20px, 2.4vw, 32px); color: var(--gold); }
+
+/* Velika brojka u istom obliku kao datumi na vrhu stranice. */
+.award__rank { display: flex; align-items: flex-start; gap: 12px; margin-bottom: clamp(24px, 3vw, 40px); font-family: var(--font-display); color: var(--gold); }
+.award__number { font-weight: 500; font-size: clamp(112px, 13vw, 196px); line-height: .78; letter-spacing: -0.06em; font-variant-numeric: lining-nums; }
+.award__place { display: flex; flex-direction: column; gap: 7px; padding-top: 4px; font-weight: 500; font-size: clamp(20px, 2vw, 28px); line-height: 1; letter-spacing: -0.02em; }
+.award__place span + span { font-family: var(--font-body); font-size: 14px; letter-spacing: 0; color: var(--on-dark-soft); }
+
+.award__text h2 { margin-bottom: 18px; font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(34px, 3.8vw, 56px); line-height: 1; letter-spacing: -0.035em; }
+.award__copy { max-width: 460px; font-size: 17px; line-height: 1.65; color: var(--on-dark-soft); }
+
+.award__img { min-height: 100%; }
+.award__img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+
+@media (max-width: 860px) {
+  .award { grid-template-columns: minmax(0, 1fr); }
+  .award__img { order: -1; }
+  .award__img img { height: auto; aspect-ratio: 3 / 2; }
+}

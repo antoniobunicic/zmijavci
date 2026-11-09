@@ -1,0 +1,14 @@
+.poster-download { flex: none; display: block; width: clamp(250px, 25vw, 340px); color: var(--on-dark); }
+.poster-download__image { display: block; overflow: hidden; border-radius: 4px; box-shadow: 0 0 0 1px rgba(243, 241, 236, .2); }
+.poster-download__image img { width: 100%; height: auto; }
+.poster-download__label {
+  display: flex; align-items: center; gap: 12px; min-height: 48px; margin-top: 8px;
+  font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+}
+
+/* Na mobitelu samo poveznica: plakat bi zauzeo cijeli ekran, a slika se tada i ne učitava. */
+@media (max-width: 860px) {
+  .poster-download { width: auto; }
+  .poster-download__image { display: none; }
+  .poster-download__label { margin-top: 0; }
+}

@@ -53,8 +53,18 @@ const eventText = z.object({
       placeholder: z.string().optional(),
     }),
   ),
+  programme: z
+    .object({ heading: z.string(), notes: z.array(z.string()), freeEntry: z.string(), download: z.string() })
+    .optional(),
   award: z
-    .object({ imageAlt: z.string(), eyebrow: z.string(), title: z.string(), text: z.string() })
+    .object({
+      imageAlt: z.string(),
+      eyebrow: z.string(),
+      title: z.string(),
+      text: z.string(),
+      /** Osvojeno mjesto, prikazuje se velikom zlatnom brojkom. */
+      rank: z.object({ number: z.string(), label: z.string(), detail: z.string() }).optional(),
+    })
     .optional(),
 });
 
@@ -69,7 +79,24 @@ const events = defineCollection({
       startTime: clock.optional(),
       endTime: clock.optional(),
       image: image(),
+      /** Dodatne fotografije koje se uz naslovnu listaju na coveru. */
+      coverPhotos: z
+        .array(z.object({ image: image(), alt: z.object({ hr: z.string(), en: z.string() }) }))
+        .optional(),
       awardImage: image().optional(),
+      /** Tamni cover s padajućim snijegom umjesto zamućene fotografije. */
+      heroSnow: z.boolean().optional(),
+      /** Plakat s programom, nudi se za preuzimanje na coveru. */
+      poster: image().optional(),
+      programme: z
+        .array(
+          z.object({
+            date: isoDate,
+            performer: z.string(),
+            occasion: z.object({ hr: z.string(), en: z.string() }).optional(),
+          }),
+        )
+        .optional(),
       gallery: z
         .array(z.object({ image: image(), alt: z.object({ hr: z.string(), en: z.string() }) }))
         .optional(),

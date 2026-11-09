@@ -1,0 +1,14 @@
+/* Sloj je viši od okvira za jednu pločicu, pa pomak za pločicu daje neprekidan pad. */
+.snowfall {
+  position: absolute; left: 0; right: 0; bottom: 0; top: calc(-1 * var(--tile));
+  background-repeat: repeat; will-change: transform;
+  animation: snowfall var(--fall) linear infinite;
+}
+.snowfall--far { --tile: 900px; --fall: 90s; background-image: url(../../assets/advent/snow-far.svg); }
+.snowfall--near { --tile: 1300px; --fall: 75s; background-image: url(../../assets/advent/snow-near.svg); }
+
+@keyframes snowfall { to { transform: translate3d(0, var(--tile), 0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .snowfall { animation: none; }
+}

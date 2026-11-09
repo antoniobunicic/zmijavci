@@ -3,6 +3,8 @@ import '../../styles/components/detail-hero.css';
 import '../../styles/components/event-date.css';
 import type { ImageMetadata } from 'astro';
 import ResponsiveImage from '../ui/ResponsiveImage.astro';
+import CoverGallery from './CoverGallery.astro';
+import Snowfall from './Snowfall.astro';
 import { ui, type Lang } from '../../i18n/ui';
 
 interface Props {
@@ -14,14 +16,18 @@ interface Props {
   image?: ImageMetadata;
   imageAlt?: string;
   imageFocus?: number;
+  /** Dodatne fotografije: naslovna tada postaje galerija sa strelicama. */
+  extraPhotos?: { image: ImageMetadata; alt: string }[];
+  /** Tamna pozadina s padajućim snijegom umjesto zamućene fotografije. */
+  snow?: boolean;
 }
 
-const { lang, parent, breadcrumb, title, lead, image, imageAlt = '', imageFocus } = Astro.props;
+const { lang, parent, breadcrumb, title, lead, image, imageAlt = '', imageFocus, extraPhotos, snow = false } = Astro.props;
 ---
 
-<section class:list={['event-hero', { 'event-hero--plain': !image }]}>
+<section class:list={['event-hero', { 'event-hero--plain': !image, 'event-hero--snow': snow }]}>
   <div class="event-hero__bg" aria-hidden="true">
-    {image && <ResponsiveImage src={image} alt="" widths={[640]} sizes="100vw" quality={40} />}
+    {snow ? <Snowfall /> : image && <ResponsiveImage src={image} alt="" widths={[640]} sizes="100vw" quality={40} />}
   </div>
   <div class="container">
     <nav class="breadcrumb" aria-label={ui[lang].breadcrumb}>
@@ -29,11 +35,18 @@ const { lang, parent, breadcrumb, title, lead, image, imageAlt = '', imageFocus 
       <span aria-hidden="true">/</span>
       <span>{breadcrumb}</span>
     </nav>
-    <slot />
-    <h1>{title}</h1>
-    <p class="event-hero__lead">{lead}</p>
+    <div class="event-hero__head">
+      <div class="event-hero__intro">
+        <slot />
+        <h1>{title}</h1>
+        <p class="event-hero__lead">{lead}</p>
+      </div>
+      <slot name="aside" />
+    </div>
     {
-      image && (
+      image && extraPhotos ? (
+        <CoverGallery lang={lang} photos={[{ image, alt: imageAlt }, ...extraPhotos]} />
+      ) : image && (
         <figure class="event-hero__img">
           <ResponsiveImage
             src={image}

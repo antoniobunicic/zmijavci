@@ -5,6 +5,8 @@ import DetailHero from '../components/detail/DetailHero.astro';
 import Facts from '../components/detail/Facts.astro';
 import Gallery from '../components/detail/Gallery.astro';
 import MoreSection from '../components/detail/MoreSection.astro';
+import EventProgramme from '../components/detail/EventProgramme.astro';
+import PosterDownload from '../components/detail/PosterDownload.astro';
 import EventDate from '../components/shared/EventDate.astro';
 import { eventPath, homePath, navLabel, sectionHref } from '../i18n/routes';
 import { ui, type Lang } from '../i18n/ui';
@@ -19,7 +21,7 @@ interface Props {
 }
 
 const { lang, event } = Astro.props;
-const { slugs, image, awardImage, gallery, start, end } = event.data;
+const { slugs, image, coverPhotos, heroSnow, poster, awardImage, gallery, programme, start, end } = event.data;
 const text = event.data[lang];
 const copy = ui[lang];
 const range = { start, end };
@@ -70,11 +72,22 @@ const moreItems = otherEvents(await getEvents(), event).map(({ data }) => ({
     lead={text.lead}
     image={image}
     imageAlt={text.imageAlt}
+    extraPhotos={coverPhotos?.map((photo) => ({ image: photo.image, alt: photo.alt[lang] }))}
+    snow={heroSnow}
   >
     <div class="event__top">
       <EventDate lang={lang} range={range} />
-      <span class="tag tag--light">{text.category}</span>
     </div>
+    {
+      poster && text.programme && (
+        <PosterDownload
+          slot="aside"
+          poster={poster}
+          label={text.programme.download}
+          fileName={`${slugs[lang]}-program.jpg`}
+        />
+      )
+    }
   </DetailHero>
 
   <section class="event-content">
@@ -91,6 +104,7 @@ const moreItems = otherEvents(await getEvents(), event).map(({ data }) => ({
           ))
         }
       </div>
+      {programme && text.programme && <EventProgramme lang={lang} items={programme} copy={text.programme} />}
       {awardImage && text.award && <AwardCard image={awardImage} {...text.award} />}
       {gallery && <Gallery items={gallery.map((item) => ({ image: item.image, alt: item.alt[lang] }))} />}
     </div>

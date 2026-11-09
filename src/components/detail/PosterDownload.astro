@@ -1,0 +1,23 @@
+---
+import '../../styles/components/poster-download.css';
+import type { ImageMetadata } from 'astro';
+import ResponsiveImage from '../ui/ResponsiveImage.astro';
+
+interface Props {
+  poster: ImageMetadata;
+  label: string;
+  fileName: string;
+}
+
+const { poster, label, fileName } = Astro.props;
+---
+
+<a href={poster.src} download={fileName} class="poster-download link-plain">
+  <span class="poster-download__image">
+    <ResponsiveImage src={poster} alt="" widths={[340, 680, 1020]} sizes="340px" quality={80} />
+  </span>
+  <span class="poster-download__label">
+    {label}
+    <span aria-hidden="true">↓</span>
+  </span>
+</a>
