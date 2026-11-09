@@ -16,7 +16,10 @@ interface Props {
 }
 
 const { src, alt, widths, sizes, class: className, focus, priority = false, quality } = Astro.props;
-const usableWidths = widths.filter((width) => width <= src.width);
+// Manje fotografije koriste svoju punu širinu umjesto da stanu na prvoj manjoj veličini.
+const usableWidths = widths.some((width) => width > src.width)
+  ? [...widths.filter((width) => width < src.width), src.width]
+  : widths;
 ---
 
 <Picture
@@ -24,7 +27,7 @@ const usableWidths = widths.filter((width) => width <= src.width);
   alt={alt}
   formats={['avif']}
   fallbackFormat="webp"
-  widths={usableWidths.length > 0 ? usableWidths : [src.width]}
+  widths={usableWidths}
   sizes={sizes}
   quality={quality}
   loading={priority ? 'eager' : 'lazy'}

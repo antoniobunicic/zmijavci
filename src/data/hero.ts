@@ -45,7 +45,7 @@ export const heroShots: HeroShot[] = [
     name: { hr: 'Ranokršćanska bazilika', en: 'Early Christian Basilica' },
     dot: { x: 46, y: 30 },
   },
-  { video: 'most', name: { hr: 'Zmijavački most', en: 'Zmijavci Bridge' }, dot: { x: 58, y: 26 } },
+  { video: 'zmijavacki-most', name: { hr: 'Zmijavački most', en: 'Zmijavci Bridge' }, dot: { x: 58, y: 26 } },
   { video: 'kriz-uspon', name: GRADINA, dot: GRADINA_DOT },
   { video: 'kriz', name: GRADINA, dot: GRADINA_DOT },
   { video: 'crkva', name: { hr: 'Crkva Svih svetih', en: 'All Saints Church' }, dot: { x: 44, y: 46 } },

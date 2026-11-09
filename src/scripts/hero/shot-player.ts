@@ -15,12 +15,14 @@ export function createShotPlayer({ hero, onShotChange }: PlayerOptions) {
   const segments = [...hero.querySelectorAll<HTMLElement>('.segment')];
   const nameElement = hero.querySelector<HTMLElement>('[data-shot-name]');
   const numberElement = hero.querySelector<HTMLElement>('[data-shot-num]');
+  const poster = hero.querySelector<HTMLElement>('.hero__poster');
 
   let index = 0;
   let fallback: ReturnType<typeof setTimeout> | undefined;
   let restartBarOnPlay = false;
   let isVisible = true;
   let videosEnabled = false;
+  let isHoldingFirstFrame = false;
 
   /** Snimka se počinje skidati tek kad zatreba, da posjetitelj ne plaća promet za kadrove koje neće vidjeti. */
   const assignSource = (video: HTMLVideoElement) => {
@@ -40,7 +42,7 @@ export function createShotPlayer({ hero, onShotChange }: PlayerOptions) {
   const next = () => goTo((index + 1) % videos.length);
 
   function play(video: HTMLVideoElement) {
-    if (!video.src) return; // izvori se postavljaju tek nakon učitavanja stranice
+    if (!video.src || isHoldingFirstFrame) return; // izvori se postavljaju tek nakon učitavanja stranice
     video.muted = true;
     video.defaultPlaybackRate = PLAYBACK_RATE;
     video.playbackRate = PLAYBACK_RATE;
@@ -69,7 +71,35 @@ export function createShotPlayer({ hero, onShotChange }: PlayerOptions) {
     assignSource(upcoming);
   }
 
+  const posterFadeMs = () =>
+    poster ? parseFloat(getComputedStyle(poster).transitionDuration) * 1000 : 0;
+
+  /**
+   * Snimka stane na prvoj sličici dok se poster pretapa. Poster i ta sličica su ista slika,
+   * pa se pri prijelazu ne vide dvostruki obrisi kao kad se poster pretapa u kadar koji se već kreće.
+   */
+  function holdFirstFrame() {
+    const [first] = videos;
+    if (index !== 0) return; // posjetitelj je već prešao na drugi kadar
+    isHoldingFirstFrame = true;
+    first.pause();
+    first.addEventListener('seeked', revealVideo, { once: true });
+    first.currentTime = 0;
+  }
+
+  function revealVideo() {
+    hero.classList.add('has-video');
+    setTimeout(() => {
+      if (!isHoldingFirstFrame) return;
+      isHoldingFirstFrame = false;
+      restartBarOnPlay = true;
+      if (isVisible && !document.hidden) play(videos[index]);
+    }, posterFadeMs());
+  }
+
   function goTo(target: number) {
+    isHoldingFirstFrame = false;
+    if (videosEnabled) hero.classList.add('has-video');
     const previous = videos[index];
     index = target;
     const video = videos[index];
@@ -109,7 +139,6 @@ export function createShotPlayer({ hero, onShotChange }: PlayerOptions) {
     });
     // Traka kreće iznova kad snimka stvarno krene, da ne pobjegne dok se učitava.
     video.addEventListener('playing', () => {
-      hero.classList.add('has-video'); // poster se pretapa u video tek tada
       if (position !== index || !restartBarOnPlay) return;
       restartBarOnPlay = false;
       restartBar(segments[index]);
@@ -131,8 +160,9 @@ export function createShotPlayer({ hero, onShotChange }: PlayerOptions) {
     assignSource(first);
     syncBarDuration(first);
     restartBarOnPlay = true;
-    if (isVisible && !document.hidden) play(first);
+    first.addEventListener('playing', holdFirstFrame, { once: true });
     first.addEventListener('canplaythrough', preloadNext, { once: true });
+    if (isVisible && !document.hidden) play(first);
   }
 
   return {

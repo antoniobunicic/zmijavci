@@ -1,4 +1,5 @@
 ---
+import '../../styles/components/card.css';
 import '../../styles/components/trips.css';
 import Eyebrow from '../ui/Eyebrow.astro';
 import SectionHead from '../ui/SectionHead.astro';
@@ -27,7 +28,7 @@ const copy = tripsCopy[lang];
       <TextLink href={sectionHref('trips', lang, true)} dark>{copy.map}</TextLink>
     </SectionHead>
     <div class="trips">
-      {trips.map((trip, index) => <TripCard lang={lang} trip={trip} number={index + 1} />)}
+      {trips.map((trip) => <TripCard lang={lang} trip={trip} />)}
     </div>
   </div>
 </section>

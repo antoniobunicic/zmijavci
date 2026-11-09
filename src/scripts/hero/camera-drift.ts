@@ -1,7 +1,6 @@
 const RANGE = 3.6; // % pomaka sloja; sloj je 5 % veći od kadra sa svake strane
 const SMOOTH_TIME = 0.75; // sekunde; veće = mekše i sporije praćenje kursora
 const MAX_STEP = 0.05; // sekunde; nakon zastoja kadar ne smije naglo skočiti
-const IDLE_MS = 2500;
 
 interface Axis {
   position: number;
@@ -24,40 +23,41 @@ function dampTowards(axis: Axis, target: number, step: number) {
   axis.position = target + (offset + drift) * decay;
 }
 
-/** Dron: kursor desno → kadar se pomiče desno → sadržaj klizi ulijevo. Bez miša kadar polako sam lebdi. */
+/** Lagano stalno lebdenje drona. Zbraja se s položajem kursora, pa nikad ne mijenja smjer naglo. */
+const hover = (time: number) => ({
+  x: Math.sin(time / 5200) * 0.35,
+  y: Math.cos(time / 6900) * 0.25,
+});
+
+/** Dron: kursor desno → kadar se pomiče desno → sadržaj klizi ulijevo. */
 export function createCameraDrift(hero: HTMLElement, layer: HTMLElement) {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const horizontal: Axis = { position: 0, velocity: 0 };
   const vertical: Axis = { position: 0, velocity: 0 };
-  let target = { x: 0, y: 0 };
-  let lastPointer = 0;
+  let pointer = { x: 0, y: 0 };
   let frame: number | null = null;
   let lastFrameTime: number | null = null;
 
   hero.addEventListener('pointermove', (event) => {
     if (event.pointerType === 'touch') return;
     const rect = hero.getBoundingClientRect();
-    target = {
+    pointer = {
       x: clamp(((event.clientX - rect.left) / rect.width) * 2 - 1),
       y: clamp(((event.clientY - rect.top) / rect.height) * 2 - 1),
     };
-    lastPointer = performance.now();
   });
 
   hero.addEventListener('pointerleave', () => {
-    target = { x: 0, y: 0 };
-    lastPointer = 0;
+    pointer = { x: 0, y: 0 };
   });
 
   const tick = (time: number) => {
     const step = Math.min((time - (lastFrameTime ?? time)) / 1000, MAX_STEP);
     lastFrameTime = time;
 
-    if (performance.now() - lastPointer > IDLE_MS) {
-      target = { x: Math.sin(time / 5200) * 0.35, y: Math.cos(time / 6900) * 0.25 };
-    }
-    dampTowards(horizontal, target.x, step);
-    dampTowards(vertical, target.y, step);
+    const wave = hover(time);
+    dampTowards(horizontal, clamp(pointer.x + wave.x), step);
+    dampTowards(vertical, clamp(pointer.y + wave.y), step);
 
     const translateX = (-horizontal.position * RANGE).toFixed(3);
     const translateY = (-vertical.position * RANGE * 0.8).toFixed(3);

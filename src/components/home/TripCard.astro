@@ -1,22 +1,26 @@
 ---
+import ResponsiveImage from '../ui/ResponsiveImage.astro';
 import type { Trip } from '../../data/trips';
 import type { Lang } from '../../i18n/ui';
 
 interface Props {
   lang: Lang;
   trip: Trip;
-  number: number;
 }
 
-const { lang, trip, number } = Astro.props;
+const { lang, trip } = Astro.props;
 ---
 
-<article class="trip">
-  <div class="trip__top">
-    <span class="trip__num">{String(number).padStart(2, '0')}</span>
-    <span class="tag">{trip.tag[lang]}</span>
-  </div>
-  <div>
+<article class="trip card">
+  <figure class="trip__img">
+    <ResponsiveImage
+      src={trip.image.src}
+      alt={trip.image.alt[lang]}
+      widths={[440, 800, 1150]}
+      sizes="(max-width: 800px) 92vw, 440px"
+    />
+  </figure>
+  <div class="trip__text">
     <h3>{trip.name[lang]}</h3>
     <p>{trip.description[lang]}</p>
   </div>
