@@ -18,6 +18,7 @@
 
   --font-display: 'Familjen Grotesk', 'Inter Tight', system-ui, sans-serif;
   --font-body: 'Inter Tight', system-ui, sans-serif;
+  --display-weight: 500;
 
   --gutter: clamp(20px, 4vw, 56px);
   --max: 1320px;
@@ -79,7 +80,7 @@ button { font: inherit; }
 .small-title { font-size: 13px; letter-spacing: .14em; }
 
 .display {
-  font-family: var(--font-display); font-weight: 500;
+  font-family: var(--font-display); font-weight: var(--display-weight);
   font-size: clamp(44px, 6vw, 96px); line-height: .96; letter-spacing: -0.035em;
 }
 .display--xl { font-size: clamp(44px, 5.6vw, 84px); line-height: .98; letter-spacing: -0.035em; }
@@ -157,7 +158,7 @@ button { font: inherit; }
 .hero__location { display: flex; align-items: flex-end; gap: 26px; }
 .hero__meta { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; padding-bottom: 4px; text-align: right; }
 .hero__meta .label { opacity: .8; letter-spacing: .2em; }
-.hero__place { font-family: var(--font-display); font-weight: 500; font-size: 28px; line-height: 1; letter-spacing: -0.02em; }
+.hero__place { font-family: var(--font-display); font-weight: var(--display-weight); font-size: 28px; line-height: 1; letter-spacing: -0.02em; }
 .hero__controls { display: flex; align-items: center; gap: 14px; margin-top: 6px; }
 .hero__segments { display: flex; gap: 6px; }
 .segment {
@@ -213,21 +214,20 @@ button { font: inherit; }
 .round-btn:disabled { opacity: .3; cursor: default; background: transparent; color: var(--ink); border-color: #CFCCC3; }
 
 .carousel {
-  --edge: max(var(--gutter), calc((100% - var(--max)) / 2));
   display: flex; gap: 24px; overflow-x: auto;
   scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
   margin: 0 calc(-1 * var(--gutter));
-  padding: 0 var(--gutter) 8px var(--edge);
-  scroll-padding-left: var(--edge);
+  /* Postoci se različito računaju: padding od sekcije (bez gutera), scroll-padding od same trake (puna širina). */
+  padding: 0 var(--gutter) 8px max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+  scroll-padding-left: max(var(--gutter), calc((100% - var(--max)) / 2));
 }
 .carousel::-webkit-scrollbar { display: none; }
 .carousel::after { content: ""; flex: 0 0 1px; }
 .place { flex: 0 0 min(600px, 84%); scroll-snap-align: start; display: flex; flex-direction: column; gap: 18px; }
 .place__img { overflow: hidden; border-radius: 4px; background: #E4E1D8; }
 .place__img img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.place__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; }
-.place h3 { font-family: var(--font-display); font-weight: 500; font-size: 28px; line-height: 1.05; letter-spacing: -0.02em; }
-.place p { margin-top: -8px; font-size: 15px; line-height: 1.6; color: var(--ink-soft); max-width: 480px; }
+.place h3 { font-family: var(--font-display); font-weight: var(--display-weight); font-size: 28px; line-height: 1.05; letter-spacing: -0.02em; }
+.place p { margin-top: -8px; font-size: 18px; line-height: 1.45; color: var(--ink-soft); max-width: 520px; }
 
 /* ---------- Events ---------- */
 /* Tamnoplava, gotovo crna podloga; nazivi događanja ostaju u izvornoj veličini. */
@@ -250,7 +250,7 @@ button { font: inherit; }
 .event__top .tag { padding-top: 6px; }
 .event__body { display: flex; flex-direction: column; gap: 18px; }
 .event h3 {
-  font-family: var(--font-display); font-weight: 500;
+  font-family: var(--font-display); font-weight: var(--display-weight);
   font-size: clamp(36px, 4vw, 60px); line-height: 1; letter-spacing: -0.035em; max-width: 16ch;
   transition: color .3s;
 }
@@ -285,7 +285,7 @@ button { font: inherit; }
 .stay__img img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 .stay__info { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; }
 .stay__title { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-.stay h3 { font-family: var(--font-display); font-weight: 500; font-size: clamp(30px, 3vw, 44px); line-height: 1; letter-spacing: -0.035em; }
+.stay h3 { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(30px, 3vw, 44px); line-height: 1; letter-spacing: -0.035em; }
 .stay__meta { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted-warm); }
 .price { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; color: var(--ink-soft); font-size: 14px; }
 .price__num { font-family: var(--font-display); font-size: clamp(26px, 2.4vw, 34px); font-weight: 500; letter-spacing: -0.03em; color: var(--ink); }
@@ -297,21 +297,33 @@ button { font: inherit; }
 }
 
 /* ---------- Gastronomy ---------- */
-.gastro { display: flex; flex-wrap: wrap; gap: 48px 80px; align-items: flex-start; }
+/* Stupci završavaju u istoj liniji, pa "Ugostiteljstvo" ne stoji u visini oznake sekcije. */
+.gastro { display: flex; flex-wrap: wrap; gap: 48px 80px; align-items: flex-end; }
 .gastro__intro { flex: 1 1 380px; min-width: 0; }
 .gastro__intro .lead { margin: 22px 0 36px; max-width: 440px; }
+/* Jedna slika iznad mreže; mijenja se prema jelu nad kojim je pokazivač. */
+.dish-stage { position: relative; overflow: hidden; aspect-ratio: 4 / 3; background: #E4E1D8; }
+.dish-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .5s ease; }
+.dish-stage img.is-active { opacity: 1; }
+.dish-stage img[src$="jelo-kujundusa.webp"] { object-position: center 30%; }
 .dishes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: #E4E1D8; border: 1px solid #E4E1D8; }
-.dish { background: var(--white); padding: 22px; }
+.dish { background: var(--white); padding: 22px; min-width: 0; transition: background .25s ease; }
+.dish.is-active { background: #F4F1E9; }
+.dish:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 .dish__num { font-size: 12px; color: var(--accent); font-weight: 600; }
-.dish__name { margin: 10px 0 6px; font-family: var(--font-display); font-weight: 500; font-size: 20px; line-height: 1.1; letter-spacing: -0.02em; }
+.dish__name { margin: 10px 0 6px; font-family: var(--font-display); font-weight: var(--display-weight); font-size: 20px; line-height: 1.1; letter-spacing: -0.02em; }
 .dish p:last-child { font-size: 13px; line-height: 1.5; color: var(--muted); }
 .gastro__list { flex: 999 1 520px; min-width: 0; }
 .list-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 18px; border-bottom: 1px solid var(--ink); }
 .list-head h3 { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .list-head a, .venue a { font-size: 14px; font-weight: 600; text-decoration: none; }
-.venue { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
-.venue__type { width: 120px; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.venue__name { flex: 1 1 220px; font-family: var(--font-display); font-weight: 500; font-size: 26px; line-height: 1.05; letter-spacing: -0.02em; }
+.venue-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 32px; margin-top: 28px; }
+@media (max-width: 560px) { .venue-grid { grid-template-columns: minmax(0, 1fr); } }
+.venue { display: flex; flex-direction: column; min-width: 0; }
+.venue__img { overflow: hidden; border-radius: 2px; background: #DDD6CA; margin-bottom: 18px; }
+.venue__img img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.venue__name { margin: 0; font-family: var(--font-display); font-weight: var(--display-weight); font-size: 26px; line-height: 1.05; letter-spacing: -0.02em; }
+.venue__meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 16px; margin-top: auto; padding-top: 4px; }
 .venue__info { font-size: 14px; color: var(--muted); }
 .venue a { min-height: 44px; display: inline-flex; align-items: center; }
 
@@ -326,7 +338,7 @@ button { font: inherit; }
 }
 .trip__top { display: flex; justify-content: space-between; align-items: center; }
 .trip__num { font-family: var(--font-display); font-weight: 600; font-size: 14px; font-variant-numeric: tabular-nums; color: var(--accent); }
-.trip h3 { margin-bottom: 12px; font-family: var(--font-display); font-weight: 500; font-size: 32px; line-height: 1.02; letter-spacing: -0.03em; }
+.trip h3 { margin-bottom: 12px; font-family: var(--font-display); font-weight: var(--display-weight); font-size: 32px; line-height: 1.02; letter-spacing: -0.03em; }
 .trip p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
 
 /* ---------- Footer ---------- */
@@ -385,7 +397,7 @@ button { font: inherit; }
 .breadcrumb a { color: var(--on-dark); }
 .event-hero h1 {
   margin: clamp(32px, 4vw, 48px) 0 24px; max-width: 14ch;
-  font-family: var(--font-display); font-weight: 500;
+  font-family: var(--font-display); font-weight: var(--display-weight);
   font-size: clamp(48px, 7vw, 112px); line-height: .95; letter-spacing: -0.04em;
 }
 .event-hero__lead { max-width: 640px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.6; color: var(--on-dark-soft); }
@@ -405,11 +417,11 @@ img[src$="zmijavacki-most.webp"] { object-position: center 62%; }
 
 .event-content { padding: clamp(32px, 4vw, 56px) var(--gutter) clamp(80px, 9vw, 136px); }
 .prose { max-width: 680px; }
-.prose h2 { margin: 48px 0 16px; font-family: var(--font-display); font-weight: 500; font-size: 32px; letter-spacing: -0.03em; }
+.prose h2 { margin: 48px 0 16px; font-family: var(--font-display); font-weight: var(--display-weight); font-size: 32px; letter-spacing: -0.03em; }
 .prose h2:first-child { margin-top: 0; }
 .prose p { margin-bottom: 18px; font-size: 18px; line-height: 1.7; color: var(--ink-soft); }
 .panorama { margin-top: clamp(48px, 6vw, 80px); }
-.panorama h2 { margin-bottom: 20px; font-family: var(--font-display); font-weight: 500; font-size: 32px; letter-spacing: -0.03em; }
+.panorama h2 { margin-bottom: 20px; font-family: var(--font-display); font-weight: var(--display-weight); font-size: 32px; letter-spacing: -0.03em; }
 .panorama__frame { overflow: hidden; border-radius: 4px; background: #E4E1D8; aspect-ratio: 16 / 9; }
 .panorama__frame iframe { display: block; width: 100%; height: 100%; border: 0; }
 .panorama figcaption { margin-top: 12px; font-size: 13px; color: var(--muted); }
@@ -425,7 +437,7 @@ img[src$="zmijavacki-most.webp"] { object-position: center 62%; }
 .award__img img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 .award__text { flex: 1 1 320px; }
 .award__text .eyebrow { color: var(--muted-warm); }
-.award__text h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.02; letter-spacing: -0.035em; margin-bottom: 18px; }
+.award__text h2 { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(30px, 3.2vw, 46px); line-height: 1.02; letter-spacing: -0.035em; margin-bottom: 18px; }
 .award__text p { font-size: 17px; line-height: 1.65; color: var(--ink-soft); max-width: 460px; }
 
 .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 24px; margin-top: clamp(48px, 6vw, 80px); }
@@ -439,7 +451,7 @@ img[src$="zmijavacki-most.webp"] { object-position: center 62%; }
 .more-card__img { overflow: hidden; border-radius: 4px; }
 .more-card__img img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 .more-card__date { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
-.more-card h3 { margin-top: 8px; font-family: var(--font-display); font-weight: 500; font-size: clamp(28px, 2.6vw, 38px); line-height: 1.02; letter-spacing: -0.03em; }
+.more-card h3 { margin-top: 8px; font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 2.6vw, 38px); line-height: 1.02; letter-spacing: -0.03em; }
 
 .event h3 a { color: inherit; text-decoration: none; }
 .event__img a { display: block; height: 100%; }

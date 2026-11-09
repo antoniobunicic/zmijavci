@@ -246,6 +246,22 @@
     update();
   }
 
+  /* ---------- Gastronomija: slika iznad mreže prati odabrano jelo ---------- */
+  const dishStage = document.querySelector('[data-dish-stage]');
+  if (dishStage) {
+    const dishImgs = [...dishStage.querySelectorAll('img')];
+    const dishCells = [...document.querySelectorAll('[data-dish]')];
+    const showDish = (i) => {
+      dishImgs.forEach((img, j) => img.classList.toggle('is-active', j === i));
+      dishCells.forEach((cell, j) => cell.classList.toggle('is-active', j === i));
+    };
+    dishCells.forEach((cell, i) => {
+      cell.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') showDish(i); });
+      cell.addEventListener('focusin', () => showDish(i));
+      cell.addEventListener('click', () => showDish(i)); // dodir na mobitelu
+    });
+  }
+
   /* ---------- Novosti (bez pozadinskog servisa zasad) ---------- */
   const form = document.querySelector('[data-newsletter]');
   if (form) {
