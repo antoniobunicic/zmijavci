@@ -7,6 +7,7 @@ import '../styles/components/detail-content.css';
 import type { NavSection } from '../i18n/routes';
 import { ui, type Lang } from '../i18n/ui';
 import type { JsonLd } from '../lib/structured-data';
+import { COVER_PHOTO_ID } from '../lib/view-transitions';
 
 interface Props {
   lang: Lang;
@@ -17,9 +18,11 @@ interface Props {
   socialImage?: string;
   structuredData: JsonLd[];
   currentSection: NavSection;
+  /** Stranica ima naslovnu fotografiju u koju slijeće fotografija iz kartice. */
+  coverPhoto?: boolean;
 }
 
-const { lang, title, path, alternatePath, description, socialImage, structuredData, currentSection } =
+const { lang, title, path, alternatePath, description, socialImage, structuredData, currentSection, coverPhoto } =
   Astro.props;
 const { siteName, contentId } = ui[lang];
 ---
@@ -33,6 +36,7 @@ const { siteName, contentId } = ui[lang];
   socialImage={socialImage}
   ogType="article"
   structuredData={structuredData}
+  renderBlockingId={coverPhoto ? COVER_PHOTO_ID : undefined}
 >
   <SkipLink lang={lang} target={contentId} />
   <SiteHeader lang={lang} variant="overlay" alternatePath={alternatePath} currentSection={currentSection} />

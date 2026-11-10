@@ -34,7 +34,7 @@ const location = [text.place, text.time].filter(Boolean).join(' · ');
       <TextLink href={href} label={text.readMoreLabel}>{ui[lang].readMore}</TextLink>
     </div>
   </div>
-  <figure class="event__img">
+  <figure class="event__img" data-vt-photo={href}>
     <a href={href} tabindex="-1" aria-hidden="true">
       <ResponsiveImage
         src={image}

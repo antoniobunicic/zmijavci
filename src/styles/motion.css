@@ -1,0 +1,72 @@
+/*
+ * Pokret na stranici. Sve je ukras: bez podrške preglednika ili uz smanjeno kretanje
+ * stranica izgleda jednako, samo mirno.
+ *
+ * Pazi: roditelj s overflow: hidden postaje zaseban scroll kontejner, pa animacija unutar
+ * njega prati taj kontejner umjesto stranice i stoji. Za rezanje sadržaja koristi overflow: clip.
+ */
+
+/* ---------- Prijelaz između stranica (vidi public/scripts/view-transitions.js) ---------- */
+@view-transition { navigation: auto; }
+
+::view-transition-group(root) { animation-duration: .3s; }
+::view-transition-group(vt-photo) {
+  animation-duration: .6s;
+  animation-timing-function: cubic-bezier(.22, .8, .24, 1);
+  border-radius: 4px; overflow: clip;
+}
+/* Kartica i naslovna fotografija imaju različit omjer: snimke popunjavaju okvir umjesto da se rastegnu. */
+::view-transition-old(vt-photo), ::view-transition-new(vt-photo) {
+  height: 100%; object-fit: cover;
+  animation-duration: .6s;
+}
+
+/* Nova fotografija još se učitava: leti stara, a prava se pojavi na njenom mjestu nakon prijelaza. */
+:root:active-view-transition-type(photo-loading)::view-transition-old(vt-photo) { animation-name: none; }
+:root:active-view-transition-type(photo-loading)::view-transition-new(vt-photo) { animation-name: none; opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+
+    /* ---------- Uvodni tekst: riječi tamne redom dok se odlomak penje ekranom ---------- */
+    /* --i i --words postavlja scripts/word-reveal.ts. */
+    /* Namjerno bez skraćenog `animation`: minifikator bi ga spojio s animation-timeline
+       u oblik koji Chrome odbacuje, pa animacija u produkciji ne bi radila. */
+    .intro__lead { --words: 1; view-timeline: --intro-lead block; }
+    .intro__word {
+      animation-name: word-reveal;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: --intro-lead;
+      animation-range:
+        cover calc(8% + 32% * var(--i, 0) / var(--words))
+        cover calc(8% + 32% * (var(--i, 0) + 2) / var(--words));
+    }
+
+    /* ---------- Fotografije događaja: slika se u okviru pomiče sporije od stranice ---------- */
+    /* Ne na naslovnoj fotografiji podstranice: u nju slijeće fotografija iz kartice i mora
+       mirovati, inače kadar nakon prijelaza skoči na povećani izrez. */
+    .event__img { view-timeline: --parallax block; }
+    .event__img img {
+      animation-name: parallax;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: --parallax;
+      animation-range: cover 0% cover 100%;
+    }
+  }
+}
+
+@keyframes word-reveal {
+  from { opacity: .18; }
+  to { opacity: 1; }
+}
+/* Povećanje pokriva pomak, da se u okviru nikad ne vidi rub slike. */
+@keyframes parallax {
+  from { translate: 0 -10%; scale: 1.22; }
+  to { translate: 0 10%; scale: 1.22; }
+}

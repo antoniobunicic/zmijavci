@@ -49,6 +49,7 @@ const moreItems = otherEvents(await getEvents(), event).map(({ data }) => ({
 
 <DetailPage
   lang={lang}
+  coverPhoto={!!image}
   title={text.pageTitle ?? text.title}
   description={text.description}
   path={path}
@@ -68,6 +69,7 @@ const moreItems = otherEvents(await getEvents(), event).map(({ data }) => ({
     lang={lang}
     parent={{ label: sectionLabel, href: sectionHref('events', lang) }}
     breadcrumb={text.breadcrumb}
+    photoKey={path}
     title={text.title}
     lead={text.lead}
     image={image}

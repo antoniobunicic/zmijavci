@@ -6,6 +6,7 @@ import ResponsiveImage from '../ui/ResponsiveImage.astro';
 import CoverGallery from './CoverGallery.astro';
 import Snowfall from './Snowfall.astro';
 import { ui, type Lang } from '../../i18n/ui';
+import { COVER_PHOTO_ID } from '../../lib/view-transitions';
 
 interface Props {
   lang: Lang;
@@ -20,9 +21,11 @@ interface Props {
   extraPhotos?: { image: ImageMetadata; alt: string }[];
   /** Tamna pozadina s padajućim snijegom umjesto zamućene fotografije. */
   snow?: boolean;
+  /** Putanja ove stranice: kartica s istim ključem pri prijelazu „preleti” u ovu fotografiju. */
+  photoKey?: string;
 }
 
-const { lang, parent, breadcrumb, title, lead, image, imageAlt = '', imageFocus, extraPhotos, snow = false } = Astro.props;
+const { lang, parent, breadcrumb, title, lead, image, imageAlt = '', imageFocus, extraPhotos, snow = false, photoKey } = Astro.props;
 ---
 
 <section class:list={['event-hero', { 'event-hero--plain': !image, 'event-hero--snow': snow }]}>
@@ -45,9 +48,9 @@ const { lang, parent, breadcrumb, title, lead, image, imageAlt = '', imageFocus,
     </div>
     {
       image && extraPhotos ? (
-        <CoverGallery lang={lang} photos={[{ image, alt: imageAlt }, ...extraPhotos]} />
+        <CoverGallery lang={lang} photos={[{ image, alt: imageAlt }, ...extraPhotos]} photoKey={photoKey} />
       ) : image && (
-        <figure class="event-hero__img">
+        <figure class="event-hero__img" id={COVER_PHOTO_ID} data-vt-photo={photoKey}>
           <ResponsiveImage
             src={image}
             alt={imageAlt}

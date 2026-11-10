@@ -19,7 +19,11 @@ const copy = introCopy[lang];
 <section id={sectionId('intro', lang)} class="section intro section--white">
   <div class="container intro__head">
     <Eyebrow tone="accent">{copy.eyebrow}</Eyebrow>
-    <p class="intro__lead">{copy.lead}</p>
+    <p class="intro__lead" data-word-reveal>
+      {copy.lead.split(' ').map((word) => <span class="intro__word">{word} </span>)}
+    </p>
   </div>
   <LandmarkCarousel lang={lang} landmarks={landmarks} />
 </section>
+
+<script src="../../scripts/word-reveal.ts"></script>

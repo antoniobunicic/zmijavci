@@ -4,8 +4,10 @@ import '@fontsource-variable/inter-tight/index.css';
 import '../styles/tokens.css';
 import '../styles/base.css';
 import '../styles/typography.css';
+import '../styles/motion.css';
 import displayFont from '@fontsource-variable/familjen-grotesk/files/familjen-grotesk-latin-wght-normal.woff2?url';
 import bodyFont from '@fontsource-variable/inter-tight/files/inter-tight-latin-wght-normal.woff2?url';
+import viewTransitionsScript from '../scripts/view-transitions.js?url';
 import { getImage } from 'astro:assets';
 import type { Lang } from '../i18n/ui';
 import type { JsonLd } from '../lib/structured-data';
@@ -22,9 +24,11 @@ interface Props {
   noindex?: boolean;
   ogType?: 'website' | 'article';
   structuredData?: JsonLd[];
+  /** Id elementa do kojeg se čeka prije prvog iscrtavanja (cilj prijelaza između stranica). */
+  renderBlockingId?: string;
 }
 
-const { lang, ...seo } = Astro.props;
+const { lang, renderBlockingId, ...seo } = Astro.props;
 const appleIcon = await getImage({ src: coat, width: 180, format: 'png' });
 ---
 
@@ -39,6 +43,9 @@ const appleIcon = await getImage({ src: coat, width: 180, format: 'png' });
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="apple-touch-icon" href={appleIcon.src} />
     <Seo lang={lang} {...seo} />
+    {renderBlockingId && <link rel="expect" href={`#${renderBlockingId}`} blocking="render" />}
+    <!-- Klasična skripta s hashom u imenu: trajno u cacheu, pa ne čeka mrežu i ne zadržava CSS. -->
+    <script is:inline src={viewTransitionsScript}></script>
   </head>
   <body>
     <slot />

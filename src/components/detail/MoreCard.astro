@@ -20,7 +20,7 @@ const { lang, href, image, imageAlt = '', imageFocus, meta, title } = Astro.prop
 <a href={href} class="more-card card link-plain">
   {
     image ? (
-      <figure class="more-card__img">
+      <figure class="more-card__img" data-vt-photo={href}>
         <ResponsiveImage
           src={image}
           alt={imageAlt}

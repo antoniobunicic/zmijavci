@@ -13,12 +13,13 @@ interface Props {
 const { lang, landmark } = Astro.props;
 const { image, imageFocus, slugs } = landmark.data;
 const text = landmark.data[lang];
+const href = landmarkPath(slugs, lang);
 ---
 
 <article class="place card card--linked">
   {
     image ? (
-      <figure class="place__img">
+      <figure class="place__img" data-vt-photo={href}>
         <ResponsiveImage
           src={image}
           alt={text.imageAlt ?? ''}
@@ -31,6 +32,6 @@ const text = landmark.data[lang];
       <PhotoPlaceholder lang={lang} class="place__img" />
     )
   }
-  <h3><a href={landmarkPath(slugs, lang)}>{text.name}</a></h3>
+  <h3><a href={href}>{text.name}</a></h3>
   <p>{text.summary}</p>
 </article>

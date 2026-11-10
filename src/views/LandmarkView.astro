@@ -38,6 +38,7 @@ const moreItems = nextLandmarks(await getLandmarks(), landmark).map(({ data }) =
 
 <DetailPage
   lang={lang}
+  coverPhoto={!!image}
   title={text.name}
   description={text.lead}
   path={path}
@@ -57,6 +58,7 @@ const moreItems = nextLandmarks(await getLandmarks(), landmark).map(({ data }) =
     lang={lang}
     parent={{ label: sectionLabel, href: sectionHref('landmarks', lang) }}
     breadcrumb={text.name}
+    photoKey={path}
     title={text.name}
     lead={text.lead}
     image={image}
